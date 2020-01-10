@@ -30,14 +30,15 @@ class Character:
     RESOURCE_CAP = 1000000
 
     def __init__(self, *args, **kwargs):
-        self.atributes = self.__atributes_cls(
-            strength=kwargs['strength'],
-            agility=kwargs['agility'],
-            vitality=kwargs['vitality'],
-            wisdom=kwargs['wisdom'],
-            willpower=kwargs['willpower'],
-            intellect=kwargs['intellect'],
-        )
+        # self.atributes = self.__atributes_cls(
+        #     strength=kwargs['strength'],
+        #     agility=kwargs['agility'],
+        #     vitality=kwargs['vitality'],
+        #     wisdom=kwargs['wisdom'],
+        #     willpower=kwargs['willpower'],
+        #     intellect=kwargs['intellect'],
+        # )
+        pass
 
 
 class PlayableCharacter(Character):

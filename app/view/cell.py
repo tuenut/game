@@ -2,6 +2,7 @@ import pygame
 
 
 class Door:
+    """Класс отвечает за отрисовку одной двери в ячейке/на локации."""
     def __init__(self, surface, x, y, width, height, color):
         self.x = x
         self.y = y
@@ -16,7 +17,9 @@ class Door:
         pygame.draw.rect(self.surface, self.color, (self.x, self.y, self.width, self.height))
 
 
-class Cell:
+class LocationCell:
+    """Класс отвечает за отрисовку одной ячейки/локации на карте."""
+
     color_left = (255, 100, 100)
     color_right = (100, 255, 100)
     color_up = (100, 100, 255)

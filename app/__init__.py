@@ -1,25 +1,36 @@
 import pygame
 
-from app.view import View
+from app.game import Game
 from app.events import Events
 from app.state import State
 
 
 class App:
-    def __init__(self, world_map):
+    """
+    Класс приложения.
+    Отвечает за обработку состояния приложения, событий и прочего, что связано с самым верхним уровнем.
+    Запускает Игру.
+    Предполагается, что будет какое-то меню, и в режиме меню Игра не выполняется.
+    """
+    state = None
+    events = None
+    game = None
+    menu = None
+
+    def __init__(self):
         pygame.init()
         pygame.display.set_caption("Press ESC to quit")
 
-        self.world_map = world_map
-
         self.state = State(True)
-        self.events = Events(on_exit=self.end_mainloop)
-        self.view = View(self.world_map)
+        self.game = Game()
+        self.events = Events(
+            on_exit=self.end_mainloop,
+        )
 
     def mainloop(self):
         while self.state.run:
             self.events.check()
-            self.view.loop()
+            self.game.run()
 
         self.exit()
 
@@ -28,3 +39,4 @@ class App:
 
     def exit(self):
         pygame.quit()
+

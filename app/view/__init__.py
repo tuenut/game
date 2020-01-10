@@ -1,9 +1,13 @@
 import pygame
 
-from app.view.cell import Cell
+from app.view.cell import LocationCell
 
 
 class View:
+    """Класс "представления" для всего, что касается как минимум графики игры.
+    Отрисовка состояния игрового поля и объектов на нем.
+
+    """
     background = (0, 0, 0)
 
     def __init__(self, world_map, width=640, height=640, fps=30, ):
@@ -22,11 +26,11 @@ class View:
         x = 5
         y = 5
 
-        cell_size = Cell.cell_size
+        cell_size = LocationCell.cell_size
 
         for x_row in self.world_map.grid:
             for location in x_row:
-                location_cell = Cell(exits=location.exits, x=x, y=y)
+                location_cell = LocationCell(exits=location.exits, x=x, y=y)
                 location_cell.blit(self.surface)
                 y += cell_size+1
 
