@@ -1,34 +1,25 @@
 import pygame
+from abc import ABC, abstractmethod
 
 
-class Events:
-    """
-    Класс обработки событий.
-    При получении события вызывается нужный коллбэк или дефолтный, который ничего не делает.
-    todo хорошо бы, чтобы этот класс мог получать тип события и коллбэк, который на него надо повесить, снаружи
-         типа есть метод для подписки коллбеков на события, соответственно, метод отписки.
-         хотя это может быть плохой идеей.
-         Вопрос нужна ли гибкость настройки ивентов без изменения кода?
-         за:     можно использовать конфиг для настройки всех ивентов.
-         против: Настройка ивентов захардкожена, исключены ошибки конфигурации.
-         ввариант: Можно найти компромис в зависимости от типов ивентов,
-                    менять конфиг только из приложения(контролируется валидность),
-                    при загрузке конфига проверять валидность.
+class ABCEvents(ABC):
+    @abstractmethod
+    def on_event(self, event):
+        ...
 
-    """
-    KEY_EVENTS_MOVING = (pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN,)
-    KEY_EVENTS_EXIT = (pygame.K_ESCAPE, pygame.K_q)
-    KEY_EVENTS_CREATE_CHARACTER = (pygame.K_c,)
+    def check(self, events):
+        for event in events:
+            self.on_event(event)
+
+    def default_callback(self, *args, **kwargs):
+        print("Default callback: do nothing.")
+
+
+class AppEvents(ABCEvents):
+    """Класс обработки событий приложения."""
 
     def __init__(self, *args, **kwargs):
-        self.on_exit = kwargs.get('on_exit', self.__default_callback)
-
-    def __default_callback(self, *args, **kwargs):
-        pass
-
-    def check(self):
-        for event in pygame.event.get():
-            self.on_event(event)
+        self.on_exit = kwargs.get('on_exit', self.default_callback)
 
     def on_event(self, event):
         if event.type == pygame.QUIT:
@@ -37,9 +28,8 @@ class Events:
         elif event.type == pygame.KEYDOWN:
             self.on_press_key(event)
 
-    def on_press_key(self, event):
-        if event.key in self.KEY_EVENTS_EXIT:
-            self.on_exit()
+        return event
 
-        # elif event.key in self.KEY_EVENTS_CREATE_CHARACTER:
-        #     self.on_create_character()
+    def on_press_key(self, event):
+        if event.key in (pygame.K_ESCAPE, pygame.K_q):
+            self.on_exit()

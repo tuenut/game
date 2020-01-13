@@ -1,6 +1,6 @@
 import pygame
 
-from app.view.cell import LocationCell
+from app.view.locationcell import LocationCell
 
 
 class View:
@@ -9,6 +9,8 @@ class View:
 
     """
     background = (0, 0, 0)
+    margin_left = 5
+    margin_right = 5
 
     def __init__(self, world_map, width=640, height=640, fps=30, ):
         self.world_map = world_map
@@ -20,24 +22,24 @@ class View:
         self.surface = pygame.Surface(self.screen.get_size()).convert()
         self.surface.fill(self.background)
 
-        self.draw_cells()
+        self.__init_draw_cells()
 
-    def draw_cells(self):
-        x = 5
-        y = 5
-
+    def __init_draw_cells(self):
+        # todo косяк!!! создание новых объектов в каждом цикле. Хотелось бы работать с тем, что есть.
         cell_size = LocationCell.cell_size
 
-        for x_row in self.world_map.grid:
-            for location in x_row:
-                location_cell = LocationCell(exits=location.exits, x=x, y=y)
-                location_cell.blit(self.surface)
-                y += cell_size+1
+        for content in self.world_map.locations:
+            x = content['coordinates'][0] * (cell_size+1) + self.margin_left
+            y = content['coordinates'][1] * (cell_size+1) + self.margin_right
 
-            x += cell_size+1
-            y = 5
+            location_cell = LocationCell(content, x_pos=x, y_pos=y)
+            location_cell.blit(self.surface)
 
+    def update(self):
+        self.rerender_cells_if_nesessary()
 
-    def loop(self):
         pygame.display.flip()
         self.screen.blit(self.surface, (0, 0))
+
+    def rerender_cells_if_nesessary(self):
+        pass

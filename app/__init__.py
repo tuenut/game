@@ -1,7 +1,9 @@
 import pygame
 
+from time import sleep
+
 from app.game import Game
-from app.events import Events
+from app.events import AppEvents
 from app.state import State
 
 
@@ -17,26 +19,73 @@ class App:
     game = None
     menu = None
 
-    def __init__(self):
-        pygame.init()
-        pygame.display.set_caption("Press ESC to quit")
+    FPS = 30
+    __playtime = 0.0
 
-        self.state = State(True)
+    __HINT_IN_TITLE = "Press ESC to quit"
+
+    def __init__(self):
+        self.__title = self.__HINT_IN_TITLE
+
+        self.__init_pygame()
+        self.__configure_events()
+
+        self.state = State()
+
         self.game = Game()
-        self.events = Events(
-            on_exit=self.end_mainloop,
+
+    def __configure_events(self):
+        self.events = AppEvents(
+            on_exit=self._end_mainloop,
         )
 
-    def mainloop(self):
+    def __init_pygame(self):
+        pygame.init()
+
+        self.__clock = pygame.time.Clock()
+
+        pygame.display.set_caption(self.__title)
+
+    def run(self):
+        self.state.run = True
+
+        # self.__fake_loading()
+
+        self._mainloop()
+
+        self._exit()
+
+    def __fake_loading(self):
+        print("Loading imitation...")
+        sleep(1)
+        print("Still imitate...")
+        sleep(1)
+        print("Last two seconds... Honestly :)")
+        sleep(2)
+
+        print("Let's the Game begin!")
+
+    def _mainloop(self):
         while self.state.run:
-            self.events.check()
-            self.game.run()
+            current_events = pygame.event.get()
 
-        self.exit()
+            self._fps_update()
 
-    def end_mainloop(self):
+            self.events.check(current_events)
+
+            self.game.update(current_events)
+
+    def _fps_update(self):
+        milliseconds = self.__clock.tick(self.FPS)
+        self.__playtime += milliseconds / 1000.0
+
+        fps = "FPS: {0:.2f}   Playtime: {1:.2f}".format(self.__clock.get_fps(), self.__playtime)
+        self.__title = "{title}. {fps}".format(title=self.__HINT_IN_TITLE, fps=fps)
+
+        pygame.display.set_caption(self.__title)
+
+    def _end_mainloop(self):
         self.state.run = False
 
-    def exit(self):
+    def _exit(self):
         pygame.quit()
-
