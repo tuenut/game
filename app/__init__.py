@@ -40,7 +40,7 @@ class App:
         )
 
     def __init_pygame(self):
-        pygame.init()
+        pygame.display.init()  # pygame.init() has 100% CPU usage
 
         self.__clock = pygame.time.Clock()
 
@@ -89,3 +89,4 @@ class App:
 
     def _exit(self):
         pygame.quit()
+

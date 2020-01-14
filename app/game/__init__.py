@@ -1,5 +1,6 @@
 from app.view import View
-from universe import World
+from game.world import WorldController
+from game.character import PlayableCharacter
 from .events import GameEvents
 
 
@@ -9,8 +10,9 @@ class Game:
     """
 
     def __init__(self):
-        self.world = World()
+        self.world = WorldController()
         self.view = View(self.world)
+
         self.__configure_events()
 
     def __configure_events(self):
@@ -23,4 +25,6 @@ class Game:
 
     def update(self, events):
         self.events.check(events)
+        self.world.update()
         self.view.update()
+
