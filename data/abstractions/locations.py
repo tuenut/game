@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class ABCLocationRepository(ABC):
+class ABCLocationData(ABC):
     @property
     @abstractmethod
     def exits(self):
@@ -44,7 +44,7 @@ class ABCLocationRepository(ABC):
         ...
 
 
-class ABCExitsRepository(ABC):
+class ABCExitsData(ABC):
     @property
     @abstractmethod
     def down(self):

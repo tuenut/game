@@ -1,10 +1,10 @@
 import pygame
 
-from .doors import Doors
-from app.view.characters.player import Player
+from .doors import LocationExitsRenderObject
+from app.render.characters.player import PlayerRenderObject
 
 
-class LocationCell:
+class LocationRenderObject:
     """Класс отвечает за отрисовку одной ячейки/локации на карте."""
     background = (100, 100, 100)
 
@@ -23,10 +23,10 @@ class LocationCell:
         self.surface = self.surface.convert()
         self.surface.fill(self.background)
 
-        self.doors = Doors(self.surface, self.__exits, self.cell_size, self.door_width, self.door_height)
+        self.exits = LocationExitsRenderObject(self.surface, self.__exits, self.cell_size, self.door_width, self.door_height)
 
         if self.__characters:
-            self.player = Player(self.surface, self.cell_size, self.door_height)
+            self.player = PlayerRenderObject(self.surface, self.cell_size, self.door_height)
 
     def blit(self, background):
         """blit the Ball on the background"""

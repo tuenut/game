@@ -1,3 +1,4 @@
+import logging
 import pygame
 
 from time import sleep
@@ -5,6 +6,8 @@ from time import sleep
 from app.game import Game
 from app.events import AppEvents
 from app.state import State
+
+logger = logging.getLogger(__name__)
 
 
 class App:
@@ -25,6 +28,8 @@ class App:
     __HINT_IN_TITLE = "Press ESC to quit"
 
     def __init__(self):
+        logger.debug("Init App...")
+
         self.__title = self.__HINT_IN_TITLE
 
         self.__init_pygame()
@@ -89,4 +94,3 @@ class App:
 
     def _exit(self):
         pygame.quit()
-

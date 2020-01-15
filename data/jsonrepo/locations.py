@@ -1,29 +1,29 @@
 import json
 
-from data.abstractions.location import ABCLocationRepository, ABCExitsRepository
-from data.jsonrepo.character import CharacterRepository
-from data.jsonrepo.objects import ObjectRepository
+from data.abstractions.locations import ABCLocationData, ABCExitsData
+from data.jsonrepo.character import CharacterData
+from data.jsonrepo.objects import ObjectData
 
-__all__ = ['LocationRepository']
+__all__ = ['LocationData']
 
 
-class LocationRepository(ABCLocationRepository):
+class LocationData(ABCLocationData):
     __exits = None
     __characters = None
     __objects = None
 
     def __init__(self, coordinates, **kwargs):
-        self.__exits = ExitsRepository(kwargs.get('exits'))
-        self.__characters = [CharacterRepository(self, **character) for character in kwargs.get('characters', [])]
+        self.__exits = ExitsData(kwargs.get('exits'))
+        self.__characters = [CharacterData(self, **character) for character in kwargs.get('characters', [])]
         self.__objects = kwargs.get('objects', [])
         self.__coordinates = coordinates
 
     def add_character(self, character):
-        if isinstance(character, CharacterRepository):
+        if isinstance(character, CharacterData):
             self.characters.append(character)
 
     def add_object(self, obj):
-        if isinstance(obj, ObjectRepository):
+        if isinstance(obj, ObjectData):
             self.objects.append(obj)
 
     def remove_character(self, character):
@@ -57,7 +57,7 @@ class LocationRepository(ABCLocationRepository):
         return json.loads(json.dumps({'exits': self.exits, 'characters': self.characters, 'objects': self.objects}))
 
 
-class ExitsRepository(ABCExitsRepository):
+class ExitsData(ABCExitsData):
     @property
     def down(self):
         return self.__down

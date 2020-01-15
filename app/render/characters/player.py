@@ -1,7 +1,7 @@
 import pygame
 
 
-class Player:
+class PlayerRenderObject:
     """Класс отвечает за отрисовку одной двери в ячейке/на локации."""
 
     color = (200, 200, 0)

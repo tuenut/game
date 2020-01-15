@@ -1,7 +1,7 @@
-from app.view.objects.door import Door
+from app.render.objects.door import DoorRenderObject
 
 
-class Doors:
+class LocationExitsRenderObject:
     color_left = (255, 100, 100)
     color_right = (100, 255, 100)
     color_up = (100, 100, 255)
@@ -14,10 +14,10 @@ class Doors:
         self.__height = door_height
         self.__cell_size = cell_size
 
-        self.down = Door(surface, *self.__down_door)
-        self.left = Door(surface, *self.__left_door)
-        self.right = Door(surface, *self.__right_door)
-        self.up = Door(surface, *self.__up_door)
+        self.down = DoorRenderObject(surface, *self.__down_door)
+        self.left = DoorRenderObject(surface, *self.__left_door)
+        self.right = DoorRenderObject(surface, *self.__right_door)
+        self.up = DoorRenderObject(surface, *self.__up_door)
 
     @property
     def __down_door(self):

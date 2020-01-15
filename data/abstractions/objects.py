@@ -18,5 +18,5 @@ class ABCObjectRepository(ABC):
         ...
 
 
-class ABCCharacterRepository(ABCObjectRepository, metaclass=ABCMeta):
+class ABCCharacterData(ABCObjectRepository, metaclass=ABCMeta):
     pass

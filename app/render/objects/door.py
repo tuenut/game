@@ -1,7 +1,7 @@
 import pygame
 
 
-class Door:
+class DoorRenderObject:
     """Класс отвечает за отрисовку одной двери в ячейке/на локации."""
 
     def __init__(self, surface, x, y, width, height, color):

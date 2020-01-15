@@ -5,18 +5,13 @@
 
 import json
 
-from data import ABCWorldRepository
-from data.jsonrepo.locations import LocationRepository
+from data import ABCWorldData
+from data.jsonrepo.locations import LocationData
 
 
-class WorldRepository(ABCWorldRepository):
-    """Класс для хранения состояния мира.
-    todo В данном сучае это тестовый вариант. Как организовать хорошо и правильно пока не понятно.
-    todo задумка такая (WorldState) <- (WorldInterface) <- (data source)
-    todo есть один класс, который предоставляет API наружу, он использует одну из реализаций интерфейса для конкретного
-            источника данных
-
-    """
+class JSONWorldData(ABCWorldData):
+    """Класс для хранения данных о состояния мира."""
+    # todo все передаваемые наружу данные должны быть серриализованы. Не передавать объекты!
 
     directions = ('left', 'right', 'up', 'down')
 
@@ -32,7 +27,7 @@ class WorldRepository(ABCWorldRepository):
         self.__world = {}
         for coordinates, location_data in self.__raw_data.items():
             coordinates = tuple(int(i) for i in coordinates.split("."))
-            location = LocationRepository(coordinates, **location_data)
+            location = LocationData(coordinates, **location_data)
 
             self.__world.update({coordinates: location})
 
@@ -62,7 +57,7 @@ class WorldRepository(ABCWorldRepository):
         return self.get_location(pos)
 
     @property
-    def data(self):
+    def locations(self):
         return list(self.__world.values())
 
     @property

@@ -1,6 +1,6 @@
 from data.abstractions.objects import ABCObjectRepository
 
-class ObjectRepository(ABCObjectRepository):
+class ObjectData(ABCObjectRepository):
     @property
     def name(self):
         raise NotImplementedError

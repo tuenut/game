@@ -6,10 +6,10 @@
 from abc import ABC, abstractmethod
 
 
-class ABCWorldRepository(ABC):
+class ABCWorldData(ABC):
     @property
     @abstractmethod
-    def data(self):
+    def locations(self):
         """
         todo 'data' is deprecated.
         Хочу убрать, чтобы был унифицированный интерфейс поиска локации по координатам или id,

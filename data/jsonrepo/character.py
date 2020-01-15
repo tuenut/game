@@ -1,7 +1,7 @@
-from data.abstractions.objects import ABCCharacterRepository
+from data.abstractions.objects import ABCCharacterData
 
 
-class CharacterRepository(ABCCharacterRepository):
+class CharacterData(ABCCharacterData):
     def __init__(self, location, **kwargs):
         self.__location = location
         self.__name = kwargs.get('name')
