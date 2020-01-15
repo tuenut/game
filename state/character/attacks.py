@@ -1,0 +1,2 @@
+class CharacterAttack:
+    pass
