@@ -1,10 +1,11 @@
 from state import ABCGameStateObject
-from state.character.attacks import CharacterAttack
-from state.character.attributes import BaseAttributes
+
+from state.character.atributes import Attributes
 from state.character.classes import CharacterClass
-from state.character.interactions import CharacterInterraction
-from state.character.movings import CharacterMoving
 from state.character.races import CharacterRace
+from state.character.actions import CharacterMoving
+from state.character.actions import CharacterAttack
+from state.character.actions import CharacterInterraction
 
 
 class Character(ABCGameStateObject):
@@ -22,7 +23,7 @@ class Character(ABCGameStateObject):
 
     __klass_cls = CharacterClass
     __race_cls = CharacterRace
-    __atributes_cls = BaseAttributes
+    __atributes_cls = Attributes
 
     __moving_cls = CharacterMoving
     __interraction_cls = CharacterInterraction
@@ -32,16 +33,18 @@ class Character(ABCGameStateObject):
 
     ATTRIBUTE_CAP = 999
     RESOURCE_CAP = 1000000
+    name = None
 
     def __init__(self, *args, **kwargs):
-        # self.atributes = self.__atributes_cls(
-        #     strength=kwargs['strength'],
-        #     agility=kwargs['agility'],
-        #     vitality=kwargs['vitality'],
-        #     wisdom=kwargs['wisdom'],
-        #     willpower=kwargs['willpower'],
-        #     intellect=kwargs['intellect'],
-        # )
+        self.atributes = self.__atributes_cls(
+            strength=kwargs.get('strength'),
+            agility=kwargs.get('agility'),
+            vitality=kwargs.get('vitality'),
+            wisdom=kwargs.get('wisdom'),
+            willpower=kwargs.get('willpower'),
+            intellect=kwargs.get('intellect'),
+        )
+
         self.name = kwargs.get('name', self.DEFAULT_NAME)
         self.position = kwargs.get('position')
 
