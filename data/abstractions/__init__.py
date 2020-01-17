@@ -5,6 +5,8 @@
 
 from abc import ABC, abstractmethod
 
+__all__ = ['ABCWorldData']
+
 
 class ABCWorldData(ABC):
     @property
