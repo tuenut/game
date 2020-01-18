@@ -1,6 +1,6 @@
 import logging
 
-from data import WorldData
+
 from data.abstractions.locations import ABCLocationData
 from data.abstractions.objects import ABCObjectRepository, ABCCharacterData
 from state.abstractions import ABCGameStateObject
@@ -15,7 +15,7 @@ class GameState(ABCGameStateObject):
     def __init__(self, *args, **kwargs):
         logger.debug("Init GameState...")
 
-        self.__world_data = WorldData
+        self.__world_data = kwargs.get('data')
         self.__generate_locations()
 
     def __generate_locations(self):
@@ -31,7 +31,7 @@ class GameState(ABCGameStateObject):
     def move_object(self, obj: ABCObjectRepository, direction: str):
         """Изменяет состояние репозитория данных."""
         self.remove_object_from_location(obj)
-        self.add_object_on_location(obj, self.__world_data.get_next_location(obj.location, direction))
+        self.add_object_on_location(obj, self.__world_data.get_next_location(obj.location_id, direction))
 
     def update(self):
         """Обновить состояние мира на основе состояния репозитория данных."""

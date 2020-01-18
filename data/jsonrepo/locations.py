@@ -12,11 +12,13 @@ class LocationData(ABCLocationData):
     __characters = None
     __objects = None
 
-    def __init__(self, coordinates, **kwargs):
-        self.__exits = ExitsData(kwargs.get('exits'))
-        self.__characters = [CharacterData(self, **character) for character in kwargs.get('characters', [])]
+    def __init__(self, location_id, **kwargs):
+        self.__coordinates = location_id
+
+        self.__exits = ExitsData(kwargs.get('exits', {}))
+
+        self.__characters = [CharacterData(self.location_id, **character) for character in kwargs.get('characters', [])]
         self.__objects = kwargs.get('objects', [])
-        self.__coordinates = coordinates
 
     def add_character(self, character):
         if isinstance(character, CharacterData):
@@ -33,7 +35,7 @@ class LocationData(ABCLocationData):
         self.objects.remove(obj)
 
     @property
-    def coordinates(self):
+    def location_id(self):
         return self.__coordinates
 
     @property
@@ -53,11 +55,25 @@ class LocationData(ABCLocationData):
     #     if isinstance(value, dict) and {'left', 'right', 'up', 'down'} == set(value.keys()):
     #         self.__exits = value
 
-    def json(self):
-        return json.loads(json.dumps({'exits': self.exits, 'characters': self.characters, 'objects': self.objects}))
+    def dump(self):
+        return {
+            "location_id": self.location_id,
+            'exits': self.exits.dump(),
+            'characters': [character.dump() for character in self.characters],
+            'objects': [obj.dump() for obj in self.objects]
+        }
+
+    def load(self):
+        pass
 
 
 class ExitsData(ABCExitsData):
+    def __init__(self, exits):
+        self.__left = exits.get("left", False)
+        self.__right = exits.get("right", False)
+        self.__down = exits.get("down", False)
+        self.__up = exits.get("up", False)
+
     @property
     def down(self):
         return self.__down
@@ -74,8 +90,10 @@ class ExitsData(ABCExitsData):
     def up(self):
         return self.__up
 
-    def __init__(self, exits):
-        self.__left = exits.get("left", False)
-        self.__right = exits.get("right", False)
-        self.__down = exits.get("down", False)
-        self.__up = exits.get("up", False)
+    def dump(self):
+        return {
+            "left": self.left,
+            "right": self.right,
+            "up": self.up,
+            "down": self.down
+        }

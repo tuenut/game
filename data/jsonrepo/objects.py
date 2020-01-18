@@ -10,5 +10,5 @@ class ObjectData(ABCObjectRepository):
         raise NotImplementedError
 
     @property
-    def location(self):
+    def location_id(self):
         raise NotImplementedError

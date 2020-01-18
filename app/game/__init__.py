@@ -1,12 +1,11 @@
 from app.render import Render
 from app.game.events import GameEvents
 from state import GameState
-
-
+from data import get_data_object
 
 import logging
-logger = logging.getLogger(__name__)
 
+logger = logging.getLogger(__name__)
 
 __all__ = ['Game']
 
@@ -19,6 +18,7 @@ class Game:
     def __init__(self, *args, **kwargs):
         logger.debug("Init Game...")
 
+        self.data = get_data_object()
         self.state = GameState()
         self.render = Render()
 
@@ -34,6 +34,5 @@ class Game:
 
     def update(self, events):
         self.events.check(events)
-        # todo self.world.update()
+        self.state.update()
         self.render.update(self.state.locations)
-

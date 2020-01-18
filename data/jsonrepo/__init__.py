@@ -5,15 +5,17 @@
 
 import json
 
-from data import ABCWorldData
+from data.abstractions.world import ABCWorldData
 from data.jsonrepo.locations import LocationData
 
 
 class JSONWorldData(ABCWorldData):
     """Класс для хранения данных о состояния мира."""
-    # todo все передаваемые наружу данные должны быть серриализованы. Не передавать объекты!
 
-    directions = ('left', 'right', 'up', 'down')
+    def dump(self):
+        pass
+
+    # todo все передаваемые наружу данные должны быть серриализованы. Не передавать объекты!
 
     def __init__(self, json_file):
         self.__file_path = json_file
@@ -42,7 +44,7 @@ class JSONWorldData(ABCWorldData):
         :return:
             location : вернет ту же самую локацию, если соседняя не существует.
         """
-        x, y = location.coordinates[0], location.coordinates[1]
+        x, y = location.location_id[0], location.location_id[1]
         pos = (x, y)
 
         if direction == "down":

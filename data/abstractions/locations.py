@@ -1,7 +1,14 @@
-from abc import ABC, abstractmethod
+from abc import ABC, ABCMeta, abstractmethod
+from .base import ABCDataObject
+
+__all__ = ["ABCLocationData", "ABCExitsData"]
 
 
-class ABCLocationData(ABC):
+class ABCLocationData(ABCDataObject, metaclass=ABCMeta):
+    @property
+    def object_properties(self):
+        return []
+
     @property
     @abstractmethod
     def exits(self):
@@ -14,7 +21,7 @@ class ABCLocationData(ABC):
 
     @property
     @abstractmethod
-    def coordinates(self):
+    def location_id(self):
         ...
 
     @property
@@ -44,7 +51,11 @@ class ABCLocationData(ABC):
         ...
 
 
-class ABCExitsData(ABC):
+class ABCExitsData(ABCDataObject, metaclass=ABCMeta):
+    @property
+    def object_properties(self):
+        return []
+
     @property
     @abstractmethod
     def down(self):

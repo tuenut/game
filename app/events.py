@@ -33,3 +33,5 @@ class AppEvents(ABCEvents):
     def on_press_key(self, event):
         if event.key in (pygame.K_ESCAPE, pygame.K_q):
             self.on_exit()
+
+

@@ -4,14 +4,20 @@ class State:
     todo в идеале нужен базовый класс состояний, от которого будут наследованы как минимум состояния приложения,
     todo  состояния игры
     """
-    def __init__(self, run=False):
-        self.run = run
+
+    def __init__(self):
+        self.__run = None
 
     @property
-    def run(self):
+    def runned(self):
         return self.__run
 
-    @run.setter
-    def run(self, state):
-        if state in (True, False):
-            self.__run = state
+    @property
+    def stopped(self):
+        return not self.__run
+
+    def run(self):
+        self.__run = True
+
+    def stop(self):
+        self.__run = False
