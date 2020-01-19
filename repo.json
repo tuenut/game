@@ -1,1007 +1,2714 @@
 {
-    "0.0": {
-        "exits": {
-            "left": false,
-            "right": true,
-            "up": false,
-            "down": true
-        },
-        "characters": [
-            {
-                "type": "player",
-                "name": "player"
-            }
-        ],
-        "objects": []
-    },
-    "0.1": {
-        "exits": {
-            "left": false,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "0.2": {
-        "exits": {
-            "left": false,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "0.3": {
-        "exits": {
-            "left": false,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "0.4": {
-        "exits": {
-            "left": false,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "0.5": {
-        "exits": {
-            "left": false,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "0.6": {
-        "exits": {
-            "left": false,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "0.7": {
-        "exits": {
-            "left": false,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "0.8": {
-        "exits": {
-            "left": false,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "0.9": {
-        "exits": {
-            "left": false,
-            "right": true,
-            "up": true,
-            "down": false
-        },
-        "characters": [],
-        "objects": []
-    },
-    "1.0": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": false,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "1.1": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "1.2": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "1.3": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "1.4": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "1.5": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "1.6": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "1.7": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "1.8": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "1.9": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": false
-        },
-        "characters": [],
-        "objects": []
-    },
-    "2.0": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": false,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "2.1": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "2.2": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "2.3": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "2.4": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "2.5": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "2.6": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "2.7": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "2.8": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "2.9": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": false
-        },
-        "characters": [],
-        "objects": []
-    },
-    "3.0": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": false,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "3.1": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "3.2": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "3.3": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "3.4": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "3.5": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "3.6": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "3.7": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "3.8": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "3.9": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": false
-        },
-        "characters": [],
-        "objects": []
-    },
-    "4.0": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": false,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "4.1": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "4.2": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "4.3": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "4.4": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "4.5": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "4.6": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "4.7": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "4.8": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "4.9": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": false
-        },
-        "characters": [],
-        "objects": []
-    },
-    "5.0": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": false,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "5.1": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "5.2": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "5.3": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "5.4": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "5.5": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "5.6": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "5.7": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "5.8": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "5.9": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": false
-        },
-        "characters": [],
-        "objects": []
-    },
-    "6.0": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": false,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "6.1": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "6.2": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "6.3": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "6.4": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "6.5": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "6.6": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "6.7": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "6.8": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "6.9": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": false
-        },
-        "characters": [],
-        "objects": []
-    },
-    "7.0": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": false,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "7.1": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "7.2": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "7.3": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "7.4": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "7.5": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "7.6": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "7.7": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "7.8": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "7.9": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": false
-        },
-        "characters": [],
-        "objects": []
-    },
-    "8.0": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": false,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "8.1": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "8.2": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "8.3": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "8.4": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "8.5": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "8.6": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "8.7": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "8.8": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "8.9": {
-        "exits": {
-            "left": true,
-            "right": true,
-            "up": true,
-            "down": false
-        },
-        "characters": [],
-        "objects": []
-    },
-    "9.0": {
-        "exits": {
-            "left": true,
-            "right": false,
-            "up": false,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "9.1": {
-        "exits": {
-            "left": true,
-            "right": false,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "9.2": {
-        "exits": {
-            "left": true,
-            "right": false,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "9.3": {
-        "exits": {
-            "left": true,
-            "right": false,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "9.4": {
-        "exits": {
-            "left": true,
-            "right": false,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "9.5": {
-        "exits": {
-            "left": true,
-            "right": false,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "9.6": {
-        "exits": {
-            "left": true,
-            "right": false,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "9.7": {
-        "exits": {
-            "left": true,
-            "right": false,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "9.8": {
-        "exits": {
-            "left": true,
-            "right": false,
-            "up": true,
-            "down": true
-        },
-        "characters": [],
-        "objects": []
-    },
-    "9.9": {
-        "exits": {
-            "left": true,
-            "right": false,
-            "up": true,
-            "down": false
-        },
-        "characters": [],
-        "objects": []
-    }
+    "locations": [
+        {
+            "exits": {
+                "down": {
+                    "location_id": "224327f3b3b6b483f7b12f4c962e5ca03fe58d144fff6b63e342142d94f55319",
+                    "access": true
+                },
+                "left": {
+                    "location_id": null,
+                    "access": null
+                },
+                "right": {
+                    "location_id": "b479e3b4793c99ad0c245d8e1871cd7f35cabf8c654b21cdffdd236473a353a7",
+                    "access": true
+                },
+                "up": {
+                    "location_id": null,
+                    "access": null
+                }
+            },
+            "coordinates": [
+                0,
+                0
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "ffb739f085d16ec97eeb487b24c058320c0ce0a720049d988bc8077e09c3cd99"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "d0554ec11265992043fb0d73e3729b311c4361aaf1e7dcb8679d299b014c4a6a",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "ffb739f085d16ec97eeb487b24c058320c0ce0a720049d988bc8077e09c3cd99",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "52de26eb74ea735cca95974b129050e41d7d3b017d820108b129d7cf3d0ebaba",
+                    "access": true
+                },
+                "up": {
+                    "location_id": null,
+                    "access": null
+                }
+            },
+            "coordinates": [
+                1,
+                0
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "b479e3b4793c99ad0c245d8e1871cd7f35cabf8c654b21cdffdd236473a353a7"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "120262e0fdd27b475a3106a54e79275557a59a6291cdb88acbf3669d0ae02827",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "b479e3b4793c99ad0c245d8e1871cd7f35cabf8c654b21cdffdd236473a353a7",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "ed8d37e2323b4c096e81b9d30ecfe023c30311d28e87585d3b82429183827a4b",
+                    "access": true
+                },
+                "up": {
+                    "location_id": null,
+                    "access": null
+                }
+            },
+            "coordinates": [
+                2,
+                0
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "52de26eb74ea735cca95974b129050e41d7d3b017d820108b129d7cf3d0ebaba"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "215ebca173e2eff870b8ff6a11c3aa973e1f863edc5aa568cdf9d14bb44af037",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "52de26eb74ea735cca95974b129050e41d7d3b017d820108b129d7cf3d0ebaba",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "c5b6cbdc5ecfc25d6dff8f5113e21ca80d6c48dd5172ef9be1c242ff3aea11d8",
+                    "access": true
+                },
+                "up": {
+                    "location_id": null,
+                    "access": null
+                }
+            },
+            "coordinates": [
+                3,
+                0
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "ed8d37e2323b4c096e81b9d30ecfe023c30311d28e87585d3b82429183827a4b"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "d7d2d2e550500e4c3a680c52055d01abb56c353e63bebb3794bcb9efd828d413",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "ed8d37e2323b4c096e81b9d30ecfe023c30311d28e87585d3b82429183827a4b",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "7f6577fc380031c1e1c53391a75bf6b28726b6a7bf6fad963de62597252dd908",
+                    "access": true
+                },
+                "up": {
+                    "location_id": null,
+                    "access": null
+                }
+            },
+            "coordinates": [
+                4,
+                0
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "c5b6cbdc5ecfc25d6dff8f5113e21ca80d6c48dd5172ef9be1c242ff3aea11d8"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "557717f8e5c692a2207b14196d85b4f89f93f0e4fd38a972232071660ba74036",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "c5b6cbdc5ecfc25d6dff8f5113e21ca80d6c48dd5172ef9be1c242ff3aea11d8",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "ab643bb5f16aa5c302cc4b99132f1d143c2fab759c65651dc637dade3b1917ac",
+                    "access": true
+                },
+                "up": {
+                    "location_id": null,
+                    "access": null
+                }
+            },
+            "coordinates": [
+                5,
+                0
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "7f6577fc380031c1e1c53391a75bf6b28726b6a7bf6fad963de62597252dd908"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "ca7efd474aba3416850c9ac10fb6e2eefaacd46c189a557df44bafde9aa3cb04",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "7f6577fc380031c1e1c53391a75bf6b28726b6a7bf6fad963de62597252dd908",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "d0f06d5db058accfd6c085b045bd06b53aefbb728894c7b3e21efd74b98de699",
+                    "access": true
+                },
+                "up": {
+                    "location_id": null,
+                    "access": null
+                }
+            },
+            "coordinates": [
+                6,
+                0
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "ab643bb5f16aa5c302cc4b99132f1d143c2fab759c65651dc637dade3b1917ac"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "7c2c4e703d8bb5050899c0c322670d1ec79b41ee2cc26161962c950eab654466",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "ab643bb5f16aa5c302cc4b99132f1d143c2fab759c65651dc637dade3b1917ac",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "4cfb38fdc5a81d6b346a037d65d5dcfdd65b007934cc3702624607fbc5586f43",
+                    "access": true
+                },
+                "up": {
+                    "location_id": null,
+                    "access": null
+                }
+            },
+            "coordinates": [
+                7,
+                0
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "d0f06d5db058accfd6c085b045bd06b53aefbb728894c7b3e21efd74b98de699"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "16cff5ee86df37b95b113d672244fb144f790b86f5926620af7cb823958f4132",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "d0f06d5db058accfd6c085b045bd06b53aefbb728894c7b3e21efd74b98de699",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "f9b5dc7145ddf9cec853cc3bdae62646fb2caf3153305c62b1a320ba87b2b7c9",
+                    "access": true
+                },
+                "up": {
+                    "location_id": null,
+                    "access": null
+                }
+            },
+            "coordinates": [
+                8,
+                0
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "4cfb38fdc5a81d6b346a037d65d5dcfdd65b007934cc3702624607fbc5586f43"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "49d0534d969fa11f1a763061ffdfca97b3fee32ad37080bc5a3698c445edecb4",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "4cfb38fdc5a81d6b346a037d65d5dcfdd65b007934cc3702624607fbc5586f43",
+                    "access": true
+                },
+                "right": {
+                    "location_id": null,
+                    "access": null
+                },
+                "up": {
+                    "location_id": null,
+                    "access": null
+                }
+            },
+            "coordinates": [
+                9,
+                0
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "f9b5dc7145ddf9cec853cc3bdae62646fb2caf3153305c62b1a320ba87b2b7c9"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "6482d48e85fe1900e9a70f52c59e0d7fc39053e34cc40ac04015546a5e352ad2",
+                    "access": true
+                },
+                "left": {
+                    "location_id": null,
+                    "access": null
+                },
+                "right": {
+                    "location_id": "d0554ec11265992043fb0d73e3729b311c4361aaf1e7dcb8679d299b014c4a6a",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "ffb739f085d16ec97eeb487b24c058320c0ce0a720049d988bc8077e09c3cd99",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                0,
+                1
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "224327f3b3b6b483f7b12f4c962e5ca03fe58d144fff6b63e342142d94f55319"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "3fb730527ae6edab776b830f88dfd56220ce764aa508f530b07539a086cb162b",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "224327f3b3b6b483f7b12f4c962e5ca03fe58d144fff6b63e342142d94f55319",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "120262e0fdd27b475a3106a54e79275557a59a6291cdb88acbf3669d0ae02827",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "b479e3b4793c99ad0c245d8e1871cd7f35cabf8c654b21cdffdd236473a353a7",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                1,
+                1
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "d0554ec11265992043fb0d73e3729b311c4361aaf1e7dcb8679d299b014c4a6a"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "f5559ce765e82fc89b6178ac99a1276ba8bec541b9539583896908d0c4ede52a",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "d0554ec11265992043fb0d73e3729b311c4361aaf1e7dcb8679d299b014c4a6a",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "215ebca173e2eff870b8ff6a11c3aa973e1f863edc5aa568cdf9d14bb44af037",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "52de26eb74ea735cca95974b129050e41d7d3b017d820108b129d7cf3d0ebaba",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                2,
+                1
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "120262e0fdd27b475a3106a54e79275557a59a6291cdb88acbf3669d0ae02827"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "388cd1ad4765f26e3088ef4cf6b1cd808cb65c626e23266213ea8a940b88cc74",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "120262e0fdd27b475a3106a54e79275557a59a6291cdb88acbf3669d0ae02827",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "d7d2d2e550500e4c3a680c52055d01abb56c353e63bebb3794bcb9efd828d413",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "ed8d37e2323b4c096e81b9d30ecfe023c30311d28e87585d3b82429183827a4b",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                3,
+                1
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "215ebca173e2eff870b8ff6a11c3aa973e1f863edc5aa568cdf9d14bb44af037"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "083d5e11f1410de7883c9050359874d87e962532e21a616c99a0e8b73f7f95e6",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "215ebca173e2eff870b8ff6a11c3aa973e1f863edc5aa568cdf9d14bb44af037",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "557717f8e5c692a2207b14196d85b4f89f93f0e4fd38a972232071660ba74036",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "c5b6cbdc5ecfc25d6dff8f5113e21ca80d6c48dd5172ef9be1c242ff3aea11d8",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                4,
+                1
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "d7d2d2e550500e4c3a680c52055d01abb56c353e63bebb3794bcb9efd828d413"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "0290dda4a4b2df374d9f8201a5c69060f7281f80c01121d8571118d229b85e64",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "d7d2d2e550500e4c3a680c52055d01abb56c353e63bebb3794bcb9efd828d413",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "ca7efd474aba3416850c9ac10fb6e2eefaacd46c189a557df44bafde9aa3cb04",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "7f6577fc380031c1e1c53391a75bf6b28726b6a7bf6fad963de62597252dd908",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                5,
+                1
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "557717f8e5c692a2207b14196d85b4f89f93f0e4fd38a972232071660ba74036"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "428dfafd6015d2846a27c655b172e8446886c591fdcf5f678ce591eb9eb0c43d",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "557717f8e5c692a2207b14196d85b4f89f93f0e4fd38a972232071660ba74036",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "7c2c4e703d8bb5050899c0c322670d1ec79b41ee2cc26161962c950eab654466",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "ab643bb5f16aa5c302cc4b99132f1d143c2fab759c65651dc637dade3b1917ac",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                6,
+                1
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "ca7efd474aba3416850c9ac10fb6e2eefaacd46c189a557df44bafde9aa3cb04"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "6aa3e3c691db895f760f691153e7297ed24ab316cfb2b0830a6523661d67b4c8",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "ca7efd474aba3416850c9ac10fb6e2eefaacd46c189a557df44bafde9aa3cb04",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "16cff5ee86df37b95b113d672244fb144f790b86f5926620af7cb823958f4132",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "d0f06d5db058accfd6c085b045bd06b53aefbb728894c7b3e21efd74b98de699",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                7,
+                1
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "7c2c4e703d8bb5050899c0c322670d1ec79b41ee2cc26161962c950eab654466"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "98b1c36d1c0d2c31451d69ed2b1e7b310be705b63441a352bd36cd3818f322d3",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "7c2c4e703d8bb5050899c0c322670d1ec79b41ee2cc26161962c950eab654466",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "49d0534d969fa11f1a763061ffdfca97b3fee32ad37080bc5a3698c445edecb4",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "4cfb38fdc5a81d6b346a037d65d5dcfdd65b007934cc3702624607fbc5586f43",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                8,
+                1
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "16cff5ee86df37b95b113d672244fb144f790b86f5926620af7cb823958f4132"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "de03e21ca4de7e85728f77209184c44b3f04a8809f09fd8ccabd94455aa1770b",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "16cff5ee86df37b95b113d672244fb144f790b86f5926620af7cb823958f4132",
+                    "access": true
+                },
+                "right": {
+                    "location_id": null,
+                    "access": null
+                },
+                "up": {
+                    "location_id": "f9b5dc7145ddf9cec853cc3bdae62646fb2caf3153305c62b1a320ba87b2b7c9",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                9,
+                1
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "49d0534d969fa11f1a763061ffdfca97b3fee32ad37080bc5a3698c445edecb4"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "f41d7debe47ad28fd8d9383a54cf1546a06c3aaf6a59af57d8e47c5ed5d7722e",
+                    "access": true
+                },
+                "left": {
+                    "location_id": null,
+                    "access": null
+                },
+                "right": {
+                    "location_id": "3fb730527ae6edab776b830f88dfd56220ce764aa508f530b07539a086cb162b",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "224327f3b3b6b483f7b12f4c962e5ca03fe58d144fff6b63e342142d94f55319",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                0,
+                2
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "6482d48e85fe1900e9a70f52c59e0d7fc39053e34cc40ac04015546a5e352ad2"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "1ac4b756bdad36625f5a2f88e7aa1fa7459a4e8f17b45b2e6d11ccfdd91597c2",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "6482d48e85fe1900e9a70f52c59e0d7fc39053e34cc40ac04015546a5e352ad2",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "f5559ce765e82fc89b6178ac99a1276ba8bec541b9539583896908d0c4ede52a",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "d0554ec11265992043fb0d73e3729b311c4361aaf1e7dcb8679d299b014c4a6a",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                1,
+                2
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "3fb730527ae6edab776b830f88dfd56220ce764aa508f530b07539a086cb162b"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "2ef26dbfe88c1ee377a312314a4de927930834007c686715f91ac70753849809",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "3fb730527ae6edab776b830f88dfd56220ce764aa508f530b07539a086cb162b",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "388cd1ad4765f26e3088ef4cf6b1cd808cb65c626e23266213ea8a940b88cc74",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "120262e0fdd27b475a3106a54e79275557a59a6291cdb88acbf3669d0ae02827",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                2,
+                2
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "f5559ce765e82fc89b6178ac99a1276ba8bec541b9539583896908d0c4ede52a"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "49cd573076db391361ae316820c6cc1a704426f2e480efda67125dee12444ec3",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "f5559ce765e82fc89b6178ac99a1276ba8bec541b9539583896908d0c4ede52a",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "083d5e11f1410de7883c9050359874d87e962532e21a616c99a0e8b73f7f95e6",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "215ebca173e2eff870b8ff6a11c3aa973e1f863edc5aa568cdf9d14bb44af037",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                3,
+                2
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "388cd1ad4765f26e3088ef4cf6b1cd808cb65c626e23266213ea8a940b88cc74"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "deb2755c5c2f1e936a4922cb7ccaec8f766b3e7dcbc60ae1673cefe9ceb0a2fa",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "388cd1ad4765f26e3088ef4cf6b1cd808cb65c626e23266213ea8a940b88cc74",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "0290dda4a4b2df374d9f8201a5c69060f7281f80c01121d8571118d229b85e64",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "d7d2d2e550500e4c3a680c52055d01abb56c353e63bebb3794bcb9efd828d413",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                4,
+                2
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "083d5e11f1410de7883c9050359874d87e962532e21a616c99a0e8b73f7f95e6"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "28d30946f5dd2645d976d240e9143a0d7679b3cb37bb1d9692ab92d75d145fc2",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "083d5e11f1410de7883c9050359874d87e962532e21a616c99a0e8b73f7f95e6",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "428dfafd6015d2846a27c655b172e8446886c591fdcf5f678ce591eb9eb0c43d",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "557717f8e5c692a2207b14196d85b4f89f93f0e4fd38a972232071660ba74036",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                5,
+                2
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "0290dda4a4b2df374d9f8201a5c69060f7281f80c01121d8571118d229b85e64"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "9a0ffe3afd8dfed27928ffe4d006a4d347cd0509b0fb505d0215eb7232c0dced",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "0290dda4a4b2df374d9f8201a5c69060f7281f80c01121d8571118d229b85e64",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "6aa3e3c691db895f760f691153e7297ed24ab316cfb2b0830a6523661d67b4c8",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "ca7efd474aba3416850c9ac10fb6e2eefaacd46c189a557df44bafde9aa3cb04",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                6,
+                2
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "428dfafd6015d2846a27c655b172e8446886c591fdcf5f678ce591eb9eb0c43d"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "8798c15d1c33ba9e08a52985990d2d4ca024a72897962d16fee2f30e6a45d584",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "428dfafd6015d2846a27c655b172e8446886c591fdcf5f678ce591eb9eb0c43d",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "98b1c36d1c0d2c31451d69ed2b1e7b310be705b63441a352bd36cd3818f322d3",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "7c2c4e703d8bb5050899c0c322670d1ec79b41ee2cc26161962c950eab654466",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                7,
+                2
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "6aa3e3c691db895f760f691153e7297ed24ab316cfb2b0830a6523661d67b4c8"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "f0f49f0f093586ef054e54e83c751b5f70dd609702b01d7c5831694badceef6a",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "6aa3e3c691db895f760f691153e7297ed24ab316cfb2b0830a6523661d67b4c8",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "de03e21ca4de7e85728f77209184c44b3f04a8809f09fd8ccabd94455aa1770b",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "16cff5ee86df37b95b113d672244fb144f790b86f5926620af7cb823958f4132",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                8,
+                2
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "98b1c36d1c0d2c31451d69ed2b1e7b310be705b63441a352bd36cd3818f322d3"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "0e0c186d99a3640f927b67ed4890b981b6ee25678ca65ab9de2f1b544f2a4392",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "98b1c36d1c0d2c31451d69ed2b1e7b310be705b63441a352bd36cd3818f322d3",
+                    "access": true
+                },
+                "right": {
+                    "location_id": null,
+                    "access": null
+                },
+                "up": {
+                    "location_id": "49d0534d969fa11f1a763061ffdfca97b3fee32ad37080bc5a3698c445edecb4",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                9,
+                2
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "de03e21ca4de7e85728f77209184c44b3f04a8809f09fd8ccabd94455aa1770b"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "97f08d2624936808b84b35c04839f1a519a37d53aad42634954d88961903c1f0",
+                    "access": true
+                },
+                "left": {
+                    "location_id": null,
+                    "access": null
+                },
+                "right": {
+                    "location_id": "1ac4b756bdad36625f5a2f88e7aa1fa7459a4e8f17b45b2e6d11ccfdd91597c2",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "6482d48e85fe1900e9a70f52c59e0d7fc39053e34cc40ac04015546a5e352ad2",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                0,
+                3
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "f41d7debe47ad28fd8d9383a54cf1546a06c3aaf6a59af57d8e47c5ed5d7722e"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "e15cd082bfda693cbff3c2e26d67dbd5444e5985161f9a9ebda44bc5c3d3be77",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "f41d7debe47ad28fd8d9383a54cf1546a06c3aaf6a59af57d8e47c5ed5d7722e",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "2ef26dbfe88c1ee377a312314a4de927930834007c686715f91ac70753849809",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "3fb730527ae6edab776b830f88dfd56220ce764aa508f530b07539a086cb162b",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                1,
+                3
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "1ac4b756bdad36625f5a2f88e7aa1fa7459a4e8f17b45b2e6d11ccfdd91597c2"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "5e2e91cdeb241b9095004ca0e30460a8172a46c17704ae1d6378761e7649b9e8",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "1ac4b756bdad36625f5a2f88e7aa1fa7459a4e8f17b45b2e6d11ccfdd91597c2",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "49cd573076db391361ae316820c6cc1a704426f2e480efda67125dee12444ec3",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "f5559ce765e82fc89b6178ac99a1276ba8bec541b9539583896908d0c4ede52a",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                2,
+                3
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "2ef26dbfe88c1ee377a312314a4de927930834007c686715f91ac70753849809"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "0b726267b0694142b61773195bef9bd17da6c835764c0df49ee4fb7fa4178010",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "2ef26dbfe88c1ee377a312314a4de927930834007c686715f91ac70753849809",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "deb2755c5c2f1e936a4922cb7ccaec8f766b3e7dcbc60ae1673cefe9ceb0a2fa",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "388cd1ad4765f26e3088ef4cf6b1cd808cb65c626e23266213ea8a940b88cc74",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                3,
+                3
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "49cd573076db391361ae316820c6cc1a704426f2e480efda67125dee12444ec3"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "af4adb12fbce9f744b68e8f38d663985d7375a46afe6868d4864b74cc30c7911",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "49cd573076db391361ae316820c6cc1a704426f2e480efda67125dee12444ec3",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "28d30946f5dd2645d976d240e9143a0d7679b3cb37bb1d9692ab92d75d145fc2",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "083d5e11f1410de7883c9050359874d87e962532e21a616c99a0e8b73f7f95e6",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                4,
+                3
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "deb2755c5c2f1e936a4922cb7ccaec8f766b3e7dcbc60ae1673cefe9ceb0a2fa"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "dac719b07ffbe72e572e9358fb264e9454e0e2abd644515f15fbb8e5b9079fcc",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "deb2755c5c2f1e936a4922cb7ccaec8f766b3e7dcbc60ae1673cefe9ceb0a2fa",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "9a0ffe3afd8dfed27928ffe4d006a4d347cd0509b0fb505d0215eb7232c0dced",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "0290dda4a4b2df374d9f8201a5c69060f7281f80c01121d8571118d229b85e64",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                5,
+                3
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "28d30946f5dd2645d976d240e9143a0d7679b3cb37bb1d9692ab92d75d145fc2"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "abacf7645594d78d3330bd2bb3d96b8fc5f55844578d0c8dc33f94cfaac09cdd",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "28d30946f5dd2645d976d240e9143a0d7679b3cb37bb1d9692ab92d75d145fc2",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "8798c15d1c33ba9e08a52985990d2d4ca024a72897962d16fee2f30e6a45d584",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "428dfafd6015d2846a27c655b172e8446886c591fdcf5f678ce591eb9eb0c43d",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                6,
+                3
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "9a0ffe3afd8dfed27928ffe4d006a4d347cd0509b0fb505d0215eb7232c0dced"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "f4780c773f7b8dc0e6b1545a087dc5c4acf52855a4c025072304897427250377",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "9a0ffe3afd8dfed27928ffe4d006a4d347cd0509b0fb505d0215eb7232c0dced",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "f0f49f0f093586ef054e54e83c751b5f70dd609702b01d7c5831694badceef6a",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "6aa3e3c691db895f760f691153e7297ed24ab316cfb2b0830a6523661d67b4c8",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                7,
+                3
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "8798c15d1c33ba9e08a52985990d2d4ca024a72897962d16fee2f30e6a45d584"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "32b2fabd4de5dff632d8ab54f1d437c342edcca9cb77613e6b5a4a0ac825564c",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "8798c15d1c33ba9e08a52985990d2d4ca024a72897962d16fee2f30e6a45d584",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "0e0c186d99a3640f927b67ed4890b981b6ee25678ca65ab9de2f1b544f2a4392",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "98b1c36d1c0d2c31451d69ed2b1e7b310be705b63441a352bd36cd3818f322d3",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                8,
+                3
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "f0f49f0f093586ef054e54e83c751b5f70dd609702b01d7c5831694badceef6a"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "30cf8b8599c952ad675071a7ee9ee5289c83ffe038ca86e7c0421df4d6ceb9ed",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "f0f49f0f093586ef054e54e83c751b5f70dd609702b01d7c5831694badceef6a",
+                    "access": true
+                },
+                "right": {
+                    "location_id": null,
+                    "access": null
+                },
+                "up": {
+                    "location_id": "de03e21ca4de7e85728f77209184c44b3f04a8809f09fd8ccabd94455aa1770b",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                9,
+                3
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "0e0c186d99a3640f927b67ed4890b981b6ee25678ca65ab9de2f1b544f2a4392"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "44afffb74ae6ac056c642f58f3fc9614124f175e3d2260797a96181a0fcf932b",
+                    "access": true
+                },
+                "left": {
+                    "location_id": null,
+                    "access": null
+                },
+                "right": {
+                    "location_id": "e15cd082bfda693cbff3c2e26d67dbd5444e5985161f9a9ebda44bc5c3d3be77",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "f41d7debe47ad28fd8d9383a54cf1546a06c3aaf6a59af57d8e47c5ed5d7722e",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                0,
+                4
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "97f08d2624936808b84b35c04839f1a519a37d53aad42634954d88961903c1f0"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "8c9db068772552e5f146c09b80a2f096ee6d3941a78bcf9f7d66ad48f3833a89",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "97f08d2624936808b84b35c04839f1a519a37d53aad42634954d88961903c1f0",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "5e2e91cdeb241b9095004ca0e30460a8172a46c17704ae1d6378761e7649b9e8",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "1ac4b756bdad36625f5a2f88e7aa1fa7459a4e8f17b45b2e6d11ccfdd91597c2",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                1,
+                4
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "e15cd082bfda693cbff3c2e26d67dbd5444e5985161f9a9ebda44bc5c3d3be77"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "5105348be46b88607e541751e77cb9dace1d3dce9f34e0523df7a851ea7cde62",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "e15cd082bfda693cbff3c2e26d67dbd5444e5985161f9a9ebda44bc5c3d3be77",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "0b726267b0694142b61773195bef9bd17da6c835764c0df49ee4fb7fa4178010",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "2ef26dbfe88c1ee377a312314a4de927930834007c686715f91ac70753849809",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                2,
+                4
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "5e2e91cdeb241b9095004ca0e30460a8172a46c17704ae1d6378761e7649b9e8"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "0c9a814c74247c80624c3a5ab63143974192011e523b21942aaa74442ae4f881",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "5e2e91cdeb241b9095004ca0e30460a8172a46c17704ae1d6378761e7649b9e8",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "af4adb12fbce9f744b68e8f38d663985d7375a46afe6868d4864b74cc30c7911",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "49cd573076db391361ae316820c6cc1a704426f2e480efda67125dee12444ec3",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                3,
+                4
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "0b726267b0694142b61773195bef9bd17da6c835764c0df49ee4fb7fa4178010"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "464d266865eff848291a5ff69d0e38faa07973df2dc99adb70c6b8bd88205bad",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "0b726267b0694142b61773195bef9bd17da6c835764c0df49ee4fb7fa4178010",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "dac719b07ffbe72e572e9358fb264e9454e0e2abd644515f15fbb8e5b9079fcc",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "deb2755c5c2f1e936a4922cb7ccaec8f766b3e7dcbc60ae1673cefe9ceb0a2fa",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                4,
+                4
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "af4adb12fbce9f744b68e8f38d663985d7375a46afe6868d4864b74cc30c7911"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "43ba7b28f93b4053d8dfbb87ae5e0e74a0c7325bcfcc6c613af8c1c56b3f28f6",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "af4adb12fbce9f744b68e8f38d663985d7375a46afe6868d4864b74cc30c7911",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "abacf7645594d78d3330bd2bb3d96b8fc5f55844578d0c8dc33f94cfaac09cdd",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "28d30946f5dd2645d976d240e9143a0d7679b3cb37bb1d9692ab92d75d145fc2",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                5,
+                4
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "dac719b07ffbe72e572e9358fb264e9454e0e2abd644515f15fbb8e5b9079fcc"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "3d1235a3ed3f88ebe09512ee023074d8fffe66956996bf247f3b75c849862504",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "dac719b07ffbe72e572e9358fb264e9454e0e2abd644515f15fbb8e5b9079fcc",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "f4780c773f7b8dc0e6b1545a087dc5c4acf52855a4c025072304897427250377",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "9a0ffe3afd8dfed27928ffe4d006a4d347cd0509b0fb505d0215eb7232c0dced",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                6,
+                4
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "abacf7645594d78d3330bd2bb3d96b8fc5f55844578d0c8dc33f94cfaac09cdd"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "b33be4aafe362ca441e8a3cb2166140059d0751569453c3d84724f19a3ced5af",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "abacf7645594d78d3330bd2bb3d96b8fc5f55844578d0c8dc33f94cfaac09cdd",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "32b2fabd4de5dff632d8ab54f1d437c342edcca9cb77613e6b5a4a0ac825564c",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "8798c15d1c33ba9e08a52985990d2d4ca024a72897962d16fee2f30e6a45d584",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                7,
+                4
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "f4780c773f7b8dc0e6b1545a087dc5c4acf52855a4c025072304897427250377"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "105bbf358ea5cc21d859b8b8b892de2b8ba3d4da0a7a46bc590a6d8914c96da2",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "f4780c773f7b8dc0e6b1545a087dc5c4acf52855a4c025072304897427250377",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "30cf8b8599c952ad675071a7ee9ee5289c83ffe038ca86e7c0421df4d6ceb9ed",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "f0f49f0f093586ef054e54e83c751b5f70dd609702b01d7c5831694badceef6a",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                8,
+                4
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "32b2fabd4de5dff632d8ab54f1d437c342edcca9cb77613e6b5a4a0ac825564c"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "057bd21d3e65b2023f31b57d5fe72a5813300b5c3794370e8156e6739ba8080a",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "32b2fabd4de5dff632d8ab54f1d437c342edcca9cb77613e6b5a4a0ac825564c",
+                    "access": true
+                },
+                "right": {
+                    "location_id": null,
+                    "access": null
+                },
+                "up": {
+                    "location_id": "0e0c186d99a3640f927b67ed4890b981b6ee25678ca65ab9de2f1b544f2a4392",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                9,
+                4
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "30cf8b8599c952ad675071a7ee9ee5289c83ffe038ca86e7c0421df4d6ceb9ed"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "234d848b939779c497973715740cf984738dd4456730960fcc26b086c7f9816c",
+                    "access": true
+                },
+                "left": {
+                    "location_id": null,
+                    "access": null
+                },
+                "right": {
+                    "location_id": "8c9db068772552e5f146c09b80a2f096ee6d3941a78bcf9f7d66ad48f3833a89",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "97f08d2624936808b84b35c04839f1a519a37d53aad42634954d88961903c1f0",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                0,
+                5
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "44afffb74ae6ac056c642f58f3fc9614124f175e3d2260797a96181a0fcf932b"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "d02a3f709a9fd4d38086b6a95624db37d9c16bfa187c81c8285b394af9be9af7",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "44afffb74ae6ac056c642f58f3fc9614124f175e3d2260797a96181a0fcf932b",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "5105348be46b88607e541751e77cb9dace1d3dce9f34e0523df7a851ea7cde62",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "e15cd082bfda693cbff3c2e26d67dbd5444e5985161f9a9ebda44bc5c3d3be77",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                1,
+                5
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "8c9db068772552e5f146c09b80a2f096ee6d3941a78bcf9f7d66ad48f3833a89"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "5cc2021cb4c98cd66f7b4a90687451500ab09587e9a8761b5d63385edb8a4edb",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "8c9db068772552e5f146c09b80a2f096ee6d3941a78bcf9f7d66ad48f3833a89",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "0c9a814c74247c80624c3a5ab63143974192011e523b21942aaa74442ae4f881",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "5e2e91cdeb241b9095004ca0e30460a8172a46c17704ae1d6378761e7649b9e8",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                2,
+                5
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "5105348be46b88607e541751e77cb9dace1d3dce9f34e0523df7a851ea7cde62"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "6dfa5d275c65e1107a2df04d6f4dffda867b125368b7faf2c8d6cbc9bd5bfd6a",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "5105348be46b88607e541751e77cb9dace1d3dce9f34e0523df7a851ea7cde62",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "464d266865eff848291a5ff69d0e38faa07973df2dc99adb70c6b8bd88205bad",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "0b726267b0694142b61773195bef9bd17da6c835764c0df49ee4fb7fa4178010",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                3,
+                5
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "0c9a814c74247c80624c3a5ab63143974192011e523b21942aaa74442ae4f881"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "d65cc1e22e4fac3edf909ba259f2c0a900590303e26655ff49dcce82cc7c4b12",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "0c9a814c74247c80624c3a5ab63143974192011e523b21942aaa74442ae4f881",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "43ba7b28f93b4053d8dfbb87ae5e0e74a0c7325bcfcc6c613af8c1c56b3f28f6",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "af4adb12fbce9f744b68e8f38d663985d7375a46afe6868d4864b74cc30c7911",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                4,
+                5
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "464d266865eff848291a5ff69d0e38faa07973df2dc99adb70c6b8bd88205bad"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "bb2fc0c1153f025d74c83c502b935c445b8507afd6d740740d1ff9462f69fcc1",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "464d266865eff848291a5ff69d0e38faa07973df2dc99adb70c6b8bd88205bad",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "3d1235a3ed3f88ebe09512ee023074d8fffe66956996bf247f3b75c849862504",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "dac719b07ffbe72e572e9358fb264e9454e0e2abd644515f15fbb8e5b9079fcc",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                5,
+                5
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "43ba7b28f93b4053d8dfbb87ae5e0e74a0c7325bcfcc6c613af8c1c56b3f28f6"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "2335d743bb6909e93ff4144973b3ab25c526993ba6b5f28843f157d00fdf0f57",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "43ba7b28f93b4053d8dfbb87ae5e0e74a0c7325bcfcc6c613af8c1c56b3f28f6",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "b33be4aafe362ca441e8a3cb2166140059d0751569453c3d84724f19a3ced5af",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "abacf7645594d78d3330bd2bb3d96b8fc5f55844578d0c8dc33f94cfaac09cdd",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                6,
+                5
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "3d1235a3ed3f88ebe09512ee023074d8fffe66956996bf247f3b75c849862504"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "29fb54184e63745003053a7869439bfdd2d6abe81b16b54b547c8e12a81a6412",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "3d1235a3ed3f88ebe09512ee023074d8fffe66956996bf247f3b75c849862504",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "105bbf358ea5cc21d859b8b8b892de2b8ba3d4da0a7a46bc590a6d8914c96da2",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "f4780c773f7b8dc0e6b1545a087dc5c4acf52855a4c025072304897427250377",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                7,
+                5
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "b33be4aafe362ca441e8a3cb2166140059d0751569453c3d84724f19a3ced5af"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "fac5060a5a1ae70dd6fce8e65ba062ff5a5ce0c1fa4235b4c3fdac141623771a",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "b33be4aafe362ca441e8a3cb2166140059d0751569453c3d84724f19a3ced5af",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "057bd21d3e65b2023f31b57d5fe72a5813300b5c3794370e8156e6739ba8080a",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "32b2fabd4de5dff632d8ab54f1d437c342edcca9cb77613e6b5a4a0ac825564c",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                8,
+                5
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "105bbf358ea5cc21d859b8b8b892de2b8ba3d4da0a7a46bc590a6d8914c96da2"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "a22f664515405ba040e7ff4c3dc8881d0f1f22dd120fa53abb25078bc82a1e77",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "105bbf358ea5cc21d859b8b8b892de2b8ba3d4da0a7a46bc590a6d8914c96da2",
+                    "access": true
+                },
+                "right": {
+                    "location_id": null,
+                    "access": null
+                },
+                "up": {
+                    "location_id": "30cf8b8599c952ad675071a7ee9ee5289c83ffe038ca86e7c0421df4d6ceb9ed",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                9,
+                5
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "057bd21d3e65b2023f31b57d5fe72a5813300b5c3794370e8156e6739ba8080a"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "e49d6e0e39d3497a6eb02b67d05ad00244d8922a62e1111a4cfca0642e0c4b6d",
+                    "access": true
+                },
+                "left": {
+                    "location_id": null,
+                    "access": null
+                },
+                "right": {
+                    "location_id": "d02a3f709a9fd4d38086b6a95624db37d9c16bfa187c81c8285b394af9be9af7",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "44afffb74ae6ac056c642f58f3fc9614124f175e3d2260797a96181a0fcf932b",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                0,
+                6
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "234d848b939779c497973715740cf984738dd4456730960fcc26b086c7f9816c"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "d6b4b2a00e6bedb5714bc3090e3b73849f22bdb9a9f102c172da8db2217998e5",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "234d848b939779c497973715740cf984738dd4456730960fcc26b086c7f9816c",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "5cc2021cb4c98cd66f7b4a90687451500ab09587e9a8761b5d63385edb8a4edb",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "8c9db068772552e5f146c09b80a2f096ee6d3941a78bcf9f7d66ad48f3833a89",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                1,
+                6
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "d02a3f709a9fd4d38086b6a95624db37d9c16bfa187c81c8285b394af9be9af7"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "1953ec259bd6bfa549d80181a234b6f9f713f5ceb144aedfd413f9286def41c1",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "d02a3f709a9fd4d38086b6a95624db37d9c16bfa187c81c8285b394af9be9af7",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "6dfa5d275c65e1107a2df04d6f4dffda867b125368b7faf2c8d6cbc9bd5bfd6a",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "5105348be46b88607e541751e77cb9dace1d3dce9f34e0523df7a851ea7cde62",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                2,
+                6
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "5cc2021cb4c98cd66f7b4a90687451500ab09587e9a8761b5d63385edb8a4edb"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "ad40fdbe43922c6c059be54bd74e242ef3223402aa98d3979d3b2f0e5a307f6d",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "5cc2021cb4c98cd66f7b4a90687451500ab09587e9a8761b5d63385edb8a4edb",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "d65cc1e22e4fac3edf909ba259f2c0a900590303e26655ff49dcce82cc7c4b12",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "0c9a814c74247c80624c3a5ab63143974192011e523b21942aaa74442ae4f881",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                3,
+                6
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "6dfa5d275c65e1107a2df04d6f4dffda867b125368b7faf2c8d6cbc9bd5bfd6a"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "e460047c548c913e625544844660a92940094a3438a11a94dfc71174d1c9eda0",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "6dfa5d275c65e1107a2df04d6f4dffda867b125368b7faf2c8d6cbc9bd5bfd6a",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "bb2fc0c1153f025d74c83c502b935c445b8507afd6d740740d1ff9462f69fcc1",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "464d266865eff848291a5ff69d0e38faa07973df2dc99adb70c6b8bd88205bad",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                4,
+                6
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "d65cc1e22e4fac3edf909ba259f2c0a900590303e26655ff49dcce82cc7c4b12"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "05737ac8734321ea899eb33d633dd452394efcaccc4c207302289449c1d06c58",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "d65cc1e22e4fac3edf909ba259f2c0a900590303e26655ff49dcce82cc7c4b12",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "2335d743bb6909e93ff4144973b3ab25c526993ba6b5f28843f157d00fdf0f57",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "43ba7b28f93b4053d8dfbb87ae5e0e74a0c7325bcfcc6c613af8c1c56b3f28f6",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                5,
+                6
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "bb2fc0c1153f025d74c83c502b935c445b8507afd6d740740d1ff9462f69fcc1"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "a1fde83c854dc798602354f6e50284894a36fa61878beee2599e8ad46ffd3a37",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "bb2fc0c1153f025d74c83c502b935c445b8507afd6d740740d1ff9462f69fcc1",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "29fb54184e63745003053a7869439bfdd2d6abe81b16b54b547c8e12a81a6412",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "3d1235a3ed3f88ebe09512ee023074d8fffe66956996bf247f3b75c849862504",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                6,
+                6
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "2335d743bb6909e93ff4144973b3ab25c526993ba6b5f28843f157d00fdf0f57"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "c4975f70482d4fea6ee2e4832bea861fe17a169f8e6dbbeaeeb0653e1620f299",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "2335d743bb6909e93ff4144973b3ab25c526993ba6b5f28843f157d00fdf0f57",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "fac5060a5a1ae70dd6fce8e65ba062ff5a5ce0c1fa4235b4c3fdac141623771a",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "b33be4aafe362ca441e8a3cb2166140059d0751569453c3d84724f19a3ced5af",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                7,
+                6
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "29fb54184e63745003053a7869439bfdd2d6abe81b16b54b547c8e12a81a6412"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "27bd5163aa673f7ef93d971cc9428914f542e18640151bbce4def3568212f0ef",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "29fb54184e63745003053a7869439bfdd2d6abe81b16b54b547c8e12a81a6412",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "a22f664515405ba040e7ff4c3dc8881d0f1f22dd120fa53abb25078bc82a1e77",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "105bbf358ea5cc21d859b8b8b892de2b8ba3d4da0a7a46bc590a6d8914c96da2",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                8,
+                6
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "fac5060a5a1ae70dd6fce8e65ba062ff5a5ce0c1fa4235b4c3fdac141623771a"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "50738ee70a6bf9ba822383617a7c39c80b4503dad15e15ecbd10a4bcb909bced",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "fac5060a5a1ae70dd6fce8e65ba062ff5a5ce0c1fa4235b4c3fdac141623771a",
+                    "access": true
+                },
+                "right": {
+                    "location_id": null,
+                    "access": null
+                },
+                "up": {
+                    "location_id": "057bd21d3e65b2023f31b57d5fe72a5813300b5c3794370e8156e6739ba8080a",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                9,
+                6
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "a22f664515405ba040e7ff4c3dc8881d0f1f22dd120fa53abb25078bc82a1e77"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "be510d9295e528b418d7eb0ad763f9bd5da418558f336d548268c86bfb5d20af",
+                    "access": true
+                },
+                "left": {
+                    "location_id": null,
+                    "access": null
+                },
+                "right": {
+                    "location_id": "d6b4b2a00e6bedb5714bc3090e3b73849f22bdb9a9f102c172da8db2217998e5",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "234d848b939779c497973715740cf984738dd4456730960fcc26b086c7f9816c",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                0,
+                7
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "e49d6e0e39d3497a6eb02b67d05ad00244d8922a62e1111a4cfca0642e0c4b6d"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "c899c8947f5bd14016bb10630de9cced08022f0a4baf62487809683c890d1d3b",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "e49d6e0e39d3497a6eb02b67d05ad00244d8922a62e1111a4cfca0642e0c4b6d",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "1953ec259bd6bfa549d80181a234b6f9f713f5ceb144aedfd413f9286def41c1",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "d02a3f709a9fd4d38086b6a95624db37d9c16bfa187c81c8285b394af9be9af7",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                1,
+                7
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "d6b4b2a00e6bedb5714bc3090e3b73849f22bdb9a9f102c172da8db2217998e5"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "864875946a01b5c57492714d5c0c923d372d56a9324094e9d731fb1cc083390e",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "d6b4b2a00e6bedb5714bc3090e3b73849f22bdb9a9f102c172da8db2217998e5",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "ad40fdbe43922c6c059be54bd74e242ef3223402aa98d3979d3b2f0e5a307f6d",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "5cc2021cb4c98cd66f7b4a90687451500ab09587e9a8761b5d63385edb8a4edb",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                2,
+                7
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "1953ec259bd6bfa549d80181a234b6f9f713f5ceb144aedfd413f9286def41c1"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "fb6ec2764e9adcc7cd64f6d2e882b7508289aa28892d2da934867acbed817190",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "1953ec259bd6bfa549d80181a234b6f9f713f5ceb144aedfd413f9286def41c1",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "e460047c548c913e625544844660a92940094a3438a11a94dfc71174d1c9eda0",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "6dfa5d275c65e1107a2df04d6f4dffda867b125368b7faf2c8d6cbc9bd5bfd6a",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                3,
+                7
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "ad40fdbe43922c6c059be54bd74e242ef3223402aa98d3979d3b2f0e5a307f6d"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "36e34ea32780d14d224c015ad4ef752099101c06713807927394a2e4f270d20c",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "ad40fdbe43922c6c059be54bd74e242ef3223402aa98d3979d3b2f0e5a307f6d",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "05737ac8734321ea899eb33d633dd452394efcaccc4c207302289449c1d06c58",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "d65cc1e22e4fac3edf909ba259f2c0a900590303e26655ff49dcce82cc7c4b12",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                4,
+                7
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "e460047c548c913e625544844660a92940094a3438a11a94dfc71174d1c9eda0"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "573f6451623f00e52f781e9d4e8ae0c1a71ce4eb95ad305a608e629d5e08d222",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "e460047c548c913e625544844660a92940094a3438a11a94dfc71174d1c9eda0",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "a1fde83c854dc798602354f6e50284894a36fa61878beee2599e8ad46ffd3a37",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "bb2fc0c1153f025d74c83c502b935c445b8507afd6d740740d1ff9462f69fcc1",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                5,
+                7
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "05737ac8734321ea899eb33d633dd452394efcaccc4c207302289449c1d06c58"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "f13f8b1ce71b4fabbaa9f2fd00b7fc3c73c68deb1f983daca4a9f07e30c4280a",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "05737ac8734321ea899eb33d633dd452394efcaccc4c207302289449c1d06c58",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "c4975f70482d4fea6ee2e4832bea861fe17a169f8e6dbbeaeeb0653e1620f299",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "2335d743bb6909e93ff4144973b3ab25c526993ba6b5f28843f157d00fdf0f57",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                6,
+                7
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "a1fde83c854dc798602354f6e50284894a36fa61878beee2599e8ad46ffd3a37"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "6978c316c8f07629bb47b98c64c3cd50af003efbf53058ccb0631cf2c7f85e8c",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "a1fde83c854dc798602354f6e50284894a36fa61878beee2599e8ad46ffd3a37",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "27bd5163aa673f7ef93d971cc9428914f542e18640151bbce4def3568212f0ef",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "29fb54184e63745003053a7869439bfdd2d6abe81b16b54b547c8e12a81a6412",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                7,
+                7
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "c4975f70482d4fea6ee2e4832bea861fe17a169f8e6dbbeaeeb0653e1620f299"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "9733b60bec8653908b4cf6800e3cb33b3216402b3d97f80811b6dac74fbc1593",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "c4975f70482d4fea6ee2e4832bea861fe17a169f8e6dbbeaeeb0653e1620f299",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "50738ee70a6bf9ba822383617a7c39c80b4503dad15e15ecbd10a4bcb909bced",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "fac5060a5a1ae70dd6fce8e65ba062ff5a5ce0c1fa4235b4c3fdac141623771a",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                8,
+                7
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "27bd5163aa673f7ef93d971cc9428914f542e18640151bbce4def3568212f0ef"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "3f1402e2d3ccdac2303af4246797f60e7020b2ec4f74ad3ee63b1e891119c19e",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "27bd5163aa673f7ef93d971cc9428914f542e18640151bbce4def3568212f0ef",
+                    "access": true
+                },
+                "right": {
+                    "location_id": null,
+                    "access": null
+                },
+                "up": {
+                    "location_id": "a22f664515405ba040e7ff4c3dc8881d0f1f22dd120fa53abb25078bc82a1e77",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                9,
+                7
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "50738ee70a6bf9ba822383617a7c39c80b4503dad15e15ecbd10a4bcb909bced"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "e671dd28d7030f904b752a28a7e74ba12a6a9377569a2e745fe59491114cc5e2",
+                    "access": true
+                },
+                "left": {
+                    "location_id": null,
+                    "access": null
+                },
+                "right": {
+                    "location_id": "c899c8947f5bd14016bb10630de9cced08022f0a4baf62487809683c890d1d3b",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "e49d6e0e39d3497a6eb02b67d05ad00244d8922a62e1111a4cfca0642e0c4b6d",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                0,
+                8
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "be510d9295e528b418d7eb0ad763f9bd5da418558f336d548268c86bfb5d20af"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "3780c19605d36bedafc26c32aac7471abaa36724334a9db02893bd8c83ea3290",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "be510d9295e528b418d7eb0ad763f9bd5da418558f336d548268c86bfb5d20af",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "864875946a01b5c57492714d5c0c923d372d56a9324094e9d731fb1cc083390e",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "d6b4b2a00e6bedb5714bc3090e3b73849f22bdb9a9f102c172da8db2217998e5",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                1,
+                8
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "c899c8947f5bd14016bb10630de9cced08022f0a4baf62487809683c890d1d3b"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "39c84f787888a5179152a68982ef3a0b7fafc94a3d7d912ea1225afefa3d00d4",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "c899c8947f5bd14016bb10630de9cced08022f0a4baf62487809683c890d1d3b",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "fb6ec2764e9adcc7cd64f6d2e882b7508289aa28892d2da934867acbed817190",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "1953ec259bd6bfa549d80181a234b6f9f713f5ceb144aedfd413f9286def41c1",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                2,
+                8
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "864875946a01b5c57492714d5c0c923d372d56a9324094e9d731fb1cc083390e"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "8d63072ff698d53bbe104939dd71571254589c7c2b264d892634f8c641d1475a",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "864875946a01b5c57492714d5c0c923d372d56a9324094e9d731fb1cc083390e",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "36e34ea32780d14d224c015ad4ef752099101c06713807927394a2e4f270d20c",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "ad40fdbe43922c6c059be54bd74e242ef3223402aa98d3979d3b2f0e5a307f6d",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                3,
+                8
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "fb6ec2764e9adcc7cd64f6d2e882b7508289aa28892d2da934867acbed817190"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "d841aba3cf45c006f0743ad839c08e9506d48fb0e4685d4b653f52ed2ff58a7a",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "fb6ec2764e9adcc7cd64f6d2e882b7508289aa28892d2da934867acbed817190",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "573f6451623f00e52f781e9d4e8ae0c1a71ce4eb95ad305a608e629d5e08d222",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "e460047c548c913e625544844660a92940094a3438a11a94dfc71174d1c9eda0",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                4,
+                8
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "36e34ea32780d14d224c015ad4ef752099101c06713807927394a2e4f270d20c"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "4900c7e9362b4f98fa2983ac79b376c5a4266b941e61b0c9147f8edb5e5c12b3",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "36e34ea32780d14d224c015ad4ef752099101c06713807927394a2e4f270d20c",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "f13f8b1ce71b4fabbaa9f2fd00b7fc3c73c68deb1f983daca4a9f07e30c4280a",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "05737ac8734321ea899eb33d633dd452394efcaccc4c207302289449c1d06c58",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                5,
+                8
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "573f6451623f00e52f781e9d4e8ae0c1a71ce4eb95ad305a608e629d5e08d222"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "603e28b69bd6501bf8c17aa6b86ef3fe0646c4b9e4a91a75441ce2dd44e70bfd",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "573f6451623f00e52f781e9d4e8ae0c1a71ce4eb95ad305a608e629d5e08d222",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "6978c316c8f07629bb47b98c64c3cd50af003efbf53058ccb0631cf2c7f85e8c",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "a1fde83c854dc798602354f6e50284894a36fa61878beee2599e8ad46ffd3a37",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                6,
+                8
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "f13f8b1ce71b4fabbaa9f2fd00b7fc3c73c68deb1f983daca4a9f07e30c4280a"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "d7bd3b08dbedc88be63636076bf687d50861903bde3e09bb45364f0df5ca96ec",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "f13f8b1ce71b4fabbaa9f2fd00b7fc3c73c68deb1f983daca4a9f07e30c4280a",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "9733b60bec8653908b4cf6800e3cb33b3216402b3d97f80811b6dac74fbc1593",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "c4975f70482d4fea6ee2e4832bea861fe17a169f8e6dbbeaeeb0653e1620f299",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                7,
+                8
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "6978c316c8f07629bb47b98c64c3cd50af003efbf53058ccb0631cf2c7f85e8c"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "8def4ed7f2b5114bde78e7e739a0a41111df968e0408089dbc0dc22643e878e2",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "6978c316c8f07629bb47b98c64c3cd50af003efbf53058ccb0631cf2c7f85e8c",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "3f1402e2d3ccdac2303af4246797f60e7020b2ec4f74ad3ee63b1e891119c19e",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "27bd5163aa673f7ef93d971cc9428914f542e18640151bbce4def3568212f0ef",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                8,
+                8
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "9733b60bec8653908b4cf6800e3cb33b3216402b3d97f80811b6dac74fbc1593"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": "0e09195a276d9666e9fa5c1a603b650557b30b2d4f68d07d66347329c7829981",
+                    "access": true
+                },
+                "left": {
+                    "location_id": "9733b60bec8653908b4cf6800e3cb33b3216402b3d97f80811b6dac74fbc1593",
+                    "access": true
+                },
+                "right": {
+                    "location_id": null,
+                    "access": null
+                },
+                "up": {
+                    "location_id": "50738ee70a6bf9ba822383617a7c39c80b4503dad15e15ecbd10a4bcb909bced",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                9,
+                8
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "3f1402e2d3ccdac2303af4246797f60e7020b2ec4f74ad3ee63b1e891119c19e"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": null,
+                    "access": null
+                },
+                "left": {
+                    "location_id": null,
+                    "access": null
+                },
+                "right": {
+                    "location_id": "3780c19605d36bedafc26c32aac7471abaa36724334a9db02893bd8c83ea3290",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "be510d9295e528b418d7eb0ad763f9bd5da418558f336d548268c86bfb5d20af",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                0,
+                9
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "e671dd28d7030f904b752a28a7e74ba12a6a9377569a2e745fe59491114cc5e2"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": null,
+                    "access": null
+                },
+                "left": {
+                    "location_id": "e671dd28d7030f904b752a28a7e74ba12a6a9377569a2e745fe59491114cc5e2",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "39c84f787888a5179152a68982ef3a0b7fafc94a3d7d912ea1225afefa3d00d4",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "c899c8947f5bd14016bb10630de9cced08022f0a4baf62487809683c890d1d3b",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                1,
+                9
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "3780c19605d36bedafc26c32aac7471abaa36724334a9db02893bd8c83ea3290"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": null,
+                    "access": null
+                },
+                "left": {
+                    "location_id": "3780c19605d36bedafc26c32aac7471abaa36724334a9db02893bd8c83ea3290",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "8d63072ff698d53bbe104939dd71571254589c7c2b264d892634f8c641d1475a",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "864875946a01b5c57492714d5c0c923d372d56a9324094e9d731fb1cc083390e",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                2,
+                9
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "39c84f787888a5179152a68982ef3a0b7fafc94a3d7d912ea1225afefa3d00d4"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": null,
+                    "access": null
+                },
+                "left": {
+                    "location_id": "39c84f787888a5179152a68982ef3a0b7fafc94a3d7d912ea1225afefa3d00d4",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "d841aba3cf45c006f0743ad839c08e9506d48fb0e4685d4b653f52ed2ff58a7a",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "fb6ec2764e9adcc7cd64f6d2e882b7508289aa28892d2da934867acbed817190",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                3,
+                9
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "8d63072ff698d53bbe104939dd71571254589c7c2b264d892634f8c641d1475a"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": null,
+                    "access": null
+                },
+                "left": {
+                    "location_id": "8d63072ff698d53bbe104939dd71571254589c7c2b264d892634f8c641d1475a",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "4900c7e9362b4f98fa2983ac79b376c5a4266b941e61b0c9147f8edb5e5c12b3",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "36e34ea32780d14d224c015ad4ef752099101c06713807927394a2e4f270d20c",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                4,
+                9
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "d841aba3cf45c006f0743ad839c08e9506d48fb0e4685d4b653f52ed2ff58a7a"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": null,
+                    "access": null
+                },
+                "left": {
+                    "location_id": "d841aba3cf45c006f0743ad839c08e9506d48fb0e4685d4b653f52ed2ff58a7a",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "603e28b69bd6501bf8c17aa6b86ef3fe0646c4b9e4a91a75441ce2dd44e70bfd",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "573f6451623f00e52f781e9d4e8ae0c1a71ce4eb95ad305a608e629d5e08d222",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                5,
+                9
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "4900c7e9362b4f98fa2983ac79b376c5a4266b941e61b0c9147f8edb5e5c12b3"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": null,
+                    "access": null
+                },
+                "left": {
+                    "location_id": "4900c7e9362b4f98fa2983ac79b376c5a4266b941e61b0c9147f8edb5e5c12b3",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "d7bd3b08dbedc88be63636076bf687d50861903bde3e09bb45364f0df5ca96ec",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "f13f8b1ce71b4fabbaa9f2fd00b7fc3c73c68deb1f983daca4a9f07e30c4280a",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                6,
+                9
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "603e28b69bd6501bf8c17aa6b86ef3fe0646c4b9e4a91a75441ce2dd44e70bfd"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": null,
+                    "access": null
+                },
+                "left": {
+                    "location_id": "603e28b69bd6501bf8c17aa6b86ef3fe0646c4b9e4a91a75441ce2dd44e70bfd",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "8def4ed7f2b5114bde78e7e739a0a41111df968e0408089dbc0dc22643e878e2",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "6978c316c8f07629bb47b98c64c3cd50af003efbf53058ccb0631cf2c7f85e8c",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                7,
+                9
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "d7bd3b08dbedc88be63636076bf687d50861903bde3e09bb45364f0df5ca96ec"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": null,
+                    "access": null
+                },
+                "left": {
+                    "location_id": "d7bd3b08dbedc88be63636076bf687d50861903bde3e09bb45364f0df5ca96ec",
+                    "access": true
+                },
+                "right": {
+                    "location_id": "0e09195a276d9666e9fa5c1a603b650557b30b2d4f68d07d66347329c7829981",
+                    "access": true
+                },
+                "up": {
+                    "location_id": "9733b60bec8653908b4cf6800e3cb33b3216402b3d97f80811b6dac74fbc1593",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                8,
+                9
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "8def4ed7f2b5114bde78e7e739a0a41111df968e0408089dbc0dc22643e878e2"
+        },
+        {
+            "exits": {
+                "down": {
+                    "location_id": null,
+                    "access": null
+                },
+                "left": {
+                    "location_id": "8def4ed7f2b5114bde78e7e739a0a41111df968e0408089dbc0dc22643e878e2",
+                    "access": true
+                },
+                "right": {
+                    "location_id": null,
+                    "access": null
+                },
+                "up": {
+                    "location_id": "3f1402e2d3ccdac2303af4246797f60e7020b2ec4f74ad3ee63b1e891119c19e",
+                    "access": true
+                }
+            },
+            "coordinates": [
+                9,
+                9
+            ],
+            "characters": [],
+            "objects": [],
+            "id": "0e09195a276d9666e9fa5c1a603b650557b30b2d4f68d07d66347329c7829981"
+        }
+    ],
+    "characters": [
+        {
+            "type": "player",
+            "name": "player",
+            "location_id": null,
+            "id": "e0d8c2fd6376776b55cb6d08322c7b180b90c09a63ca1f0c608bd9482fb8cc72",
+            "location": null
+        }
+    ],
+    "objects": []
 }

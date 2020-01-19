@@ -1,31 +1,15 @@
-import os
-from logging import getLogger
-from logging.config import dictConfig
-from app import App
-from config import LOGGING, LOG_DIR
-
-
-def configure_logger():
-    logger = getLogger(__name__)
-
-    try:
-        os.mkdir(LOG_DIR)
-    except OSError as e:
-        if e.errno == 17:
-            pass
-        else:
-            logger.exception('%s %s', e.strerror, e.filename)
-
-    dictConfig(LOGGING)
-
-    return logger
-
+from app.mainfunctions.arguments import parse_arguments
+from app.mainfunctions.logger import configure_logger
+from app.mainfunctions.generaterepo import generate_repo
+from app.mainfunctions.main import main
 
 if __name__ == "__main__":
     logger = configure_logger()
+    start_opts = parse_arguments()
 
-    try:
-        App().run()
-    except Exception as e:
-        logger.exception("")
-        exit(1)
+    logger.debug("Start with args %s" % start_opts)
+
+    generate_repo(start_opts)
+
+    main()
+

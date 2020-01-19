@@ -7,7 +7,7 @@ class ABCDataObject(ABC):
     @property
     @abstractmethod
     def object_properties(self):
-        ...
+        return []
 
     @abstractmethod
     def dump(self):

@@ -2,10 +2,13 @@ from abc import ABC, ABCMeta, abstractmethod
 from .base import ABCDataObject
 
 
-class ABCWorldData(ABCDataObject, metaclass=ABCMeta):
+__all__ = ['ABCWorldMapData']
+
+
+class ABCWorldMapData(ABCDataObject, metaclass=ABCMeta):
     @property
     def object_properties(self):
-        pass
+        return []
     
     @property
     @abstractmethod
@@ -19,18 +22,6 @@ class ABCWorldData(ABCDataObject, metaclass=ABCMeta):
             list
         """
         ...
-
-    #  todo пока не ясно, нужно ли отсюда провайдить размеры поля/карты
-    #
-    # @property
-    # @abstractmethod
-    # def x_range(self):
-    #     ...
-    #
-    # @property
-    # @abstractmethod
-    # def y_range(self):
-    #     ...
 
     @property
     @abstractmethod
