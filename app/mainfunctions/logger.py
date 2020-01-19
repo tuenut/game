@@ -1,8 +1,11 @@
 import os
 from logging import getLogger
 from logging.config import dictConfig
+from pprint import PrettyPrinter
 
 from app.config import LOG_DIR, LOGGING
+
+pp = PrettyPrinter(indent=4, width=120, compact=True)
 
 
 def configure_logger():

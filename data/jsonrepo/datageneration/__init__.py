@@ -28,10 +28,10 @@ def generate_characters():
 
 def place_characters_on_locations(data):
     for character in data['characters']:
-        target_location_id = character.get("location_id")
+        target_location_id = character.get("location")
 
         if target_location_id:
-            for location in data["locations"]:
+            for i, location in enumerate(data["locations"]):
 
                 if location['id'] == target_location_id:
                     location['characters'].append(character['id'])

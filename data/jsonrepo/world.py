@@ -24,7 +24,7 @@ class WorldMapData(ABCWorldMapData):
         :return:
             location : вернет ту же самую локацию, если соседняя не существует.
         """
-        x, y = location.location_id[0], location.location_id[1]
+        x, y = location.location[0], location.location[1]
         pos = (x, y)
 
         if direction == "down":

@@ -31,7 +31,7 @@ class GameState(ABCGameStateObject):
     def move_object(self, obj: ABCObjectRepository, direction: str):
         """Изменяет состояние репозитория данных."""
         self.remove_object_from_location(obj)
-        self.add_object_on_location(obj, self.__world_data.get_next_location(obj.location_id, direction))
+        self.add_object_on_location(obj, self.__world_data.get_next_location(obj.location, direction))
 
     def update(self):
         """Обновить состояние мира на основе состояния репозитория данных."""

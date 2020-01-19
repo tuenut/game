@@ -9,7 +9,7 @@ class Character:
     CHARACTER_PATTERN = {
         "type": None,
         "name": None,
-        "location_id": None,
+        "location": None,
         "id": None
     }
 

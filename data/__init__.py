@@ -9,4 +9,4 @@ __all__ = ['get_data_object']
 
 
 def get_data_object():
-    return DataClass(source)  # type: ABCWorldMapData
+    return DataClass(source=source)  # type: ABCWorldMapData

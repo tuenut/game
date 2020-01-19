@@ -1,7 +1,7 @@
 import pygame
 
-from .doors import LocationExitsRenderObject
-from app.render.characters.player import PlayerRenderObject
+from render.locations.doors import LocationExitsRenderObject
+from render.characters.player import PlayerRenderObject
 
 
 class LocationRenderObject:

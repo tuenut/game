@@ -10,5 +10,5 @@ RANGE_Y = range(10)
 PLAYER_CHARACTER = {
     "type": "player",
     "name": "player",
-    "location_id": (0, 0)
+    "location": (0, 0)
 }

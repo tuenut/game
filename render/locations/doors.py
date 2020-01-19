@@ -1,4 +1,4 @@
-from app.render.objects.door import DoorRenderObject
+from render.objects.door import DoorRenderObject
 
 
 class LocationExitsRenderObject:

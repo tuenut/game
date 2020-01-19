@@ -8,38 +8,19 @@ __all__ = []
 
 
 class ABCData(ABCDataObject, metaclass=ABCMeta):
+    """Get data from source and create objects data instances to build data structure."""
     @property
-    @abstractmethod
-    def locations_list(self):
-        ...
-
-    @property
-    @abstractmethod
-    def characters_list(self):
-        ...
-
-    @property
-    @abstractmethod
-    def objects_list(self):
-        ...
-
-    @abstractmethod
-    def move_object_to(self, obj, direction):
-        ...
-
-    @abstractmethod
-    def add_new_object(self, obj_type, obj_props, location=None):
-        ...
-
-    @abstractmethod
-    def remove_object(self, obj_id):
-        """Remove from location."""
-        ...
-
-    @abstractmethod
-    def delete_obj(self, obj_id):
-        """Fully delete object from game."""
-        ...
-
-    def load(self, *args, **kwargs):
+    def data_fields(self):
         raise NotImplementedError
+
+    @abstractmethod
+    def get_location(self, location_id):
+        ...
+
+    @abstractmethod
+    def get_character(self, character_id):
+        ...
+
+    @abstractmethod
+    def get_object(self, obj_id):
+        ...

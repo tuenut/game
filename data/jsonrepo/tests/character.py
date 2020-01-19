@@ -1,7 +1,7 @@
 import unittest
 
 from data.abstractions.objects import ABCCharacterData
-from data.jsonrepo.character import CharacterData
+from data.jsonrepo.characters import CharacterData
 from data.jsonrepo.tests.data import CHARACTER, CHARACTER_DUMPED, CHARACTER_MOVED, LOCATION_ID_ONE, LOCATION_ID_TWO
 
 

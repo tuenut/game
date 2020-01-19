@@ -1,27 +1,22 @@
 from abc import ABC, ABCMeta, abstractmethod
 from .base import ABCDataObject
 
-__all__ = ["ABCLocationData", "ABCExitsData"]
+__all__ = ["ABCLocationData", ]
 
 
 class ABCLocationData(ABCDataObject, metaclass=ABCMeta):
     @property
-    def object_properties(self):
-        return []
+    def data_fields(self):
+        raise NotImplementedError
 
     @property
     @abstractmethod
-    def exits(self):
-        """
-
-        :return:
-            ABCExits
-        """
+    def id(self):
         ...
 
     @property
     @abstractmethod
-    def location_id(self):
+    def coordinates(self):
         ...
 
     @property
@@ -34,44 +29,22 @@ class ABCLocationData(ABCDataObject, metaclass=ABCMeta):
     def objects(self):
         ...
 
-    @abstractmethod
-    def add_character(self, character):
-        ...
-
-    @abstractmethod
-    def add_object(self, obj):
-        ...
-
-    @abstractmethod
-    def remove_character(self, character):
-        ...
-
-    @abstractmethod
-    def remove_object(self, obj):
-        ...
-
-
-class ABCExitsData(ABCDataObject, metaclass=ABCMeta):
-    @property
-    def object_properties(self):
-        return []
-
     @property
     @abstractmethod
-    def down(self):
+    def location_on_bottom(self):
         ...
 
     @property
     @abstractmethod
-    def left(self):
+    def location_on_left(self):
         ...
 
     @property
     @abstractmethod
-    def right(self):
+    def location_on_right(self):
         ...
 
     @property
     @abstractmethod
-    def up(self):
+    def location_on_top(self):
         ...

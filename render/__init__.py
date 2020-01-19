@@ -1,6 +1,6 @@
 import pygame
 
-from app.render.locations import LocationRenderObject
+from render.locations import LocationRenderObject
 
 import logging
 
@@ -30,8 +30,8 @@ class Render:
         cell_size = LocationRenderObject.cell_size
 
         for location in data:
-            x = location.location_id[0] * (cell_size + 1) + self.margin_left
-            y = location.location_id[1] * (cell_size + 1) + self.margin_right
+            x = location.location[0] * (cell_size + 1) + self.margin_left
+            y = location.location[1] * (cell_size + 1) + self.margin_right
 
             location_cell = LocationRenderObject(location, x_pos=x, y_pos=y)
             location_cell.blit(self.surface)

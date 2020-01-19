@@ -1,8 +1,4 @@
-import json
-
-from data.abstractions.locations import ABCLocationData, ABCExitsData
-from data.jsonrepo.character import CharacterData
-from data.jsonrepo.objects import ObjectData
+from data.abstractions.locations import ABCLocationData
 
 __all__ = ['LocationData']
 
@@ -12,30 +8,25 @@ class LocationData(ABCLocationData):
     __characters = None
     __objects = None
 
-    def __init__(self, location_id, **kwargs):
-        self.__coordinates = location_id
+    def __init__(self, **kwargs):
+        self.__id = kwargs.get('id')
+        self.__coordinates = kwargs.get('coordinates')
 
-        self.__exits = ExitsData(kwargs.get('exits', {}))
+        exits = kwargs.get('exits', {})
+        self.__location_on_bottom = exits.get('down')
+        self.__location_on_left = exits.get('left')
+        self.__location_on_right = exits.get('right')
+        self.__location_on_top = exits.get('up')
 
-        self.__characters = [CharacterData(self.location_id, **character) for character in kwargs.get('characters', [])]
+        self.__characters = kwargs.get('characters', [])
         self.__objects = kwargs.get('objects', [])
 
-    def add_character(self, character):
-        if isinstance(character, CharacterData):
-            self.characters.append(character)
-
-    def add_object(self, obj):
-        if isinstance(obj, ObjectData):
-            self.objects.append(obj)
-
-    def remove_character(self, character):
-        self.characters.remove(character)
-
-    def remove_object(self, obj):
-        self.objects.remove(obj)
+    @property
+    def id(self):
+        return self.__id
 
     @property
-    def location_id(self):
+    def coordinates(self):
         return self.__coordinates
 
     @property
@@ -47,53 +38,34 @@ class LocationData(ABCLocationData):
         return self.__objects
 
     @property
-    def exits(self):
-        return self.__exits
+    def location_on_bottom(self):
+        return self.__location_on_bottom
 
-    # @exits.setter
-    # def exits(self, value):
-    #     if isinstance(value, dict) and {'left', 'right', 'up', 'down'} == set(value.keys()):
-    #         self.__exits = value
+    @property
+    def location_on_left(self):
+        return self.__location_on_left
+
+    @property
+    def location_on_right(self):
+        return self.__location_on_right
+
+    @property
+    def location_on_top(self):
+        return self.__location_on_top
 
     def dump(self):
         return {
-            "location_id": self.location_id,
-            'exits': self.exits.dump(),
-            'characters': [character.dump() for character in self.characters],
-            'objects': [obj.dump() for obj in self.objects]
+            "location_id": self.id,
+            'exits': {
+                "left": self.location_on_left,
+                "right": self.location_on_right,
+                "up": self.location_on_top,
+                "down": self.location_on_bottom
+            },
+            'characters': self.characters,
+            'objects': self.objects,
+            "coordinates": self.coordinates
         }
 
-    def load(self):
-        pass
-
-
-class ExitsData(ABCExitsData):
-    def __init__(self, exits):
-        self.__left = exits.get("left", False)
-        self.__right = exits.get("right", False)
-        self.__down = exits.get("down", False)
-        self.__up = exits.get("up", False)
-
-    @property
-    def down(self):
-        return self.__down
-
-    @property
-    def left(self):
-        return self.__left
-
-    @property
-    def right(self):
-        return self.__right
-
-    @property
-    def up(self):
-        return self.__up
-
-    def dump(self):
-        return {
-            "left": self.left,
-            "right": self.right,
-            "up": self.up,
-            "down": self.down
-        }
+    def load(self, data):
+        raise NotImplementedError

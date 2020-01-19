@@ -1,6 +1,14 @@
 from data.abstractions.objects import ABCObjectRepository
 
+
 class ObjectData(ABCObjectRepository):
+    def __init__(self, **kwargs):
+        pass
+
+    @property
+    def data_fields(self):
+        raise NotImplementedError
+
     @property
     def name(self):
         raise NotImplementedError
@@ -10,5 +18,5 @@ class ObjectData(ABCObjectRepository):
         raise NotImplementedError
 
     @property
-    def location_id(self):
+    def location(self):
         raise NotImplementedError

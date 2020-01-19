@@ -8,7 +8,7 @@ class Location(ABCGameStateObject, LocationPropertiesMixin):
     """Класс для хранения состояния ячейки мира"""
 
     def __init__(self, location: ABCLocationData):
-        self._coordinates = location.location_id
+        self._coordinates = location.id
         self._down = location.exits.down
         self._left = location.exits.left
         self._right = location.exits.right

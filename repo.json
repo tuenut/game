@@ -23,7 +23,9 @@
                 0,
                 0
             ],
-            "characters": [],
+            "characters": [
+                "e0d8c2fd6376776b55cb6d08322c7b180b90c09a63ca1f0c608bd9482fb8cc72"
+            ],
             "objects": [],
             "id": "ffb739f085d16ec97eeb487b24c058320c0ce0a720049d988bc8077e09c3cd99"
         },
@@ -2705,9 +2707,8 @@
         {
             "type": "player",
             "name": "player",
-            "location_id": null,
-            "id": "e0d8c2fd6376776b55cb6d08322c7b180b90c09a63ca1f0c608bd9482fb8cc72",
-            "location": null
+            "location": "ffb739f085d16ec97eeb487b24c058320c0ce0a720049d988bc8077e09c3cd99",
+            "id": "e0d8c2fd6376776b55cb6d08322c7b180b90c09a63ca1f0c608bd9482fb8cc72"
         }
     ],
     "objects": []

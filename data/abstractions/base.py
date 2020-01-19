@@ -6,18 +6,15 @@ __all__ = ['ABCDataObject']
 class ABCDataObject(ABC):
     @property
     @abstractmethod
-    def object_properties(self):
+    def data_fields(self):
+        """Significant fields for data object dump()/load() methods."""
         return []
 
     @abstractmethod
-    def dump(self):
-        """Serialize data object to dict and other simple types."""
+    def load(self, data):
+        """Save data to store(disk, db, etc)."""
         ...
 
-    def load(self, *args, **kwargs):
-        for key, value in kwargs.items():
-            if key in self.object_properties:
-                try:
-                    setattr(self, key, value)
-                except AttributeError:
-                    pass
+    def dump(self):
+        """Serialize data object to dict and other simple types."""
+        return {field: getattr(self, field) for field in self.data_fields}
