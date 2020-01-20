@@ -16,12 +16,12 @@
 
 """
 
-from state.character.base import Character
+from state.characters.base import Character
 
-__all__ = ['PlayableCharacter', 'NonPlayableCharacter']
+__all__ = ['PlayableCharacterState', 'NonPlayableCharacter']
 
 
-class PlayableCharacter(Character):
+class PlayableCharacterState(Character):
     DEFAULT_NAME = 'Player'
 
 
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     pp = PrettyPrinter(indent=4)
 
     name = "Tuenut"
-    character = PlayableCharacter()
+    character = PlayableCharacterState()
     character.name = name
 
     print("Your rpg is %s" % character.name)

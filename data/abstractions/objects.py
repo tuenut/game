@@ -1,8 +1,13 @@
-from abc import ABC, abstractmethod, ABCMeta
+from abc import abstractmethod, ABCMeta
 from .base import ABCDataObject
 
 
 class ABCObjectRepository(ABCDataObject, metaclass=ABCMeta):
+    @property
+    @abstractmethod
+    def id(self):
+        ...
+
     @property
     @abstractmethod
     def name(self):
@@ -22,4 +27,4 @@ class ABCObjectRepository(ABCDataObject, metaclass=ABCMeta):
 class ABCCharacterData(ABCObjectRepository, metaclass=ABCMeta):
     @property
     def data_fields(self):
-        return ["name", "type", "location"]
+        return ["name", "type", "location", "id"]

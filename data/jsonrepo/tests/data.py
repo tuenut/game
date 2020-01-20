@@ -11,10 +11,10 @@ CHARACTER_MOVED = {**CHARACTER, "location_id": LOCATION_ID_TWO}
 LOCATION = {
     "location_id": LOCATION_ID_ONE,
     "exits": {
-        "left": False,
-        "right": True,
-        "up": True,
-        "down": False
+        "west": False,
+        "east": True,
+        "north": True,
+        "south": False
     },
     "characters": [CHARACTER, ],
     "objects": []

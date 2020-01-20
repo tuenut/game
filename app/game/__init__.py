@@ -19,20 +19,18 @@ class Game:
         logger.debug("Init Game...")
 
         self.data = get_data_object()
-        # self.state = GameState()
-        self.render = Render()
+        self.state = GameState(data=self.data)
+        self.render = Render(game_state=self.state)
 
         self.__configure_events()
 
     def __configure_events(self):
         self.events = GameEvents(
-            on_down=lambda: print("Down"),
-            on_left=lambda: print("Left"),
-            on_right=lambda: print("Right"),
-            on_up=lambda: print("Up"),
+            self.state.player,
+            on_player_move=self.state.move_object,
         )
 
     def update(self, events):
         self.events.check(events)
-        # self.state.update()
-        # self.render.update(self.state.locations)
+        self.state.update()
+        self.render.update()

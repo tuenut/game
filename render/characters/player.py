@@ -1,10 +1,13 @@
+import logging
 import pygame
+
+logger = logging.getLogger(__name__)
 
 
 class PlayerRenderObject:
     """Класс отвечает за отрисовку одной двери в ячейке/на локации."""
 
-    color = (200, 200, 0)
+    color = (255, 200, 0)
 
     def __init__(self, surface, size, magrin):
         self.surface = surface

@@ -1,60 +1,70 @@
-from render.objects.door import DoorRenderObject
+import logging
+import pygame
 
 
-class LocationExitsRenderObject:
-    color_left = (255, 100, 100)
-    color_right = (100, 255, 100)
-    color_up = (100, 100, 255)
-    color_down = (255, 255, 100)
-    color_no_exit = (50, 50, 50)
+logger = logging.getLogger(__name__)
+
+
+class LocationExitsRender:
+    color_exit_accesible = (200, 200, 200)
+    color_exit_inaccessible = (50, 50, 50)
 
     def __init__(self, surface, exits, cell_size, door_width, door_height):
+        self.surface = surface
+
         self.__exits = exits
         self.__width = door_width
         self.__height = door_height
         self.__cell_size = cell_size
 
-        self.down = DoorRenderObject(surface, *self.__down_door)
-        self.left = DoorRenderObject(surface, *self.__left_door)
-        self.right = DoorRenderObject(surface, *self.__right_door)
-        self.up = DoorRenderObject(surface, *self.__up_door)
+        self.south = self.draw_exit(self.__south_exit)
+        self.west = self.draw_exit(self.__west_exit)
+        self.east = self.draw_exit(self.__east_exit)
+        self.north = self.draw_exit(self.__north_exit)
+
+    def draw_exit(self, params):
+        try:
+            return pygame.draw.rect(self.surface, *params)
+        except:
+            logger.exception("Exception while render exits.")
 
     @property
-    def __down_door(self):
+    def __south_exit(self):
         x = self.__height
         y = self.__cell_size - self.__height
         width = self.__width
         height = self.__height
-        color = self.color_down if self.__exits[0] else self.color_no_exit
+        color = self.color_exit_accesible if self.__exits.get("south").access else self.color_exit_inaccessible
 
-        return x, y, width, height, color
+        return color, (x, y, width, height)
 
     @property
-    def __left_door(self):
+    def __west_exit(self):
         x = 0
         y = self.__height
         width = self.__height
         height = self.__width
-        color = self.color_left if self.__exits[1] else self.color_no_exit
+        color = self.color_exit_accesible if self.__exits.get("west").access else self.color_exit_inaccessible
 
-        return x, y, width, height, color
+        return color, (x, y, width, height,)
 
     @property
-    def __right_door(self):
+    def __east_exit(self):
         x = self.__cell_size - self.__height
         y = self.__height
         width = self.__height
         height = self.__width
-        color = self.color_right if self.__exits[2] else self.color_no_exit
+        color = self.color_exit_accesible if self.__exits.get("east").access else self.color_exit_inaccessible
 
-        return x, y, width, height, color
+        return color, (x, y, width, height,)
 
     @property
-    def __up_door(self):
+    def __north_exit(self):
         x = self.__height
         y = 0
         width = self.__width
         height = self.__height
-        color = self.color_up if self.__exits[3] else self.color_no_exit
+        color = self.color_exit_accesible if self.__exits.get("north").access else self.color_exit_inaccessible
 
-        return x, y, width, height, color
+        return color, (x, y, width, height,)
+

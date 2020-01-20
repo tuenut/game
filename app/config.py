@@ -20,7 +20,7 @@ LOGGING = {
         },
         'verbose': {
             '()': 'logging.Formatter',
-            'format': '%(asctime)s %(levelname)-8s [%(name)s.%(module)s:%(lineno)4d]: %(message)s'
+            'format': '%(asctime)s %(levelname)-8s [%(name)s:%(lineno)4d]: %(message)s'
         },
     },
     'loggers': {
@@ -34,7 +34,7 @@ LOGGING = {
         'basic_stream': {
             'level': LOG_LEVEL,
             'class': 'logging.StreamHandler',
-            'formatter': 'basic',
+            'formatter': 'verbose',
             "stream": "ext://sys.stdout"
         },
         'basic_file': {

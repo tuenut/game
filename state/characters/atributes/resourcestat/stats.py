@@ -1,4 +1,4 @@
-from state.character.atributes.bases.stats import BaseAttribute
+from state.characters.atributes.bases.stats import BaseAttribute
 
 
 class ResourceAttribute(BaseAttribute):

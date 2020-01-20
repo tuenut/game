@@ -1,6 +1,7 @@
 import pygame
 
-from render.locations import LocationRenderObject
+from render.locations import LocationRender
+from state import GameState
 
 import logging
 
@@ -8,16 +9,14 @@ logger = logging.getLogger(__name__)
 
 
 class Render:
-    """Класс "представления" для всего, что касается как минимум графики игры.
-    Отрисовка состояния игрового поля и объектов на нем.
-
-    """
     background = (0, 0, 0)
     margin_left = 5
     margin_right = 5
 
-    def __init__(self, width=640, height=640, fps=30, ):
+    def __init__(self, game_state: GameState, width=640, height=640, fps=30, ):
         logger.debug("Init Render...")
+
+        self.__game_state = game_state
 
         self.width = width
         self.height = height
@@ -26,18 +25,25 @@ class Render:
         self.surface = pygame.Surface(self.screen.get_size()).convert()
         self.surface.fill(self.background)
 
-    def draw_cells(self, data):
-        cell_size = LocationRenderObject.cell_size
+        self.locations = []  # type: [LocationRender]
 
-        for location in data:
-            x = location.location[0] * (cell_size + 1) + self.margin_left
-            y = location.location[1] * (cell_size + 1) + self.margin_right
+        self.draw_cells()
 
-            location_cell = LocationRenderObject(location, x_pos=x, y_pos=y)
-            location_cell.blit(self.surface)
+    def draw_cells(self, ):
+        cell_size = LocationRender.cell_size
 
-    def update(self, data):
-        self.draw_cells(data)
+        for location_id in self.__game_state.get_all_locations():
+            location = self.__game_state.get_location(location_id)
+            x = location.coordinates[0] * (cell_size + 1) + self.margin_left
+            y = location.coordinates[1] * (cell_size + 1) + self.margin_right
 
+            location_cell = LocationRender(self.surface, location, x_pos=x, y_pos=y)
+            location_cell.blit()
+
+            self.locations.append(location_cell)
+
+    def update(self):
         pygame.display.flip()
+        for location in self.locations:
+            location.update()
         self.screen.blit(self.surface, (0, 0))

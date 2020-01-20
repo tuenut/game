@@ -1,4 +1,4 @@
-from state.character.atributes.bases import BaseAttribute
+from state.characters.atributes.bases import BaseAttribute
 
 
 class Attribute(BaseAttribute):

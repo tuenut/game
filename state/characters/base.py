@@ -1,11 +1,16 @@
-from state import ABCGameStateObject
+import logging
 
-from state.character.atributes import Attributes
-from state.character.classes import CharacterClass
-from state.character.races import CharacterRace
-from state.character.actions import CharacterMoving
-from state.character.actions import CharacterAttack
-from state.character.actions import CharacterInterraction
+from app.mainfunctions.logger import pp
+from state import ABCGameStateObject
+from state.locations import LocationState
+from state.characters.atributes import Attributes
+from state.characters.classes import CharacterClass
+from state.characters.races import CharacterRace
+from state.characters.actions import CharacterMoving
+from state.characters.actions import CharacterAttack
+from state.characters.actions import CharacterInterraction
+
+logger = logging.getLogger(__name__)
 
 
 class Character(ABCGameStateObject):
@@ -45,8 +50,31 @@ class Character(ABCGameStateObject):
             intellect=kwargs.get('intellect'),
         )
 
+        logger.debug("Create character with kwargs: \n{}".format(pp.pformat(kwargs)))
+
+        self.__id = kwargs.get('id')
         self.name = kwargs.get('name', self.DEFAULT_NAME)
-        self.position = kwargs.get('position')
+        self.__type = kwargs.get("type")
+        self.__location = kwargs.get('location')
 
     def update(self):
         raise NotImplementedError
+
+    @property
+    def id(self):
+        return self.__id
+
+    @property
+    def type(self):
+        return self.__type
+
+    @property
+    def location(self):
+        return self.__location
+
+    @location.setter
+    def location(self, location):
+        if isinstance(location, LocationState):
+            self.__location = location.id
+        else:
+            raise TypeError

@@ -31,20 +31,71 @@ class ABCLocationData(ABCDataObject, metaclass=ABCMeta):
 
     @property
     @abstractmethod
-    def location_on_bottom(self):
+    def location_on_south(self):
+        """
+
+        Returns
+        -------
+            location_exit: ExitData
+        """
         ...
 
     @property
     @abstractmethod
-    def location_on_left(self):
+    def location_on_west(self):
+        """
+
+        Returns
+        -------
+            location_exit: ExitData
+        """
         ...
 
     @property
     @abstractmethod
-    def location_on_right(self):
+    def location_on_east(self):
+        """
+
+        Returns
+        -------
+            location_exit: ExitData
+        """
         ...
 
     @property
     @abstractmethod
-    def location_on_top(self):
+    def location_on_north(self):
+        """
+
+        Returns
+        -------
+            location_exit: ExitData
+        """
         ...
+
+
+class ExitData(ABCDataObject):
+    def __init__(self, access, location_id):
+        self.__access = bool(access)
+        self.__location = location_id
+
+    @property
+    def location(self):
+        return self.__location
+
+    @property
+    def accessible(self):
+        return self.__access
+
+    @property
+    def data_fields(self):
+        return []
+
+    def dump(self):
+        return {
+            "location_id": self.location,
+            "access": self.accessible
+        }
+
+    def load(self, data):
+        raise NotImplementedError

@@ -1,14 +1,15 @@
 import copy
+import random
 from hashlib import sha3_256
 
 
 class Location:
     DEFAULT_EXIT = {"location_id": None, "access": None}
     EXITS_PATTERN = {
-        "left": copy.deepcopy(DEFAULT_EXIT),
-        "right": copy.deepcopy(DEFAULT_EXIT),
-        "down": copy.deepcopy(DEFAULT_EXIT),
-        "up": copy.deepcopy(DEFAULT_EXIT)
+        "west": copy.deepcopy(DEFAULT_EXIT),
+        "east": copy.deepcopy(DEFAULT_EXIT),
+        "south": copy.deepcopy(DEFAULT_EXIT),
+        "north": copy.deepcopy(DEFAULT_EXIT)
     }
     LOCATION_PATTERN = {
         "exits": copy.deepcopy(EXITS_PATTERN),
@@ -23,10 +24,10 @@ class Location:
         self.y = y
         self.coordinates = (self.x, self.y)
 
-        self.is_location_on_bottom_edge = (self.y >= max(world_range_y))
-        self.is_location_on_left_edge = (self.x <= min(world_range_x))
-        self.is_location_on_right_edge = (self.x >= max(world_range_x))
-        self.is_location_on_top_edge = (self.y <= min(world_range_y))
+        self.is_location_on_south_edge = (self.y >= max(world_range_y))
+        self.is_location_on_west_edge = (self.x <= min(world_range_x))
+        self.is_location_on_east_edge = (self.x >= max(world_range_x))
+        self.is_location_on_north_edge = (self.y <= min(world_range_y))
 
         self.data = copy.deepcopy(self.LOCATION_PATTERN)
         self.data["coordinates"] = self.coordinates
@@ -35,10 +36,10 @@ class Location:
 
     def get_exits(self):
         exits = {
-            "down": self.bottom_exit,
-            "left": self.left_exit,
-            "right": self.right_exit,
-            "up": self.up_exit,
+            "south": self.south_exit,
+            "west": self.west_exit,
+            "east": self.east_exit,
+            "north": self.north_exit,
         }
 
         return exits
@@ -55,19 +56,19 @@ class Location:
             return None
 
     @property
-    def location_on_left(self):
+    def location_on_west(self):
         return self.get_location_id((self.x - 1, self.y))
 
     @property
-    def location_on_right(self):
+    def location_on_east(self):
         return self.get_location_id((self.x + 1, self.y))
 
     @property
-    def location_on_bottom(self):
+    def location_on_south(self):
         return self.get_location_id((self.x, self.y + 1))
 
     @property
-    def location_on_top(self):
+    def location_on_north(self):
         return self.get_location_id((self.x, self.y - 1))
 
     @property
@@ -75,29 +76,29 @@ class Location:
         return copy.deepcopy(self.DEFAULT_EXIT)
 
     @property
-    def bottom_exit(self):
-        if not self.is_location_on_bottom_edge:
-            return {"location_id": self.location_on_bottom, 'access': True}
+    def south_exit(self):
+        if not self.is_location_on_south_edge:
+            return {"location_id": self.location_on_south, 'access': random.choices([True, False], weights=[4, 6])[0]}
         else:
             return self.default_exit
 
     @property
-    def left_exit(self):
-        if not self.is_location_on_left_edge:
-            return {"location_id": self.location_on_left, 'access': True}
+    def west_exit(self):
+        if not self.is_location_on_west_edge:
+            return {"location_id": self.location_on_west, 'access': random.choices([True, False], weights=[6, 4])[0]}
         else:
             return self.default_exit
 
     @property
-    def right_exit(self):
-        if not self.is_location_on_right_edge:
-            return {"location_id": self.location_on_right, 'access': True}
+    def east_exit(self):
+        if not self.is_location_on_east_edge:
+            return {"location_id": self.location_on_east, 'access': random.choices([True, False], weights=[4, 6])[0]}
         else:
             return self.default_exit
 
     @property
-    def up_exit(self):
-        if not self.is_location_on_top_edge:
-            return {"location_id": self.location_on_top, 'access': True}
+    def north_exit(self):
+        if not self.is_location_on_north_edge:
+            return {"location_id": self.location_on_north, 'access': random.choices([True, False], weights=[4, 6])[0]}
         else:
             return self.default_exit

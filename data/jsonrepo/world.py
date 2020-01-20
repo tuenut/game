@@ -27,13 +27,13 @@ class WorldMapData(ABCWorldMapData):
         x, y = location.location[0], location.location[1]
         pos = (x, y)
 
-        if direction == "down":
+        if direction == "south":
             pos = (x, y + 1)
-        elif direction == "left":
+        elif direction == "west":
             pos = (x - 1, y)
-        elif direction == "right":
+        elif direction == "east":
             pos = (x + 1, y)
-        elif direction == "up":
+        elif direction == "north":
             pos = (x, y - 1)
 
         return self.get_location(pos)

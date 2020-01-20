@@ -1,10 +1,14 @@
-from data.abstractions.locations import ABCLocationData
+import logging
+
+from app.mainfunctions.logger import pp
+from data.abstractions.locations import ABCLocationData, ExitData
+
+logger = logging.getLogger(__name__)
 
 __all__ = ['LocationData']
 
 
 class LocationData(ABCLocationData):
-    __exits = None
     __characters = None
     __objects = None
 
@@ -13,10 +17,10 @@ class LocationData(ABCLocationData):
         self.__coordinates = kwargs.get('coordinates')
 
         exits = kwargs.get('exits', {})
-        self.__location_on_bottom = exits.get('down')
-        self.__location_on_left = exits.get('left')
-        self.__location_on_right = exits.get('right')
-        self.__location_on_top = exits.get('up')
+        self.__location_on_south = ExitData(**exits.get('south'))
+        self.__location_on_west = ExitData(**exits.get('west'))
+        self.__location_on_east = ExitData(**exits.get('east'))
+        self.__location_on_north = ExitData(**exits.get('north'))
 
         self.__characters = kwargs.get('characters', [])
         self.__objects = kwargs.get('objects', [])
@@ -38,29 +42,29 @@ class LocationData(ABCLocationData):
         return self.__objects
 
     @property
-    def location_on_bottom(self):
-        return self.__location_on_bottom
+    def location_on_south(self):
+        return self.__location_on_south
 
     @property
-    def location_on_left(self):
-        return self.__location_on_left
+    def location_on_west(self):
+        return self.__location_on_west
 
     @property
-    def location_on_right(self):
-        return self.__location_on_right
+    def location_on_east(self):
+        return self.__location_on_east
 
     @property
-    def location_on_top(self):
-        return self.__location_on_top
+    def location_on_north(self):
+        return self.__location_on_north
 
     def dump(self):
         return {
             "location_id": self.id,
             'exits': {
-                "left": self.location_on_left,
-                "right": self.location_on_right,
-                "up": self.location_on_top,
-                "down": self.location_on_bottom
+                "west": self.location_on_west.dump(),
+                "east": self.location_on_east.dump(),
+                "north": self.location_on_north.dump(),
+                "south": self.location_on_south.dump()
             },
             'characters': self.characters,
             'objects': self.objects,

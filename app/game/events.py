@@ -1,16 +1,15 @@
 import pygame
 
 from app.events import ABCEvents
+from data.abstractions import WEST, EAST, NORTH, SOUTH
 
 
 class GameEvents(ABCEvents):
     """Класс обработки событий в процессе игры."""
 
     def __init__(self, *args, **kwargs):
-        self.on_left = kwargs.get('on_left', self.default_callback)
-        self.on_right = kwargs.get('on_right', self.default_callback)
-        self.on_up = kwargs.get('on_up', self.default_callback)
-        self.on_down = kwargs.get('on_down', self.default_callback)
+        self.on_player_move = kwargs.get('on_player_move', self.default_callback)
+        self.player_id = args[0]
 
     def check(self, events):
         for event in events:
@@ -22,10 +21,10 @@ class GameEvents(ABCEvents):
 
     def on_press_key(self, event):
         if event.key == pygame.K_LEFT:
-            self.on_left()
+            self.on_player_move(self.player_id, WEST)
         elif event.key == pygame.K_RIGHT:
-            self.on_right()
+            self.on_player_move(self.player_id, EAST)
         elif event.key == pygame.K_UP:
-            self.on_up()
+            self.on_player_move(self.player_id, NORTH)
         elif event.key == pygame.K_DOWN:
-            self.on_down()
+            self.on_player_move(self.player_id, SOUTH)
