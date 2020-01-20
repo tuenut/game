@@ -26,8 +26,11 @@ class Game:
 
     def __configure_events(self):
         self.events = GameEvents(
-            self.state.player,
-            on_player_move=self.state.move_object,
+            on_player_move={
+                'callback': self.state.move_object,
+                'args': [self.state.characters.player, ],
+                'kwargs': {}
+            }
         )
 
     def update(self, events):

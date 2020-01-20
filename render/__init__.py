@@ -32,8 +32,7 @@ class Render:
     def draw_cells(self, ):
         cell_size = LocationRender.cell_size
 
-        for location_id in self.__game_state.get_all_locations():
-            location = self.__game_state.get_location(location_id)
+        for location in self.__game_state.locations:
             x = location.coordinates[0] * (cell_size + 1) + self.margin_left
             y = location.coordinates[1] * (cell_size + 1) + self.margin_right
 

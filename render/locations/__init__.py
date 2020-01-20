@@ -3,7 +3,7 @@ import logging
 
 from render.locations.doors import LocationExitsRender
 from render.characters.player import PlayerRenderObject
-from state.locations import LocationState
+from state.universe.locations.locationobject import LocationState
 from data.abstractions import PLAYABLE_CHARACTER
 
 logger = logging.getLogger(__name__)

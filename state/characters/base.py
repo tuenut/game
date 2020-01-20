@@ -1,8 +1,8 @@
 import logging
 
 from app.mainfunctions.logger import pp
-from state import ABCGameStateObject
-from state.locations import LocationState
+
+from state.abstractions import ABCGameStateObject
 from state.characters.atributes import Attributes
 from state.characters.classes import CharacterClass
 from state.characters.races import CharacterRace
@@ -74,7 +74,13 @@ class Character(ABCGameStateObject):
 
     @location.setter
     def location(self, location):
-        if isinstance(location, LocationState):
-            self.__location = location.id
-        else:
-            raise TypeError
+        # todo здесь бы какую-то проверку или предусмотреть на другом уровне, что локация может быть только
+        # определенного типа
+        self.__location = location
+
+    def __repr__(self):
+        return "<Character {type}.{name}, location: {location}>".format(
+            type=self.type, name=self.name, location=self.location
+        )
+
+    __str__ = __repr__

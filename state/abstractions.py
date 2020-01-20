@@ -13,6 +13,11 @@ class ABCGameStateObject(ABCGameState, metaclass=ABCMeta):
     def location(self):
         ...
 
+    @location.setter
+    @abstractmethod
+    def location(self, location):
+        ...
+
     @property
     @abstractmethod
     def name(self):
@@ -22,3 +27,4 @@ class ABCGameStateObject(ABCGameState, metaclass=ABCMeta):
     @abstractmethod
     def type(self):
         ...
+

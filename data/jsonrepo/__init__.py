@@ -27,7 +27,7 @@ class JSONData(ABCData):
         self.__locations_by_id = {location.id: i for i, location in enumerate(self.__locations_list)}
 
         self.__characters_list = [CharacterData(**character) for character in self.__raw_data['characters']]
-        self.__characters_by_id = {character.location: i for i, character in enumerate(self.__characters_list)}
+        self.__characters_by_id = {character.id: i for i, character in enumerate(self.__characters_list)}
 
         self.__objects_list = [ObjectData(**obj) for obj in self.__raw_data['objects']]
 
@@ -38,18 +38,14 @@ class JSONData(ABCData):
         return self.__locations_list[index]
 
     def get_all_locations(self,):
-        return list(self.__locations_by_id.keys())
+        return [location.dump() for location in self.__locations_list]
 
     def get_character(self, character_id):
         index = self.__characters_by_id.get(character_id)
-        character = self.__characters_list[index]
-
-        logger.debug("Return character data: {}".format(pp.pformat(character.dump())))
-
-        return character
+        return self.__characters_list[index]
 
     def get_all_characters(self):
-        return list(self.__characters_by_id.keys())
+        return [character.dump() for character in self.__characters_list]
 
     def get_object(self, obj_id):
         raise NotImplementedError

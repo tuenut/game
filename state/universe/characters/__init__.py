@@ -1,0 +1,1 @@
+from .charactersmanager import CharactersManager

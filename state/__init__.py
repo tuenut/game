@@ -1,107 +1,54 @@
 import logging
 
-from data.abstractions import ABCData, PLAYABLE_CHARACTER
+from data.abstractions import ABCData
 from state.abstractions import ABCGameStateObject, ABCGameState
-from state.characters import PlayableCharacterState
-from state.locations import LocationState
-from app.mainfunctions.logger import pp
+from state.universe.locations import LocationsManager
+from state.universe.characters import CharactersManager
 
 logger = logging.getLogger(__name__)
 
 
 class GameState(ABCGameState):
     """Класс для описания состояния игрового мира."""
+    locations = LocationsManager
+    characters = CharactersManager
+    objects = None
 
     def __init__(self, *args, **kwargs):
         logger.debug("Init GameState...")
 
-        self.__locations = {}  # type: {str: LocationState}
-        self.__characters = {}  # type: {str: PlayableCharacterState}
-        self.__objects = []
-
-        self.player = None
-
         self.__data = kwargs.get('data')  # type: ABCData
 
-        if self.__data is not None:
-            for location_id in self.__data.get_all_locations():
-                self.create_location(location_id)
+        self.locations = LocationsManager(self.__data.get_all_locations())
+        self.characters = CharactersManager(self.__data.get_all_characters())
 
-            for character_id in self.__data.get_all_characters():
-                self.create_character(character_id)
+        for character in self.characters:
+            location = self.locations.get_location(character.location)
+            self.locations.add_object_on_location(character, location)
 
-            for location in self.__locations.values():
-                location.init_exits()
-                location.init_characters()
+        for location in self.locations:
+            location.init_characters()
 
-    def create_location(self, location_id: str):
-        # todo сделать как create_character()
-        location = LocationState(self.__data.get_location(location_id), self.get_location, self.get_character)
-        self.__locations.update({location.id: location})
+    def move_object(self, target_object: ABCGameStateObject, direction: str, *args, **kwargs):
+        logger.debug("Request to moving object <%s> to <%s>.", target_object, direction)
 
-    def create_character(self, character_id: str):
-        character_data = self.__data.get_character(character_id)
+        try:
+            origin_location = target_object.location
+        except AttributeError:
+            logger.exception("Invalid object <target_object> for moving.")
+            return None
 
-        if character_data.type == PLAYABLE_CHARACTER and self.player is None:
-            character = PlayableCharacterState(**character_data.dump())
-            self.player = character.id
-            self.__characters.update({character.id: character})
+        next_location = origin_location.get_next_location(direction)
 
-    def get_character(self, character_id: str):
-        return self.__characters.get(character_id)
-
-    def get_location(self, location_id: str):
-        """
-
-        Parameters
-        ----------
-        location_id
-
-        Returns
-        -------
-            location : LocationState
-        """
-        return self.__locations.get(location_id)
-
-    def get_all_locations(self):
-        return list(self.__locations.keys())
-
-    def add_object_on_location(self, obj: str, location: str):
-        raise NotImplementedError
-
-    def remove_object_from_location(self, obj: str):
-        raise NotImplementedError
-
-    def move_object(self, obj_id: str, direction: str):
-        character = self.get_character(obj_id) # type:PlayableCharacterState or None
-
-        # todo: obj = self.get_object(obj_id)
-        obj = None
-
-        target_object = character or obj
-
-        if target_object is None:
+        if next_location is None:
+            logger.debug("There is no way.")
             return
-        else:
-            origin_location = self.get_location(target_object.location)
-            next_location = origin_location.get_next_location(direction)
+        if self.locations.remove_object_from_location(target_object) is None:
+            return
 
-            logger.debug("try move <{}> to <{}> from {}".
-                         format(target_object.name, direction, origin_location.coordinates))
+        self.locations.add_object_on_location(target_object, next_location)
 
-            if next_location is not None:
-                logger.debug(
-                    "<{}> can move to <{}> on location {}".
-                        format(target_object.name, direction, next_location.coordinates)
-                )
-
-                if origin_location.remove_character(character.id):
-                    next_location.add_character(character.id)
-                    character.location = next_location
-                else:
-                    raise Exception("Can't move character.")
-            else:
-                logger.debug("There is no way!")
+        logger.debug("Object moved successfully.")
 
     def update(self):
         pass

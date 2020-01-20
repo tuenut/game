@@ -59,7 +59,7 @@ class LocationData(ABCLocationData):
 
     def dump(self):
         return {
-            "location_id": self.id,
+            "id": self.id,
             'exits': {
                 "west": self.location_on_west.dump(),
                 "east": self.location_on_east.dump(),
