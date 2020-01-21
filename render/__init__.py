@@ -1,7 +1,9 @@
-import pygame
+import pygame # type: ignore
+
+from typing import List
 
 from render.locations import LocationRender
-from state import GameState
+from state import GameStateController
 
 import logging
 
@@ -13,7 +15,7 @@ class Render:
     margin_left = 5
     margin_right = 5
 
-    def __init__(self, game_state: GameState, width=640, height=640, fps=30, ):
+    def __init__(self, game_state: GameStateController, width=640, height=640, fps=30, ):
         logger.debug("Init Render...")
 
         self.__game_state = game_state
@@ -25,7 +27,7 @@ class Render:
         self.surface = pygame.Surface(self.screen.get_size()).convert()
         self.surface.fill(self.background)
 
-        self.locations = []  # type: [LocationRender]
+        self.locations = []  # type: List[LocationRender]
 
         self.draw_cells()
 

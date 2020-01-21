@@ -1,5 +1,5 @@
 import logging
-import pygame
+import pygame # type: ignore
 
 
 logger = logging.getLogger(__name__)
@@ -34,7 +34,7 @@ class LocationExitsRender:
         y = self.__cell_size - self.__height
         width = self.__width
         height = self.__height
-        color = self.color_exit_accesible if self.__exits.get("south").access else self.color_exit_inaccessible
+        color = self.color_exit_accesible if self.__exits.south.access else self.color_exit_inaccessible
 
         return color, (x, y, width, height)
 
@@ -44,7 +44,7 @@ class LocationExitsRender:
         y = self.__height
         width = self.__height
         height = self.__width
-        color = self.color_exit_accesible if self.__exits.get("west").access else self.color_exit_inaccessible
+        color = self.color_exit_accesible if self.__exits.west.access else self.color_exit_inaccessible
 
         return color, (x, y, width, height,)
 
@@ -54,7 +54,7 @@ class LocationExitsRender:
         y = self.__height
         width = self.__height
         height = self.__width
-        color = self.color_exit_accesible if self.__exits.get("east").access else self.color_exit_inaccessible
+        color = self.color_exit_accesible if self.__exits.east.access else self.color_exit_inaccessible
 
         return color, (x, y, width, height,)
 
@@ -64,7 +64,7 @@ class LocationExitsRender:
         y = 0
         width = self.__width
         height = self.__height
-        color = self.color_exit_accesible if self.__exits.get("north").access else self.color_exit_inaccessible
+        color = self.color_exit_accesible if self.__exits.north.access else self.color_exit_inaccessible
 
         return color, (x, y, width, height,)
 

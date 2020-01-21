@@ -1,7 +1,7 @@
-from data.abstractions.objects import ABCCharacterData
+from abstractions.data import ABCDataCharacter
 
 
-class CharacterData(ABCCharacterData):
+class CharacterData(ABCDataCharacter):
     __location = None
 
     def __init__(self, **kwargs):

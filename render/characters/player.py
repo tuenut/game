@@ -1,5 +1,5 @@
 import logging
-import pygame
+import pygame # type: ignore
 
 logger = logging.getLogger(__name__)
 

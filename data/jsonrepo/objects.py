@@ -1,7 +1,7 @@
-from data.abstractions.objects import ABCObjectRepository
+from abstractions.data import ABCDataObject
 
 
-class ObjectData(ABCObjectRepository):
+class ObjectData(ABCDataObject):
     def __init__(self, **kwargs):
         pass
 

@@ -1,6 +1,6 @@
 import logging
 
-from data.abstractions import PLAYABLE_CHARACTER
+from abstractions.data import PLAYABLE_CHARACTER
 from state.characters import PlayableCharacterState, NonPlayableCharacter
 from state.characters.base import Character
 
@@ -70,3 +70,6 @@ class CharactersManager:
         logger.debug("Is character: %s. In characters: %s. Result: %s.", is_character, in_characters, result)
 
         return result
+
+    def update(self):
+        raise NotImplementedError

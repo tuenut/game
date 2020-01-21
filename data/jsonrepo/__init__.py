@@ -5,8 +5,7 @@
 import json
 import logging
 
-from app.mainfunctions.logger import pp
-from data.abstractions import ABCData
+from abstractions.data import ABCDataController
 from data.jsonrepo.locations import LocationData
 from data.jsonrepo.characters import CharacterData
 from data.jsonrepo.objects import ObjectData
@@ -14,7 +13,7 @@ from data.jsonrepo.objects import ObjectData
 logger = logging.getLogger(__name__)
 
 
-class JSONData(ABCData):
+class JSONDataController(ABCDataController):
     def __init__(self, *args, **kwargs):
         self.__file_path = kwargs.get("source")
 
@@ -37,17 +36,23 @@ class JSONData(ABCData):
         index = self.__locations_by_id.get(location_id)
         return self.__locations_list[index]
 
-    def get_all_locations(self,):
-        return [location.dump() for location in self.__locations_list]
-
     def get_character(self, character_id):
         index = self.__characters_by_id.get(character_id)
         return self.__characters_list[index]
 
-    def get_all_characters(self):
+    def get_object(self, obj_id):
+        raise NotImplementedError
+
+    @property
+    def locations(self, ):
+        return [location.dump() for location in self.__locations_list]
+
+    @property
+    def characters(self):
         return [character.dump() for character in self.__characters_list]
 
-    def get_object(self, obj_id):
+    @property
+    def objects(self):
         raise NotImplementedError
 
     def dump(self):

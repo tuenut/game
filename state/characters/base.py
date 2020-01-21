@@ -2,7 +2,7 @@ import logging
 
 from app.mainfunctions.logger import pp
 
-from state.abstractions import ABCGameStateObject
+from abstractions.gamestate import ABCGameStateObject
 from state.characters.atributes import Attributes
 from state.characters.classes import CharacterClass
 from state.characters.races import CharacterRace

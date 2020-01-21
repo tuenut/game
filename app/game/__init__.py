@@ -1,6 +1,6 @@
 from app.game.events import GameEvents
 from data import get_data_object
-from state import GameState
+from state import GameStateController
 from render import Render
 
 import logging
@@ -19,7 +19,7 @@ class Game:
         logger.debug("Init Game...")
 
         self.data = get_data_object()
-        self.state = GameState(data=self.data)
+        self.state = GameStateController(data=self.data)
         self.render = Render(game_state=self.state)
 
         self.__configure_events()
@@ -35,5 +35,5 @@ class Game:
 
     def update(self, events):
         self.events.check(events)
-        self.state.update()
+        # todo: self.state.update()
         self.render.update()

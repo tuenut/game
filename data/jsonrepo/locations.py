@@ -1,14 +1,13 @@
 import logging
 
-from app.mainfunctions.logger import pp
-from data.abstractions.locations import ABCLocationData, ExitData
+from abstractions.data import ABCDataExit, ABCDataLocation
 
 logger = logging.getLogger(__name__)
 
 __all__ = ['LocationData']
 
 
-class LocationData(ABCLocationData):
+class LocationData(ABCDataLocation):
     __characters = None
     __objects = None
 
@@ -28,6 +27,14 @@ class LocationData(ABCLocationData):
     @property
     def id(self):
         return self.__id
+
+    @property
+    def type(self):
+        raise NotImplementedError
+
+    @property
+    def name(self):
+        raise NotImplementedError
 
     @property
     def coordinates(self):
@@ -69,6 +76,45 @@ class LocationData(ABCLocationData):
             'characters': self.characters,
             'objects': self.objects,
             "coordinates": self.coordinates
+        }
+
+    def load(self, data):
+        raise NotImplementedError
+
+
+class ExitData(ABCDataExit):
+    @property
+    def data_fields(self):
+        raise NotImplementedError
+
+    def __init__(self, access, location_id):
+        self.__access = bool(access)
+        self.__location = location_id
+
+    @property
+    def id(self):
+        raise NotImplementedError
+
+    @property
+    def type(self):
+        raise NotImplementedError
+
+    @property
+    def name(self):
+        raise NotImplementedError
+
+    @property
+    def next_location(self):
+        return self.__location
+
+    @property
+    def accessible(self):
+        return self.__access
+
+    def dump(self):
+        return {
+            "location_id": self.next_location,
+            "access": self.accessible
         }
 
     def load(self, data):

@@ -1,12 +1,12 @@
 from app.config import REPO_TYPE
-from data.abstractions.world import ABCWorldMapData
+from abstractions.data import ABCDataController
 
 if REPO_TYPE == "json":
-    from data.jsonrepo import JSONData as DataClass
+    from data.jsonrepo import JSONDataController as DataClass
     from app.config import JSON_REPO as source
 
 __all__ = ['get_data_object']
 
 
-def get_data_object():
-    return DataClass(source=source)  # type: ABCWorldMapData
+def get_data_object() -> ABCDataController:
+    return DataClass(source=source)

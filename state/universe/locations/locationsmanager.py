@@ -2,14 +2,14 @@ import logging
 
 from app.mainfunctions.logger import pp
 
-from state.abstractions import ABCGameStateObject
+from abstractions.gamestate import ABCGameStateObject, ABCGameStateLocationsManager
 from state.characters.base import Character
 from .locationobject import LocationState
 
 logger = logging.getLogger(__name__)
 
 
-class LocationsManager:
+class LocationsManager(ABCGameStateLocationsManager):
     def __init__(self, locations_data):
         self.__locations_data = locations_data
         self.__locations = {}  # type: {str: LocationState}
@@ -22,9 +22,11 @@ class LocationsManager:
             yield location
 
     def __init_location_objects(self):
+        # init locations
         for location_dumped_data in self.__locations_data:
             self.create_location(location_dumped_data)
 
+        # init locations exits
         for location in self:
             location_exits = location.data.get('exits')
 
@@ -82,11 +84,11 @@ class LocationsManager:
 
         return result
 
-    def add_object_on_location(self, obj: ABCGameStateObject, location: LocationState):
+    def add_object_on_location(self, obj, location):
         logger.debug("Request to add object <%s> on location <%s>.", obj, location)
 
         if issubclass(obj.__class__, Character) and location in self:
-            result = location.add_character(obj)
+            result = location.add_object(obj)
             if result:
                 obj.location = location
 
@@ -96,12 +98,12 @@ class LocationsManager:
         else:
             logger.debug("Wrong location object <%s>", location)
 
-    def remove_object_from_location(self, obj: ABCGameStateObject):
+    def remove_object_from_location(self, obj):
         logger.debug("Request to remove object <%s> from its location.", obj)
 
         if issubclass(obj.__class__, Character) and obj.location in self:
             location = obj.location
-            result = location.remove_character(obj)
+            result = location.remove_object(obj)
 
             if result:
                 obj.location = None
@@ -111,3 +113,6 @@ class LocationsManager:
             return result
         else:
             logger.debug("Wrong game object <%s>", obj)
+
+    def update(self):
+        raise NotImplementedError

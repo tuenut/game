@@ -1,19 +1,75 @@
-from state import ABCGameState
-# from state.universe.locations.locationobject import LocationState
+from __future__ import annotations
+
+from abstractions.gamestate import ABCGameStateLocationExitsManager, ABCGameStateLocationExit
+from abstractions.data import WEST, EAST, NORTH, SOUTH
 
 
-class ExitState(ABCGameState):
+
+
+class LocationExitsManager(ABCGameStateLocationExitsManager):
+    def __init__(self, location_exits: dict):
+        self.__exit_on_north = LocationExitState(self, **location_exits[NORTH])
+        self.__exit_on_south = LocationExitState(self, **location_exits[SOUTH])
+        self.__exit_on_west = LocationExitState(self, **location_exits[WEST])
+        self.__exit_on_east = LocationExitState(self, **location_exits[EAST])
+
+    @property
+    def north(self):
+        # todo; проверить, что в последней версии pycharm тоже не резолвится как сабкласс
+        return self.__exit_on_north
+
+    @property
+    def south(self):
+        return self.__exit_on_south
+
+    @property
+    def west(self):
+        return self.__exit_on_west
+
+    @property
+    def east(self):
+        return self.__exit_on_east
+
+    def update(self):
+        raise NotImplementedError
+
+
+class LocationExitState(ABCGameStateLocationExit):
     def __init__(self, parent, next_location, access: bool, *args, **kwargs):
-        self.parent = parent  # type: LocationState
-        self.next_location = next_location  # type: LocationState or None
-        self.access = access
+        self.__parent = parent
+        self.__next_location = next_location
+        self.__access = access
+
+    @property
+    def next_location(self):
+        return self.__next_location if self.access else None
+
+    @property
+    def access(self) -> bool:
+        return self.__access
+
+    @property
+    def location(self):
+        return self.__parent
+
+    @property
+    def name(self) -> str:
+        raise NotImplementedError
+
+    @property
+    def type(self) -> str:
+        raise NotImplementedError
+
+    @property
+    def id(self) -> str:
+        raise NotImplementedError
 
     def update(self):
         raise NotImplementedError
 
     def __repr__(self):
         return "<ExitState from {parent} to {next_location}, accessible is {access} >".format(
-            parent=self.parent,
+            parent=self.location,
             next_location=self.next_location,
             access=self.access
         )

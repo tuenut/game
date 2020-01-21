@@ -1,5 +1,5 @@
 import logging
-import pygame
+import pygame # type: ignore
 
 from app.game import Game
 from app.events import AppEvents

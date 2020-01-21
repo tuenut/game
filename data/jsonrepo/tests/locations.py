@@ -1,6 +1,6 @@
 import unittest
 
-from data.abstractions.locations import ABCLocationData
+from abstractions.data import ABCDataLocation
 from data.jsonrepo.locations import LocationData
 from data.jsonrepo.tests.data import LOCATION, LOCATION_DUMPED
 
@@ -12,7 +12,7 @@ class TestLocationDataObject(unittest.TestCase):
 
     def test_init(self):
         location = self.create_location()
-        self.assertIsInstance(location, ABCLocationData)
+        self.assertIsInstance(location, ABCDataLocation)
 
     def test_dump_data(self):
         location = self.create_location()

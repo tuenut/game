@@ -1,14 +1,14 @@
 import logging
 
-from data.abstractions import ABCData
-from state.abstractions import ABCGameStateObject, ABCGameState
+from abstractions.data import ABCDataController
+from abstractions.gamestate import ABCGameStateController, ABCGameStateObject
 from state.universe.locations import LocationsManager
 from state.universe.characters import CharactersManager
 
 logger = logging.getLogger(__name__)
 
 
-class GameState(ABCGameState):
+class GameStateController(ABCGameStateController):
     """Класс для описания состояния игрового мира."""
     locations = LocationsManager
     characters = CharactersManager
@@ -17,10 +17,11 @@ class GameState(ABCGameState):
     def __init__(self, *args, **kwargs):
         logger.debug("Init GameState...")
 
-        self.__data = kwargs.get('data')  # type: ABCData
+        self.__data = kwargs.get('data')  # type: ABCDataController
 
-        self.locations = LocationsManager(self.__data.get_all_locations())
-        self.characters = CharactersManager(self.__data.get_all_characters())
+        self.locations = LocationsManager(self.__data.locations)
+        self.characters = CharactersManager(self.__data.characters)
+        # todo: self.objects = ObjectsManager(self.__data.objects)
 
         for character in self.characters:
             location = self.locations.get_location(character.location)
@@ -29,14 +30,14 @@ class GameState(ABCGameState):
         for location in self.locations:
             location.init_characters()
 
-    def move_object(self, target_object: ABCGameStateObject, direction: str, *args, **kwargs):
+    def move_object(self, target_object, direction, *args, **kwargs):
         logger.debug("Request to moving object <%s> to <%s>.", target_object, direction)
 
         try:
             origin_location = target_object.location
         except AttributeError:
             logger.exception("Invalid object <target_object> for moving.")
-            return None
+            return
 
         next_location = origin_location.get_next_location(direction)
 
@@ -51,4 +52,5 @@ class GameState(ABCGameState):
         logger.debug("Object moved successfully.")
 
     def update(self):
-        pass
+        raise NotImplementedError
+

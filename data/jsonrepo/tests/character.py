@@ -1,6 +1,6 @@
 import unittest
 
-from data.abstractions.objects import ABCCharacterData
+from abstractions.data import ABCDataCharacter
 from data.jsonrepo.characters import CharacterData
 from data.jsonrepo.tests.data import CHARACTER, CHARACTER_DUMPED, CHARACTER_MOVED, LOCATION_ID_ONE, LOCATION_ID_TWO
 
@@ -12,7 +12,7 @@ class TestCharacterDataObject(unittest.TestCase):
 
     def test_init(self):
         character = self.create_character()
-        self.assertIsInstance(character, ABCCharacterData)
+        self.assertIsInstance(character, ABCDataCharacter)
 
     def test_dump_data(self):
         character = self.create_character()

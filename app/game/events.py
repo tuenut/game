@@ -1,7 +1,7 @@
-import pygame
+import pygame # type: ignore
 
 from app.events import ABCEvents
-from data.abstractions import WEST, EAST, NORTH, SOUTH
+from abstractions.data import WEST, EAST, NORTH, SOUTH
 
 
 class GameEvents(ABCEvents):

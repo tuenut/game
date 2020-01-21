@@ -1,10 +1,10 @@
-import pygame
+import pygame # type: ignore
 import logging
 
 from render.locations.doors import LocationExitsRender
 from render.characters.player import PlayerRenderObject
 from state.universe.locations.locationobject import LocationState
-from data.abstractions import PLAYABLE_CHARACTER
+from abstractions.data import PLAYABLE_CHARACTER
 
 logger = logging.getLogger(__name__)
 
