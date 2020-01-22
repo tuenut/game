@@ -6,11 +6,13 @@ logger = logging.getLogger(__name__)
 
 
 class LocationExitsRender:
+    # todo: there is need refactoring in future.
+
     color_exit_accesible = (200, 200, 200)
     color_exit_inaccessible = (50, 50, 50)
 
-    def __init__(self, surface, exits, cell_size, door_width, door_height):
-        self.surface = surface
+    def __init__(self, parent_surface, exits, cell_size, door_width, door_height):
+        self.parent_surface = parent_surface
 
         self.__exits = exits
         self.__width = door_width
@@ -24,7 +26,7 @@ class LocationExitsRender:
 
     def draw_exit(self, params):
         try:
-            return pygame.draw.rect(self.surface, *params)
+            return pygame.draw.rect(self.parent_surface, *params)
         except:
             logger.exception("Exception while render exits.")
 

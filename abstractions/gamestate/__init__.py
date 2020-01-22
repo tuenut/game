@@ -3,7 +3,11 @@ from __future__ import annotations
 from typing import List, Optional, Union, Tuple
 from abc import ABC, abstractmethod, ABCMeta
 
-__all__ = ["ABCGameStateLocation"]
+__all__ = [
+    "ABCGameState", "ABCGameStateController", "ABCGameStateLocationsManager", "ABCGameStateEntity",
+    "ABCGameStateLocation", "ABCGameStateLocationExitsManager", "ABCGameStateObject", "ABCGameStateLocationExit",
+    "ABCGameStateCharacter", "ABCGameStateCharactersManager"
+]
 
 
 class ABCGameState(ABC):
@@ -115,10 +119,29 @@ class ABCGameStateLocationExitsManager(ABCGameState, metaclass=ABCMeta):
         ...
 
 
+class ABCGameStateCharactersManager(ABCGameState, metaclass=ABCMeta):
+    @abstractmethod
+    def __iter__(self) -> ABCGameStateCharacter:
+        ...
+
+    @abstractmethod
+    def create_character(self, character_dumped_data: dict) -> ABCGameStateCharacter:
+        ...
+
+    @abstractmethod
+    def get_character(self, character: Union[str, ABCGameStateCharacter]) -> ABCGameStateCharacter:
+        ...
+
+
 class ABCGameStateObject(ABCGameStateEntity, metaclass=ABCMeta):
     @property
     @abstractmethod
     def location(self) -> Optional[ABCGameStateLocation]:
+        ...
+
+    @location.setter
+    @abstractmethod
+    def location(self, value) -> Optional[ABCGameStateLocation]:
         ...
 
 

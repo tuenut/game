@@ -1,4 +1,4 @@
-import pygame # type: ignore
+import pygame  # type: ignore
 
 from app.events import ABCEvents
 from abstractions.data import WEST, EAST, NORTH, SOUTH
@@ -13,8 +13,6 @@ class GameEvents(ABCEvents):
             self.on_player_move = on_player_move.get('callback', self.default_callback)
             self.on_player_move_args = on_player_move.get('args', [])
             self.on_player_move_kwargs = on_player_move.get('kwargs', {})
-
-
 
     def check(self, events):
         for event in events:

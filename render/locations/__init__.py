@@ -1,70 +1,28 @@
-import pygame # type: ignore
 import logging
 
-from render.locations.doors import LocationExitsRender
-from render.characters.player import PlayerRenderObject
-from state.universe.locations.locationobject import LocationState
-from abstractions.data import PLAYABLE_CHARACTER
+from render.locations.locationobject import LocationRender
 
 logger = logging.getLogger(__name__)
 
 
-class LocationRender:
-    background = (100, 100, 100)
+class LocationsRenderManager:
+    def __init__(self, parent_surface, locations_objects):
+        self.parent_surface = parent_surface
+        self.__locations_state = locations_objects
+        self.locations = []
 
-    cell_size = 62
-    exit_height = 8
-    exit_width = cell_size - 2 * exit_height
+        self.__init_draw()
 
-    def __init__(self, parent, location: LocationState, x_pos=0, y_pos=0, ):
-        self.parent = parent
+    def __init_draw(self):
+        for location in self.__locations_state:
+            x = location.coordinates[0]
+            y = location.coordinates[1]
 
-        self.__x_pos = x_pos
-        self.__y_pos = y_pos
+            location_cell = LocationRender(self.parent_surface, location, x_cell=x, y_cell=y)
+            location_cell.blit()
 
-        self.__location_state = location
-
-        self.__player_state = None
-        self.player = None
-
-        if self.__location_state.characters:
-            logger.debug("Characters on location {}: {}".format(location.coordinates, self.__location_state.characters))
-
-        self.draw()
-        self.draw_characters()
-
-    def blit(self,):
-        """blit the Ball on the background"""
-        self.parent.blit(self.surface, (self.__x_pos, self.__y_pos))
-
-    def draw(self):
-        self.surface = pygame.Surface((self.cell_size, self.cell_size))
-        self.surface = self.surface.convert()
-        self.surface.fill(self.background)
-        self.exits = LocationExitsRender(
-            self.surface, self.__location_state.exits, self.cell_size, self.exit_width, self.exit_height
-        )
-
-    def draw_characters(self):
-        # todo что-то мутное с условиями, могут быть проблемы
-
-        if self.__player_state is not None and self.__player_state not in self.__location_state.characters:
-            logger.debug("Redraw location")
-            self.__player_state = None
-            self.player = None
-            self.draw()
-
-        for character in self.__location_state.characters:
-            if character.type == PLAYABLE_CHARACTER:
-                if self.__player_state != character:
-                    logger.debug("Found player")
-                    self.__player_state = character
-
-                if not isinstance(self.player, PlayerRenderObject):
-                    self.player = PlayerRenderObject(self.surface, self.cell_size, self.exit_height)
+            self.locations.append(location_cell)
 
     def update(self):
-        self.draw_characters()
-        self.blit()
-
-
+        for location in self.locations:
+            location.update()

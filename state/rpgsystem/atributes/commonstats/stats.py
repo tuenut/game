@@ -1,4 +1,4 @@
-from state.characters.atributes.bases import BaseAttribute
+from state.rpgsystem.atributes.bases import BaseAttribute
 
 
 class Attribute(BaseAttribute):

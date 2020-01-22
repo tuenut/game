@@ -3,7 +3,17 @@ from logging import DEBUG
 
 NAME = "game"
 
-BASE_DIR = os.path.dirname(__file__)
+
+def init_base_dir_path():
+    base_dir = os.path.dirname(__file__)
+
+    while 'main.py' not in os.listdir(base_dir):
+        base_dir = os.path.abspath(os.path.join(base_dir, '../'))
+
+    return base_dir
+
+
+BASE_DIR = init_base_dir_path()
 LOG_DIR = os.path.join(BASE_DIR, '.logs')
 
 REPO_TYPE = "json"
@@ -26,7 +36,7 @@ LOGGING = {
     'loggers': {
         '': {
             'level': LOG_LEVEL,
-            'handlers': ['basic_stream'],
+            'handlers': ['basic_stream', 'basic_file'],
             'propagate': True,
         }
     },

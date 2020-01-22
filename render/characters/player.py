@@ -1,5 +1,7 @@
 import logging
-import pygame # type: ignore
+import pygame  # type: ignore
+
+from render.config import CELL_SIZE, CELL_BORDER, MAP_MARGIN_Y, MAP_MARGIN_X, EXIT_HEIGHT
 
 logger = logging.getLogger(__name__)
 
@@ -9,20 +11,45 @@ class PlayerRenderObject:
 
     color = (255, 200, 0)
 
-    def __init__(self, surface, size, magrin):
-        self.surface = surface
+    def __init__(self, parent_surface, character_state):
+        self.parent_surface = parent_surface
 
-        self.size = size
-        self.width = int(self.size * 0.1)
-        self.margin = magrin * 1.1 + self.width
+        self.surface = pygame.Surface((self.square_size, self.square_size)).convert()
+        self.surface.fill((255, 0, 255))
+        self.surface.set_colorkey((255, 0, 255))
+        self.surface.convert_alpha()
 
-        self.draw()
+        self.__character = character_state
+
+        self.update()
+
+    @property
+    def square_size(self):
+        return CELL_SIZE
+
+    @property
+    def width(self):
+        return EXIT_HEIGHT
+
+    @property
+    def margin(self):
+        return EXIT_HEIGHT * 2
+
+    @property
+    def x(self):
+        return self.__character.location.coordinates[0] * self.square_size + MAP_MARGIN_X
+
+    @property
+    def y(self):
+        return self.__character.location.coordinates[1] * self.square_size + MAP_MARGIN_Y
+
+    def blit(self):
+        self.parent_surface.blit(self.surface, (self.x, self.y))
 
     def draw(self):
-        start_pos = (self.margin, self.margin)
-        end_pos = (self.size - self.margin, self.size - self.margin)
-        pygame.draw.line(self.surface, self.color, start_pos, end_pos, self.width)
+        rect = ((self.square_size - self.margin) / 2, (self.square_size - self.margin) / 2, self.margin, self.margin)
+        pygame.draw.rect(self.surface, self.color, rect)
 
-        start_pos = (self.size - self.margin, self.margin)
-        end_pos = (self.margin, self.size - self.margin)
-        pygame.draw.line(self.surface, self.color, start_pos, end_pos, self.width)
+    def update(self):
+        self.blit()
+        self.draw()

@@ -1,5 +1,9 @@
+import logging
 import pygame # type: ignore
+
 from abc import ABC, abstractmethod
+
+logger = logging.getLogger(__name__)
 
 
 class ABCEvents(ABC):

@@ -1,5 +1,5 @@
-from state.characters.atributes.bases.stats import BaseAttribute
-from state.characters.atributes.resourcestat.stats import HealthPoints, StaminaPoints, ManaPoints
+from state.rpgsystem.atributes.bases.stats import BaseAttribute
+from state.rpgsystem.atributes.resourcestat.stats import HealthPoints, StaminaPoints, ManaPoints
 
 
 class Attributes:

@@ -2,8 +2,7 @@ import logging
 
 from app.mainfunctions.logger import pp
 
-from abstractions.gamestate import ABCGameStateObject, ABCGameStateLocationsManager
-from state.characters.base import Character
+from abstractions.gamestate import ABCGameStateObject, ABCGameStateLocationsManager, ABCGameStateCharacter
 from .locationobject import LocationState
 
 logger = logging.getLogger(__name__)
@@ -86,22 +85,25 @@ class LocationsManager(ABCGameStateLocationsManager):
 
     def add_object_on_location(self, obj, location):
         logger.debug("Request to add object <%s> on location <%s>.", obj, location)
+        if not isinstance(location, LocationState):
+            logger.debug("Wrong location object <%s>", location)
+            return
 
-        if issubclass(obj.__class__, Character) and location in self:
+        if location not in self:
+            logger.debug("Unknown %s, not in managed locations.", location)
+            return
+
+        if issubclass(obj.__class__, ABCGameStateObject):
             result = location.add_object(obj)
-            if result:
-                obj.location = location
 
             logger.debug("Request complete.")
 
             return result
-        else:
-            logger.debug("Wrong location object <%s>", location)
 
     def remove_object_from_location(self, obj):
         logger.debug("Request to remove object <%s> from its location.", obj)
 
-        if issubclass(obj.__class__, Character) and obj.location in self:
+        if issubclass(obj.__class__, ABCGameStateCharacter) and obj.location in self:
             location = obj.location
             result = location.remove_object(obj)
 

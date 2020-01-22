@@ -7,8 +7,7 @@ from typing import List, Mapping, Dict, Any, Union, Optional, Tuple
 from app.mainfunctions.logger import pp
 
 from abstractions.data import WEST, EAST, NORTH, SOUTH
-from abstractions.gamestate import ABCGameStateLocation, ABCGameStateObject
-from state.characters.base import Character
+from abstractions.gamestate import ABCGameStateLocation, ABCGameStateObject, ABCGameStateCharacter
 from .locationexit import LocationExitsManager
 
 logger = logging.getLogger(__name__)
@@ -26,20 +25,19 @@ class LocationState(ABCGameStateLocation):
         self.__get_id()
         self.__get_coordinates()
 
-        self.__characters = self.__location_data['characters'] # type: list
+        self.__characters = self.__location_data['characters']  # type: list
 
     def __get_id(self):
         _id = self.__location_data['id']
         if isinstance(_id, str):
-            self.__id = _id # type: str
+            self.__id = _id  # type: str
 
     def __get_coordinates(self):
         coordinates = self.__location_data['coordinates']
-        if len(coordinates) != 2 or isinstance(coordinates, (tuple, list)):
-            raise TypeError("Wrong coordinates %s for location %s" % (coordinates, self.id))
+        if len(coordinates) == 2 and isinstance(coordinates, (tuple, list)):
+            self.__coordinates = tuple(self.__location_data['coordinates'])  # type: Tuple[int, int]
         else:
-            self.__coordinates = tuple(self.__location_data['coordinates']) # type: Tuple[int, int]
-
+            raise TypeError("Wrong coordinates %s for location %s" % (coordinates, self.id))
 
     def update(self):
         raise NotImplementedError
@@ -54,7 +52,7 @@ class LocationState(ABCGameStateLocation):
         self.__characters = [
             character
             for character in self.__characters
-            if issubclass(character.__class__, Character)
+            if issubclass(character.__class__, ABCGameStateCharacter)
         ]
 
     @property
@@ -104,17 +102,34 @@ class LocationState(ABCGameStateLocation):
 
         return destination
 
-    def add_object(self, character):
+    def add_object(self, obj):
+        if issubclass(obj.__class__, ABCGameStateCharacter):
+            return self.__add_character(obj)
+
+        elif issubclass(obj.__class__, ABCGameStateObject):
+            raise NotImplementedError("Adding for objects not implemented yet!")
+        else:
+            raise TypeError("Unsupported type <%s>" % obj)
+
+    def __add_character(self, character):
         if character not in self.__characters:
             self.__characters.append(character)
+            character.location = self
 
             logger.debug("Character was added to location.")
             return character
-        else:
-            logger.debug("Unknown character object.")
-            return None
 
-    def remove_object(self, character):
+    def remove_object(self, obj):
+        if issubclass(obj.__class__, ABCGameStateCharacter):
+            return self.__remove_character(obj)
+
+        elif issubclass(obj.__class__, ABCGameStateObject):
+            raise NotImplementedError("Removing for objects not implemented yet!")
+
+        else:
+            raise TypeError("Unsupported type <%s>" % obj)
+
+    def __remove_character(self, character):
         try:
             self.__characters.remove(character)
         except ValueError:
@@ -122,6 +137,8 @@ class LocationState(ABCGameStateLocation):
 
             return None
         else:
+            character.location = None
+
             logger.debug("Character was removed from location.")
 
             return character
@@ -133,6 +150,6 @@ class LocationState(ABCGameStateLocation):
             logger.exception("Next location is None.")
 
     def __repr__(self):
-        return "<LocationState %s>" % self.coordinates
+        return "<LocationState %s>" % str(self.coordinates)
 
     __str__ = __repr__

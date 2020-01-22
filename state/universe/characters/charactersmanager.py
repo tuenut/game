@@ -1,16 +1,17 @@
 import logging
 
 from abstractions.data import PLAYABLE_CHARACTER
-from state.characters import PlayableCharacterState, NonPlayableCharacter
-from state.characters.base import Character
+from abstractions.gamestate import ABCGameStateCharacter, ABCGameStateCharactersManager
+from .characterobject import PlayableCharacterState, NonPlayableCharacter
+
 
 logger = logging.getLogger(__name__)
 
 
-class CharactersManager:
+class CharactersManager(ABCGameStateCharactersManager):
     def __init__(self, characters_data):
         self.__characters_data = characters_data
-        self.__characters = {}  # type: {str: Character}
+        self.__characters = {}  # type: {str: ABCGameStateCharacter}
         self.player = None
 
         if self.__characters_data is not None:
@@ -36,16 +37,6 @@ class CharactersManager:
             return None
 
     def get_character(self, character):
-        """Character getter.
-
-        Parameters
-        ----------
-        character
-
-        Returns
-        -------
-            character : PlayableCharacterState or NonPlayableCharacter or None
-        """
         if self.__is_valid_character_state_object(character):
             return character
         elif isinstance(character, str):
@@ -60,7 +51,7 @@ class CharactersManager:
         in_characters = False
 
         try:
-            is_character = issubclass(character.__class__, Character)
+            is_character = issubclass(character.__class__, ABCGameStateCharacter)
             in_characters = character.id in self
         except Exception as e:
             result = False
