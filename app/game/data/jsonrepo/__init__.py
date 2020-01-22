@@ -6,9 +6,9 @@ import json
 import logging
 
 from abstractions.data import ABCDataController
-from data.jsonrepo.locations import LocationData
-from data.jsonrepo.characters import CharacterData
-from data.jsonrepo.objects import ObjectData
+from app.game.data.jsonrepo.locations import LocationData
+from app.game.data.jsonrepo.characters import CharacterData
+from app.game.data.jsonrepo.objects import ObjectData
 
 logger = logging.getLogger(__name__)
 

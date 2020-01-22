@@ -1,9 +1,9 @@
 import json
 import copy
 
-from data.jsonrepo.datageneration.characters import Character
-from data.jsonrepo.datageneration.locations import Location
-from data.jsonrepo.datageneration.config import *
+from app.game.data.jsonrepo.datageneration.characters import Character
+from app.game.data.jsonrepo.datageneration.locations import Location
+from app.game.data.jsonrepo.datageneration.config import *
 
 
 def generate_locations():

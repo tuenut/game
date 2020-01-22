@@ -1,16 +1,19 @@
+import logging
 import pygame  # type: ignore
 
-from app.events import ABCEvents
+from app.utils.logger import pp
 from abstractions.data import WEST, EAST, NORTH, SOUTH
 
+logger = logging.getLogger(__name__)
 
-class GameEvents(ABCEvents):
+
+class GameEvents:
     """Класс обработки событий в процессе игры."""
 
     def __init__(self, *args, **kwargs):
         on_player_move = kwargs.get('on_player_move')
         if on_player_move:
-            self.on_player_move = on_player_move.get('callback', self.default_callback)
+            self.on_player_move = on_player_move.get('callback', )
             self.on_player_move_args = on_player_move.get('args', [])
             self.on_player_move_kwargs = on_player_move.get('kwargs', {})
 
@@ -21,6 +24,9 @@ class GameEvents(ABCEvents):
     def on_event(self, event):
         if event.type == pygame.KEYDOWN:
             self.on_press_key(event)
+        elif event.type == pygame.USEREVENT:
+            logger.debug(event.type)
+            self.on_player_move(event.character, event.direction)
 
     def on_press_key(self, event):
         if event.key == pygame.K_LEFT:
@@ -31,3 +37,6 @@ class GameEvents(ABCEvents):
             self.on_player_move(*self.on_player_move_args, NORTH, **self.on_player_move_kwargs)
         elif event.key == pygame.K_DOWN:
             self.on_player_move(*self.on_player_move_args, SOUTH, **self.on_player_move_kwargs)
+
+    def default_callback(self, *args, **kwargs):
+        print("Default callback: do nothing.")

@@ -1,9 +1,9 @@
 import logging
-import pygame # type: ignore
+import pygame  # type: ignore
 
 from app.game import Game
-from app.events import AppEvents
 from app.state import State
+from app.events import EventManager
 
 logger = logging.getLogger(__name__)
 
@@ -31,33 +31,33 @@ class App:
         self.title = self._HINT_IN_TITLE
 
         self.state = State()
-        self.state.run()
 
-        self._init_pygame()
-        self.events = AppEvents(
-            on_exit=self.state.stop,
-        )
+        self.__init_pygame()
+
+        self.events = EventManager()
+        self.events.subscribe(event_type=pygame.QUIT, callback=self.state.stop, )
+        self.events.subscribe(event_type=pygame.KEYDOWN, callback=self.state.stop, conditions={"key": pygame.K_q})
+        self.events.subscribe(event_type=pygame.KEYDOWN, callback=self.state.stop, conditions={"key": pygame.K_ESCAPE})
 
         self.game = Game()
 
     def run(self):
+        self.state.run()
         self.__mainloop()
         self.exit()
 
     def __mainloop(self):
         while self.state.runned:
-            current_events = pygame.event.get()
-
             self._fps_update()
 
-            self.events.check(current_events)
+            self.events.check_events()
 
-            self.game.update(current_events)
+            self.game.update()
 
     def exit(self):
         pygame.quit()
 
-    def _init_pygame(self):
+    def __init_pygame(self):
         pygame.display.init()  # pygame.init() has 100% CPU usage
         self._clock = pygame.time.Clock()
         pygame.display.set_caption(self.title)

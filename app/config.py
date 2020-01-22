@@ -1,5 +1,5 @@
 import os
-from logging import DEBUG
+from logging import DEBUG, INFO
 
 NAME = "game"
 

@@ -2,7 +2,7 @@ import copy
 import json
 from hashlib import sha3_256
 
-from data.jsonrepo.datageneration.locations import Location
+from app.game.data.jsonrepo.datageneration.locations import Location
 
 
 class Character:

@@ -1,9 +1,12 @@
+import pygame
+import random
 import logging
 
 from abstractions.data import ABCDataController
-from abstractions.gamestate import ABCGameStateController, ABCGameStateObject
-from state.universe.locations import LocationsManager
-from state.universe.characters import CharactersManager
+from abstractions.gamestate import ABCGameStateController
+from abstractions.data import DIRECTIONS
+from app.game.state.universe.locations import LocationsManager
+from app.game.state.universe.characters import CharactersManager
 
 logger = logging.getLogger(__name__)
 
@@ -52,5 +55,15 @@ class GameStateController(ABCGameStateController):
         logger.debug("Object moved successfully.")
 
     def update(self):
-        raise NotImplementedError
-
+        pass
+        # if random.choices([0, 1], [2, 10])[0]:
+        #     e = pygame.event.Event(
+        #         pygame.USEREVENT,
+        #         dict(
+        #             character=self.characters.player,
+        #             direction=random.choice(DIRECTIONS),
+        #             custom_type="move_character"
+        #         )
+        #     )
+        #
+        #     pygame.event.post(e)

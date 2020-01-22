@@ -4,7 +4,7 @@ import logging
 
 from typing import List, Mapping, Dict, Any, Union, Optional, Tuple
 
-from app.mainfunctions.logger import pp
+from app.utils.logger import pp
 
 from abstractions.data import WEST, EAST, NORTH, SOUTH
 from abstractions.gamestate import ABCGameStateLocation, ABCGameStateObject, ABCGameStateCharacter

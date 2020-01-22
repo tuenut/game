@@ -1,7 +1,8 @@
 import logging
 import pygame  # type: ignore
 
-from render.config import CELL_SIZE, CELL_BORDER, MAP_MARGIN_Y, MAP_MARGIN_X, EXIT_HEIGHT
+from app.game.render.config import CELL_SIZE, CELL_BORDER, MAP_MARGIN_Y, MAP_MARGIN_X, EXIT_HEIGHT
+from abstractions.gamestate import ABCGameStateCharacter
 
 logger = logging.getLogger(__name__)
 
@@ -11,10 +12,10 @@ class PlayerRenderObject:
 
     color = (255, 200, 0)
 
-    def __init__(self, parent_surface, character_state):
+    def __init__(self, parent_surface, character_state: ABCGameStateCharacter):
         self.parent_surface = parent_surface
 
-        self.surface = pygame.Surface((self.square_size, self.square_size)).convert()
+        self.surface = pygame.Surface((CELL_SIZE, CELL_SIZE)).convert()
         self.surface.fill((255, 0, 255))
         self.surface.set_colorkey((255, 0, 255))
         self.surface.convert_alpha()
@@ -22,10 +23,6 @@ class PlayerRenderObject:
         self.__character = character_state
 
         self.update()
-
-    @property
-    def square_size(self):
-        return CELL_SIZE
 
     @property
     def width(self):
@@ -37,17 +34,17 @@ class PlayerRenderObject:
 
     @property
     def x(self):
-        return self.__character.location.coordinates[0] * self.square_size + MAP_MARGIN_X
+        return self.__character.location.coordinates[0] * CELL_SIZE + MAP_MARGIN_X
 
     @property
     def y(self):
-        return self.__character.location.coordinates[1] * self.square_size + MAP_MARGIN_Y
+        return self.__character.location.coordinates[1] * CELL_SIZE + MAP_MARGIN_Y
 
     def blit(self):
         self.parent_surface.blit(self.surface, (self.x, self.y))
 
     def draw(self):
-        rect = ((self.square_size - self.margin) / 2, (self.square_size - self.margin) / 2, self.margin, self.margin)
+        rect = ((CELL_SIZE - self.margin) / 2, (CELL_SIZE - self.margin) / 2, self.margin, self.margin)
         pygame.draw.rect(self.surface, self.color, rect)
 
     def update(self):

@@ -3,7 +3,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 from app.config import JSON_REPO, REPO_TYPE
-from data.jsonrepo.datageneration import generate_json_repo
+from app.game.data.jsonrepo.datageneration import generate_json_repo
 
 
 def generate_repo(opts, ):

@@ -1,5 +1,5 @@
-from render.locations import LocationsRenderManager
-from render.characters import CharactersRenderManager
+from app.game.render.locations import LocationsRenderManager
+from app.game.render.characters import CharactersRenderManager
 
 
 class WorldRender:

@@ -1,7 +1,7 @@
-from app.mainfunctions.arguments import parse_arguments
-from app.mainfunctions.logger import configure_logger
-from app.mainfunctions.generaterepo import generate_repo
-from app.mainfunctions.main import main
+from app.utils.arguments import parse_arguments
+from app.utils.logger import configure_logger
+from app.utils.generaterepo import generate_repo
+from app.utils.main import main
 
 from app.config import *
 

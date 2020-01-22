@@ -1,9 +1,7 @@
 import logging
 
-from abstractions.data import PLAYABLE_CHARACTER
 from abstractions.gamestate import ABCGameStateCharactersManager
-from render.config import CELL_SIZE, CELL_BORDER, MAP_MARGIN_Y, MAP_MARGIN_X, EXIT_HEIGHT
-from render.characters.player import PlayerRenderObject
+from app.game.render.characters.player import PlayerRenderObject
 
 logger = logging.getLogger(__name__)
 

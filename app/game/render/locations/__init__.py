@@ -1,12 +1,13 @@
 import logging
 
-from render.locations.locationobject import LocationRender
+from abstractions.gamestate import ABCGameStateLocationsManager
+from app.game.render.locations.locationobject import LocationRender
 
 logger = logging.getLogger(__name__)
 
 
 class LocationsRenderManager:
-    def __init__(self, parent_surface, locations_objects):
+    def __init__(self, parent_surface, locations_objects: ABCGameStateLocationsManager):
         self.parent_surface = parent_surface
         self.__locations_state = locations_objects
         self.locations = []
@@ -15,13 +16,7 @@ class LocationsRenderManager:
 
     def __init_draw(self):
         for location in self.__locations_state:
-            x = location.coordinates[0]
-            y = location.coordinates[1]
-
-            location_cell = LocationRender(self.parent_surface, location, x_cell=x, y_cell=y)
-            location_cell.blit()
-
-            self.locations.append(location_cell)
+            self.locations.append(LocationRender(self.parent_surface, location))
 
     def update(self):
         for location in self.locations:

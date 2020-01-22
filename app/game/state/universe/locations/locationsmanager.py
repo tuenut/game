@@ -1,6 +1,6 @@
 import logging
 
-from app.mainfunctions.logger import pp
+from app.utils.logger import pp
 
 from abstractions.gamestate import ABCGameStateObject, ABCGameStateLocationsManager, ABCGameStateCharacter
 from .locationobject import LocationState
