@@ -49,29 +49,29 @@ class LocationData(ABCDataLocation):
         return self.__objects
 
     @property
-    def location_on_south(self):
+    def exit_on_south(self):
         return self.__location_on_south
 
     @property
-    def location_on_west(self):
+    def exit_on_west(self):
         return self.__location_on_west
 
     @property
-    def location_on_east(self):
+    def exit_on_east(self):
         return self.__location_on_east
 
     @property
-    def location_on_north(self):
+    def exit_on_north(self):
         return self.__location_on_north
 
     def dump(self):
         return {
             "id": self.id,
             'exits': {
-                "west": self.location_on_west.dump(),
-                "east": self.location_on_east.dump(),
-                "north": self.location_on_north.dump(),
-                "south": self.location_on_south.dump()
+                "west": self.exit_on_west.dump(),
+                "east": self.exit_on_east.dump(),
+                "north": self.exit_on_north.dump(),
+                "south": self.exit_on_south.dump()
             },
             'characters': self.characters,
             'objects': self.objects,

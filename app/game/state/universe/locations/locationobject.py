@@ -10,15 +10,15 @@ from abstractions.data import WEST, EAST, NORTH, SOUTH
 from abstractions.gamestate import ABCGameStateLocation, ABCGameStateObject, ABCGameStateCharacter
 from .locationexit import LocationExitsManager
 
-logger = logging.getLogger(__name__)
-
 
 class LocationState(ABCGameStateLocation):
     """Класс для хранения состояния ячейки мира"""
     __exits_created = False
 
+    logger = logging.getLogger(__name__)
+
     def __init__(self, location_data):
-        logger.debug("Init location with data:\n%s", pp.pformat(location_data))
+        self.logger.debug("Init location with data:\n%s", pp.pformat(location_data))
 
         self.__location_data = location_data
 
@@ -89,6 +89,8 @@ class LocationState(ABCGameStateLocation):
         return self.__characters
 
     def get_next_location(self, direction):
+        self.logger.debug("Direction <%s>. Exits <%s>", direction, self.exits)
+
         if direction == WEST:
             destination = self.exits.west.next_location
         elif direction == EAST:
@@ -116,7 +118,7 @@ class LocationState(ABCGameStateLocation):
             self.__characters.append(character)
             character.location = self
 
-            logger.debug("Character was added to location.")
+            self.logger.debug("Character was added to location.")
             return character
 
     def remove_object(self, obj):
@@ -133,13 +135,13 @@ class LocationState(ABCGameStateLocation):
         try:
             self.__characters.remove(character)
         except ValueError:
-            logger.debug("Can't remove character from origin location.")
+            self.logger.debug("Can't remove character from origin location.")
 
             return None
         else:
             character.location = None
 
-            logger.debug("Character was removed from location.")
+            self.logger.debug("Character was removed from location.")
 
             return character
 
@@ -147,7 +149,7 @@ class LocationState(ABCGameStateLocation):
         try:
             self.get_next_location(direction).add_object(self.remove_object(obj))
         except AttributeError:
-            logger.exception("Next location is None.")
+            self.logger.exception("Next location is None.")
 
     def __repr__(self):
         return "<LocationState %s>" % str(self.coordinates)

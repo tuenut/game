@@ -49,6 +49,7 @@ class CharactersManager(ABCGameStateCharactersManager):
         if self.__is_valid_character_state_object(character):
             return character
         elif isinstance(character, str):
+            self.logger.debug("Get character by id.")
             return self.__characters.get(character)
         else:
             return None

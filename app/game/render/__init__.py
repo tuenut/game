@@ -10,7 +10,7 @@ class Render:
     BACKGROUND = (0, 0, 0)
     logger = logging.getLogger(__name__)
 
-    def __init__(self, game_state: GameStateController, width=640, height=640, fps=30, ):
+    def __init__(self, game_state: GameStateController, width=640, height=640, fps=30,):
         self.logger.debug("Init Render...")
 
         self.__game_state = game_state

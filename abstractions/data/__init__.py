@@ -119,22 +119,22 @@ class ABCDataLocation(ABCDataEntity, metaclass=ABCMeta):
 
     @property
     @abstractmethod
-    def location_on_south(self) -> ABCDataExit:
+    def exit_on_south(self) -> ABCDataExit:
         ...
 
     @property
     @abstractmethod
-    def location_on_west(self) -> ABCDataExit:
+    def exit_on_west(self) -> ABCDataExit:
         ...
 
     @property
     @abstractmethod
-    def location_on_east(self) -> ABCDataExit:
+    def exit_on_east(self) -> ABCDataExit:
         ...
 
     @property
     @abstractmethod
-    def location_on_north(self) -> ABCDataExit:
+    def exit_on_north(self) -> ABCDataExit:
         ...
 
 

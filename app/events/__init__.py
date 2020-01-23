@@ -4,6 +4,9 @@ import logging
 from typing import Optional
 
 
+MOVE_CHARACTER = 1
+
+
 class __EventManagerSingleton(type):
     def __init__(cls, *args, **kwargs):
         cls.__instance = None
