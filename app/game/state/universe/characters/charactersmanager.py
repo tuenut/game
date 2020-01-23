@@ -1,14 +1,14 @@
 import logging
 
-from abstractions.data import PLAYABLE_CHARACTER
+from app.utils.logger import pp
+from abstractions.data import PLAYABLE_CHARACTER, NON_PLAYABLE_CHARACTER
 from abstractions.gamestate import ABCGameStateCharacter, ABCGameStateCharactersManager
 from .characterobject import PlayableCharacterState, NonPlayableCharacter
 
 
-logger = logging.getLogger(__name__)
-
-
 class CharactersManager(ABCGameStateCharactersManager):
+    logger = logging.getLogger(__name__)
+
     def __init__(self, characters_data):
         self.__characters_data = characters_data
         self.__characters = {}  # type: {str: ABCGameStateCharacter}
@@ -26,15 +26,24 @@ class CharactersManager(ABCGameStateCharactersManager):
             self.create_character(character_dumped_data)
 
     def create_character(self, character_dumped_data: dict):
+        # todo : add check for character already exist
+
+        self.logger.debug("Try to create character \n%s", pp.pformat(character_dumped_data))
+
         if character_dumped_data.get('type') == PLAYABLE_CHARACTER and self.player is None:
             character = PlayableCharacterState(**character_dumped_data)
-
             self.player = character
-            self.__characters.update({character.id: character})
 
-            return character
+            self.logger.debug("Player created.")
+        elif character_dumped_data.get('type') == NON_PLAYABLE_CHARACTER:
+            character = NonPlayableCharacter(**character_dumped_data)
+
+            self.logger.debug("NPC created.")
         else:
             return None
+
+        self.__characters.update({character.id: character})
+        return character
 
     def get_character(self, character):
         if self.__is_valid_character_state_object(character):
@@ -45,7 +54,7 @@ class CharactersManager(ABCGameStateCharactersManager):
             return None
 
     def __is_valid_character_state_object(self, character):
-        logger.debug("Check is %s a valid character", character)
+        self.logger.debug("Check is %s a valid character", character)
 
         is_character = False
         in_characters = False
@@ -58,7 +67,7 @@ class CharactersManager(ABCGameStateCharactersManager):
         else:
             result = is_character and in_characters
 
-        logger.debug("Is character: %s. In characters: %s. Result: %s.", is_character, in_characters, result)
+        self.logger.debug("Is character: %s. In characters: %s. Result: %s.", is_character, in_characters, result)
 
         return result
 

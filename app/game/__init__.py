@@ -25,7 +25,12 @@ class Game:
         self.render = Render(game_state=self.state)
 
         self.events = EventManager()
-        self.events.subscribe(event_type=pygame.KEYDOWN, callback=self.move_player, kwargs=["key"])
+        self.events.subscribe(
+            event_type=pygame.KEYDOWN,
+            callback=self.move_player,
+            conditions={"key": [pygame.K_DOWN, pygame.K_UP, pygame.K_RIGHT, pygame.K_LEFT]},
+            kwargs=["key"]
+        )
 
     def move_player(self, key):
         self.state.move_object(self.state.characters.player, NAVIGATION[key])

@@ -1,19 +1,17 @@
+import logging
 import pygame  # type: ignore
 
 from app.game.render.locations.locationobject import LocationRender
 from app.game.render.world import WorldRender
 from app.game.state import GameStateController
 
-import logging
-
-logger = logging.getLogger(__name__)
-
 
 class Render:
     BACKGROUND = (0, 0, 0)
+    logger = logging.getLogger(__name__)
 
     def __init__(self, game_state: GameStateController, width=640, height=640, fps=30, ):
-        logger.debug("Init Render...")
+        self.logger.debug("Init Render...")
 
         self.__game_state = game_state
 
@@ -31,5 +29,3 @@ class Render:
         self.surface.fill(self.BACKGROUND)
         self.world.update()
         self.screen.blit(self.surface, (0, 0))
-
-

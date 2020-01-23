@@ -18,6 +18,7 @@ class __EventManagerSingleton(type):
 
 class EventManager(metaclass=__EventManagerSingleton):
     logger = logging.getLogger(__name__)
+    logger.level = logging.INFO
 
     def __init__(self):
         self.logger.debug("Init events manager.")
@@ -56,10 +57,17 @@ class EventManager(metaclass=__EventManagerSingleton):
             return True
 
         try:
-            return all([getattr(event, attr) == value for attr, value in conditions.items()])
+            return all([cls.__check_condition(getattr(event, attr), value) for attr, value in conditions.items()])
         except AttributeError:
             cls.logger.debug("Check event <%s> conditions for <%s> not successfull.", event, conditions)
             return False
+
+    @classmethod
+    def __check_condition(cls, event_value, expected_value):
+        if isinstance(expected_value, (list, tuple)):
+            return event_value in expected_value
+        else:
+            return event_value == expected_value
 
     @classmethod
     def __check_event_subtype(cls, event, subtype):

@@ -4,7 +4,8 @@ from typing import List, Tuple, Optional, Union
 from abc import ABCMeta, abstractmethod, ABC
 
 PLAYABLE_CHARACTER = "player"
-CHARACTER_TYPES = (PLAYABLE_CHARACTER,)
+NON_PLAYABLE_CHARACTER = "npc"
+CHARACTER_TYPES = (PLAYABLE_CHARACTER, NON_PLAYABLE_CHARACTER)
 WEST = 'west'
 EAST = 'east'
 NORTH = 'north'
