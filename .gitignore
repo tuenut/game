@@ -2,4 +2,4 @@
 .logs/
 .pytype/
 .mypy_cache/
-__pychache__/
+__pycache__/
