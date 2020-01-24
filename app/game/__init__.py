@@ -1,11 +1,12 @@
 import pygame
 import logging
 
-from app.events import EventManager
-from .data import get_data_object
-from .state import GameStateController
-from .render import Render
-from .config import NAVIGATION
+from app.events import EventManager, MOVE_CHARACTER
+from app.game.data import get_data_object
+from app.game.state import GameStateController
+from app.game.state.aisystem import AISystem
+from app.game.render import Render
+from app.game.config import NAVIGATION
 
 __all__ = ['Game']
 
@@ -22,6 +23,7 @@ class Game:
         self.data = get_data_object()
 
         self.state = GameStateController(data=self.data)
+        self.ai = AISystem(self.state)
         self.render = Render(game_state=self.state)
 
         self.events = EventManager()
@@ -32,9 +34,17 @@ class Game:
             kwargs=["key"]
         )
 
+        self.events.subscribe(
+            pygame.USEREVENT,
+            callback=self.state.move_character,
+            subtype=MOVE_CHARACTER,
+            kwargs=["direction", "character"]
+        )
+
     def move_player(self, key):
         self.state.move_object(self.state.characters.player, NAVIGATION[key])
 
     def update(self):
         self.state.update()
+        self.ai.update()
         self.render.update()
