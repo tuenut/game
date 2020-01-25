@@ -21,7 +21,10 @@ def generate_characters():
     characters_list = []
 
     player = Character(**PLAYER_CHARACTER)
+    npc = Character(**NPC_CHARACTER)
+
     characters_list.append(player.data)
+    characters_list.append(npc.data)
 
     return characters_list
 

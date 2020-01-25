@@ -4,7 +4,6 @@ import logging
 from app.events import EventManager, MOVE_CHARACTER
 from app.game.data import get_data_object
 from app.game.state import GameStateController
-from app.game.state.aisystem import AISystem
 from app.game.render import Render
 from app.game.config import NAVIGATION
 
@@ -23,7 +22,6 @@ class Game:
         self.data = get_data_object()
 
         self.state = GameStateController(data=self.data)
-        self.ai = AISystem(self.state)
         self.render = Render(game_state=self.state)
 
         self.events = EventManager()
@@ -46,5 +44,4 @@ class Game:
 
     def update(self):
         self.state.update()
-        self.ai.update()
         self.render.update()

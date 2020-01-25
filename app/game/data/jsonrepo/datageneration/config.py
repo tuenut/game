@@ -12,3 +12,9 @@ PLAYER_CHARACTER = {
     "name": "player",
     "location": (0, 0)
 }
+
+NPC_CHARACTER = {
+    "type": "npc",
+    "name": "npc",
+    "location": (9, 0)
+}

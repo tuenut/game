@@ -3,7 +3,8 @@ import logging
 from app.utils.logger import pp
 from abstractions.data import PLAYABLE_CHARACTER, NON_PLAYABLE_CHARACTER
 from abstractions.gamestate import ABCGameStateCharacter, ABCGameStateCharactersManager
-from .characterobject import PlayableCharacterState, NonPlayableCharacter
+from app.game.state.characters.playable import PlayableCharacterState
+from app.game.state.characters.nonplayable import NonPlayableCharacter
 
 
 class CharactersManager(ABCGameStateCharactersManager):
@@ -73,4 +74,6 @@ class CharactersManager(ABCGameStateCharactersManager):
         return result
 
     def update(self):
-        raise NotImplementedError
+        for character in self:
+            character.update()
+

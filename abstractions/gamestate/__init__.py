@@ -158,4 +158,21 @@ class ABCGameStateLocationExit(ABCGameStateObject, metaclass=ABCMeta):
 
 
 class ABCGameStateCharacter(ABCGameStateObject, metaclass=ABCMeta):
+    @property
+    @abstractmethod
+    def DEFAULT_NAME(self):
+        ...
+
+    def __repr__(self):
+        return "<Character {type}.{name}, location: {location}>".format(
+            type=self.type, name=self.name, location=self.location
+        )
+
+    __str__ = __repr__
+
+
+class ABCGameStateNonPlayableCharacter(ABCGameStateCharacter, metaclass=ABCMeta):
+    ...
+
+class ABCGameStatePlayableCharacter(ABCGameStateCharacter, metaclass=ABCMeta):
     ...

@@ -1,0 +1,1 @@
+from .npcmazeai import NPCMazeAI

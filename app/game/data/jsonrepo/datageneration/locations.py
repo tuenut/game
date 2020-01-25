@@ -78,27 +78,27 @@ class Location:
     @property
     def south_exit(self):
         if not self.is_location_on_south_edge:
-            return {"location_id": self.location_on_south, 'access': random.choices([True, False], weights=[4, 6])[0]}
+            return {"location_id": self.location_on_south, 'access': True}
         else:
             return self.default_exit
 
     @property
     def west_exit(self):
         if not self.is_location_on_west_edge:
-            return {"location_id": self.location_on_west, 'access': random.choices([True, False], weights=[6, 4])[0]}
+            return {"location_id": self.location_on_west, 'access': True}
         else:
             return self.default_exit
 
     @property
     def east_exit(self):
         if not self.is_location_on_east_edge:
-            return {"location_id": self.location_on_east, 'access': random.choices([True, False], weights=[4, 6])[0]}
+            return {"location_id": self.location_on_east, 'access': True}
         else:
             return self.default_exit
 
     @property
     def north_exit(self):
         if not self.is_location_on_north_edge:
-            return {"location_id": self.location_on_north, 'access': random.choices([True, False], weights=[4, 6])[0]}
+            return {"location_id": self.location_on_north, 'access': True}
         else:
             return self.default_exit

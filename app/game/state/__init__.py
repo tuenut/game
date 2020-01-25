@@ -3,8 +3,8 @@ import logging
 from abstractions.data import ABCDataController
 from abstractions.gamestate import ABCGameStateController
 
-from app.game.state.universe.locations import LocationsManager
-from app.game.state.universe.characters import CharactersManager
+from app.game.state.locations import LocationsManager
+from app.game.state.characters import CharactersManager
 
 
 class GameStateController(ABCGameStateController):
@@ -73,4 +73,4 @@ class GameStateController(ABCGameStateController):
         self.logger.debug("Object moved successfully.")
 
     def update(self):
-        pass
+        self.characters.update()

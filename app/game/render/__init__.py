@@ -4,10 +4,10 @@ import pygame  # type: ignore
 from app.game.render.locations.locationobject import LocationRender
 from app.game.render.world import WorldRender
 from app.game.state import GameStateController
+from app.game.render.config import COLOR_RENDER_BG
 
 
 class Render:
-    BACKGROUND = (0, 0, 0)
     logger = logging.getLogger(__name__)
 
     def __init__(self, game_state: GameStateController, width=640, height=640, fps=30,):
@@ -20,12 +20,12 @@ class Render:
         self.screen = pygame.display.set_mode((self.width, self.height), pygame.DOUBLEBUF)
 
         self.surface = pygame.Surface(self.screen.get_size()).convert()
-        self.surface.fill(self.BACKGROUND)
+        self.surface.fill(COLOR_RENDER_BG)
 
         self.world = WorldRender(self.surface, self.__game_state.locations, self.__game_state.characters)
 
     def update(self):
         pygame.display.flip()
-        self.surface.fill(self.BACKGROUND)
+        self.surface.fill(COLOR_RENDER_BG)
         self.world.update()
         self.screen.blit(self.surface, (0, 0))
