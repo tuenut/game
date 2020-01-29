@@ -1,6 +1,7 @@
 import copy
 import random
 from hashlib import sha3_256
+from .config import DEFAULT_LOCATION_SIZE
 
 
 class Location:
@@ -16,13 +17,15 @@ class Location:
         "coordinates": tuple(),
         "characters": [],
         "objects": [],
-        "id": None
+        "id": None,
+        "size": (0, 0)  # (x, y)
     }
 
-    def __init__(self, x, y, world_range_x, world_range_y):
+    def __init__(self, x, y, world_range_x, world_range_y, location_size=DEFAULT_LOCATION_SIZE):
         self.x = x
         self.y = y
         self.coordinates = (self.x, self.y)
+        self.size = location_size
 
         self.is_location_on_south_edge = (self.y >= max(world_range_y))
         self.is_location_on_west_edge = (self.x <= min(world_range_x))
@@ -33,6 +36,7 @@ class Location:
         self.data["coordinates"] = self.coordinates
         self.data["id"] = self.get_location_id(self.coordinates)
         self.data['exits'] = self.get_exits()
+        self.data['size'] = self.size
 
     def get_exits(self):
         exits = {

@@ -28,7 +28,7 @@ class NPCMazeAI(ABCGameState):
     def choose_direction_of_character_move(self):
         known_map = self.__knowledge.get("map", {})
 
-        current_location_coordinates = self.__character.location.coordinates
+        current_location_coordinates = self.__character.location.position
         current_location = known_map.get(current_location_coordinates)
 
         # заподнить знания о локации, если их нет

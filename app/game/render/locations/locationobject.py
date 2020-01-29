@@ -1,7 +1,8 @@
 import logging
 import pygame
 
-from app.game.render.config import CELL_SIZE, CELL_BORDER, MAP_MARGIN_X, MAP_MARGIN_Y, COLOR_LOCATION_BG, COLOR_RENDER_BG
+from app.game.render.config import CELL_SIZE, CELL_BORDER, MAP_MARGIN_X, MAP_MARGIN_Y, COLOR_LOCATION_BG, \
+    COLOR_RENDER_BG
 from app.game.render.locations.exitsobject import LocationExitsRender
 from abstractions.gamestate import ABCGameStateLocation
 
@@ -18,27 +19,35 @@ class LocationRender:
         self.player = None
 
         if self.__location.characters:
-            logger.debug("Characters on location {}: {}".format(location.coordinates, self.__location.characters))
+            logger.debug("Characters on location {}: {}".format(location.position, self.__location.characters))
 
         self.draw()
 
     @property
     def x(self):
-        return self.__location.coordinates[0] * (CELL_SIZE + CELL_BORDER) + MAP_MARGIN_X
+        return self.__location.position[0] * self.size_x + MAP_MARGIN_X
 
     @property
     def y(self):
-        return self.__location.coordinates[1] * (CELL_SIZE + CELL_BORDER) + MAP_MARGIN_Y
+        return self.__location.position[1] * self.size_y + MAP_MARGIN_Y
+
+    @property
+    def size_x(self):
+        return self.__location.size[0]
+
+    @property
+    def size_y(self):
+        return self.__location.size[1]
 
     def blit(self, ):
         """blit the Ball on the background"""
         self.parent_surface.blit(self.surface, (self.x, self.y))
 
     def draw(self):
-        self.surface = pygame.Surface((CELL_SIZE + CELL_BORDER, CELL_SIZE + CELL_BORDER)).convert()
+        self.surface = pygame.Surface((self.size_x, self.size_y)).convert()
         self.surface.fill(COLOR_RENDER_BG)
-        pygame.draw.rect(self.surface, COLOR_LOCATION_BG, (1, 1, CELL_SIZE, CELL_SIZE))
-        self.exits = LocationExitsRender(self.surface, self.__location.exits)
+        pygame.draw.rect(self.surface, COLOR_LOCATION_BG, (1, 1, self.size_x, self.size_y))
+        # self.exits = LocationExitsRender(self.surface, self.__location.exits)
 
     def update(self):
         self.blit()

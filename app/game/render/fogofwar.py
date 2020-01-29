@@ -31,7 +31,7 @@ class FogOfWar:
         self.surface.fill(self.BACKGROUND)
 
         for character in self.__characters:
-            center_postition = self.__get_center(character.location.coordinates)
+            center_postition = self.__get_center(character.location.position)
             radius = self.FOG_WIDTHS[character.type]
 
             pygame.draw.circle(self.surface, self.ALPHA_COLOR, center_postition, radius)

@@ -24,6 +24,7 @@ class LocationState(ABCGameStateLocation):
 
         self.__get_id()
         self.__get_coordinates()
+        self.__get_size()
 
         self.__characters = self.__location_data['characters']  # type: list
 
@@ -38,6 +39,9 @@ class LocationState(ABCGameStateLocation):
             self.__coordinates = tuple(self.__location_data['coordinates'])  # type: Tuple[int, int]
         else:
             raise TypeError("Wrong coordinates %s for location %s" % (coordinates, self.id))
+
+    def __get_size(self):
+        self.__size = self.__location_data['size']
 
     def update(self):
         raise NotImplementedError
@@ -68,12 +72,16 @@ class LocationState(ABCGameStateLocation):
         raise NotImplementedError
 
     @property
+    def size(self):
+        return self.__size
+
+    @property
     def data(self) -> dict:
         # todo: одно использование для инициализации выходов
         return self.__location_data
 
     @property
-    def coordinates(self):
+    def position(self):
         return self.__coordinates
 
     @property
@@ -152,6 +160,6 @@ class LocationState(ABCGameStateLocation):
             self.logger.exception("Next location is None.")
 
     def __repr__(self):
-        return "<LocationState %s>" % str(self.coordinates)
+        return "<LocationState %s>" % str(self.position)
 
     __str__ = __repr__

@@ -50,11 +50,11 @@ class PlayerRenderObject:
 
     @property
     def x(self):
-        return self.get_x(self.__character.location.coordinates[0])
+        return self.get_x(self.__character.location.position[0])
 
     @property
     def y(self):
-        return self.get_y(self.__character.location.coordinates[1])
+        return self.get_y(self.__character.location.position[1])
 
     def blit(self):
         self.parent_surface.blit(self.surface, (self.x, self.y))

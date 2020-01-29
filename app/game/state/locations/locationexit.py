@@ -4,8 +4,6 @@ from abstractions.gamestate import ABCGameStateLocationExitsManager, ABCGameStat
 from abstractions.data import WEST, EAST, NORTH, SOUTH
 
 
-
-
 class LocationExitsManager(ABCGameStateLocationExitsManager):
     def __init__(self, location_exits: dict):
         self.__exit_on_north = LocationExitState(self, **location_exits[NORTH])
@@ -53,6 +51,10 @@ class LocationExitState(ABCGameStateLocationExit):
         return self.__parent
 
     @property
+    def size(self):
+        raise NotImplementedError
+
+    @property
     def name(self) -> str:
         raise NotImplementedError
 
@@ -65,6 +67,9 @@ class LocationExitState(ABCGameStateLocationExit):
         raise NotImplementedError
 
     def update(self):
+        raise NotImplementedError
+
+    def position(self):
         raise NotImplementedError
 
     def __repr__(self):

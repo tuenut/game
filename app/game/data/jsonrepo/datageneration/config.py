@@ -1,11 +1,15 @@
+from app.game.render.config import CELL_SIZE
+
 DATA_PATTERN = {
     "locations": [],
     "characters": [],
     "objects": [],
 }
 
-RANGE_X = range(10)
-RANGE_Y = range(10)
+RANGE_X = range(4)
+RANGE_Y = range(4)
+
+DEFAULT_LOCATION_SIZE = (CELL_SIZE, CELL_SIZE)
 
 PLAYER_CHARACTER = {
     "type": "player",

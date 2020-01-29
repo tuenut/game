@@ -14,6 +14,7 @@ class LocationData(ABCDataLocation):
     def __init__(self, **kwargs):
         self.__id = kwargs.get('id')
         self.__coordinates = kwargs.get('coordinates')
+        self.__size = kwargs.get('size')
 
         exits = kwargs.get('exits', {})
         self.__location_on_south = ExitData(**exits.get('south'))
@@ -27,6 +28,10 @@ class LocationData(ABCDataLocation):
     @property
     def id(self):
         return self.__id
+
+    @property
+    def size(self):
+        return self.__size
 
     @property
     def type(self):
@@ -75,7 +80,8 @@ class LocationData(ABCDataLocation):
             },
             'characters': self.characters,
             'objects': self.objects,
-            "coordinates": self.coordinates
+            "coordinates": self.coordinates,
+            "size": self.size
         }
 
     def load(self, data):
