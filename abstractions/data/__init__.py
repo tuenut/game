@@ -100,11 +100,11 @@ class ABCDataLocation(ABCDataEntity, metaclass=ABCMeta):
     @property
     def data_fields(self):
         """Fields for data object dump()/load() methods."""
-        return ["id", "objects", "characters", "coordinates", "exits"]
+        return ["id", "objects", "characters", "position", "exits"]
 
     @property
     @abstractmethod
-    def coordinates(self) -> Tuple[int]:
+    def position(self) -> Tuple[int]:
         ...
 
     @property

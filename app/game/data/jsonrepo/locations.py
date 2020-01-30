@@ -42,7 +42,7 @@ class LocationData(ABCDataLocation):
         raise NotImplementedError
 
     @property
-    def coordinates(self):
+    def position(self):
         return self.__coordinates
 
     @property
@@ -80,7 +80,7 @@ class LocationData(ABCDataLocation):
             },
             'characters': self.characters,
             'objects': self.objects,
-            "coordinates": self.coordinates,
+            "coordinates": self.position,
             "size": self.size
         }
 
