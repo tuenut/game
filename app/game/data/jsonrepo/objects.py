@@ -6,7 +6,7 @@ class ObjectData(ABCDataObject):
         pass
 
     @property
-    def data_fields(self):
+    def sirializing_fields(self):
         raise NotImplementedError
 
     @property

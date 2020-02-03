@@ -1,12 +1,14 @@
 from app.config import REPO_TYPE
-from abstractions.data import ABCDataController
+from abstractions.data.datacontroller import ABCDataController
 
-if REPO_TYPE == "json":
-    from app.game.data.jsonrepo import JSONDataController as DataClass
+if REPO_TYPE == "JSON":
+    from app.game.data.jsonrepo import DataController
     from app.config import JSON_REPO as source
+elif REPO_TYPE == "SQLITE":
+    from app.game.data.peeweerepo import DataController
 
 __all__ = ['get_data_object']
 
 
 def get_data_object() -> ABCDataController:
-    return DataClass(source=source)
+    return DataController(source=source)

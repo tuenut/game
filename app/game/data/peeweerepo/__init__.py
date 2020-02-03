@@ -42,3 +42,6 @@ if __name__ == "__main__":
     location = Location(**location_dict)
 
     location.save()
+
+class DataController:
+    pass

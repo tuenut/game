@@ -5,7 +5,7 @@
 import json
 import logging
 
-from abstractions.data import ABCDataController
+from abstractions.data.datacontroller import ABCDataController
 from app.game.data.jsonrepo.locations import LocationData
 from app.game.data.jsonrepo.characters import CharacterData
 from app.game.data.jsonrepo.objects import ObjectData
@@ -13,7 +13,7 @@ from app.game.data.jsonrepo.objects import ObjectData
 logger = logging.getLogger(__name__)
 
 
-class JSONDataController(ABCDataController):
+class DataController(ABCDataController):
     def __init__(self, *args, **kwargs):
         self.__file_path = kwargs.get("source")
 

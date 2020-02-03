@@ -1,6 +1,7 @@
 import logging
 
-from abstractions.data import ABCDataExit, ABCDataLocation
+from abstractions.data import ABCDataLocation
+from abstractions.data.objects import ABCDataExit
 
 logger = logging.getLogger(__name__)
 
@@ -90,7 +91,7 @@ class LocationData(ABCDataLocation):
 
 class ExitData(ABCDataExit):
     @property
-    def data_fields(self):
+    def sirializing_fields(self):
         raise NotImplementedError
 
     def __init__(self, access, location_id):
