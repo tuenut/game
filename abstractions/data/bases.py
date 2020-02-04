@@ -38,10 +38,10 @@ class ABCDataEntity(ABCData, metaclass=ABCMeta):
 class ABCDataMaterialEntityMixin(ABCDataEntity, metaclass=ABCMeta):
     @property
     @abstractmethod
-    def location(self) -> Optional[ABCDataLocation]:
+    def location(self):
         ...
 
     @property
     @abstractmethod
-    def position(self) -> Tuple(int, int):
+    def position(self) -> Tuple[int, int]:
         ...
