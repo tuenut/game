@@ -5,7 +5,7 @@ from app.events import EventManager, MOVE_CHARACTER
 from app.game.data import get_data_object
 from app.game.state import GameStateController
 from app.game.render import Render
-from app.game.config import NAVIGATION
+from config import NAVIGATION
 
 __all__ = ['Game']
 

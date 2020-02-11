@@ -1,8 +1,7 @@
 import logging
 import pygame  # type: ignore
 
-from app.utils.logger import pp
-from abstractions.data import WEST, EAST, NORTH, SOUTH
+from config import WEST, EAST, NORTH, SOUTH
 
 logger = logging.getLogger(__name__)
 

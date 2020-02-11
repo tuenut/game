@@ -1,7 +1,7 @@
 import logging
 
 from app.utils.logger import pp
-from abstractions.data import PLAYABLE_CHARACTER, NON_PLAYABLE_CHARACTER
+from config import PLAYABLE_CHARACTER_TYPE, NON_PLAYABLE_CHARACTER_TYPE
 from abstractions.gamestate import ABCGameStateCharacter, ABCGameStateCharactersManager
 from app.game.state.characters.playable import PlayableCharacterState
 from app.game.state.characters.nonplayable import NonPlayableCharacter
@@ -31,12 +31,12 @@ class CharactersManager(ABCGameStateCharactersManager):
 
         self.logger.debug("Try to create character \n%s", pp.pformat(character_dumped_data))
 
-        if character_dumped_data.get('type') == PLAYABLE_CHARACTER and self.player is None:
+        if character_dumped_data.get('type') == PLAYABLE_CHARACTER_TYPE and self.player is None:
             character = PlayableCharacterState(**character_dumped_data)
             self.player = character
 
             self.logger.debug("Player created.")
-        elif character_dumped_data.get('type') == NON_PLAYABLE_CHARACTER:
+        elif character_dumped_data.get('type') == NON_PLAYABLE_CHARACTER_TYPE:
             character = NonPlayableCharacter(**character_dumped_data)
 
             self.logger.debug("NPC created.")

@@ -1,9 +1,7 @@
 import logging
 import pygame
 
-from app.game.render.config import CELL_SIZE, CELL_BORDER, MAP_MARGIN_X, MAP_MARGIN_Y, COLOR_LOCATION_BG, \
-    COLOR_RENDER_BG
-from app.game.render.locations.exitsobject import LocationExitsRender
+from config import MAP_MARGIN_X, MAP_MARGIN_Y, COLOR_RENDER_BG, COLOR_LOCATION_BG
 from abstractions.gamestate import ABCGameStateLocation
 
 logger = logging.getLogger(__name__)

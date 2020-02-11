@@ -1,47 +1,51 @@
-import peewee
-import json
+from app.game.data.peeweerepo.bases import database, EntityBinding, GameEntity
+from app.game.data.peeweerepo.characters import Character
+from app.game.data.peeweerepo.locations import Location
 
-from hashlib import sha3_256
+from config import PLAYABLE_CHARACTER_TYPE, NON_PLAYABLE_CHARACTER_TYPE
+from app.utils.logger import configure_logger
 
-from app.config import SQLITE_REPO
-from app.game.render.config import CELL_SIZE
-
-database = peewee.SqliteDatabase(SQLITE_REPO)
-
-class BaseModel(peewee.Model):
-    class Meta:
-        database = database
-
-
-class Location(BaseModel):
-    position_x = peewee.IntegerField()
-    position_y = peewee.IntegerField()
-    object_id = peewee.CharField(max_length=64, default=None, null=True, unique=True)
-    object_type = peewee.CharField(max_length=16, default=None, null=True)
-    object_name = peewee.CharField(max_length=16, default=None, null=True)
-    object_size_x = peewee.IntegerField(default=CELL_SIZE)
-    object_size_y = peewee.IntegerField(default=CELL_SIZE)
-
-
-def generate_object_id(obj: dict):
-    serrialized_object = {key: val for key, val in obj.items() if key != 'object_id'}
-    stringified_object = json.dumps(serrialized_object).encode()
-    object_id = sha3_256(stringified_object).hexdigest()
-
-    return object_id
-
-
-if __name__ == "__main__":
-    database.connect()
-    database.drop_tables([Location])
-    database.create_tables([Location])
-
-    location_dict = {'position_x': 0, 'position_y': 0, 'object_type': "location"}
-    location_dict['object_id'] = generate_object_id(location_dict)
-
-    location = Location(**location_dict)
-
-    location.save()
 
 class DataController:
     pass
+
+
+if __name__ == "__main__":
+    logger = configure_logger()
+
+    with database.connection_context():
+        database.drop_tables([Location, GameEntity, Character])
+        logger.debug(database.get_tables())
+
+        if not database.get_tables():
+            database.create_tables([Location, GameEntity, Character])
+
+            locations = [
+                {
+                    'position_x': 0,
+                    'position_y': 0,
+                    'ingame_type': "location"
+                },
+                {
+                    'position_x': 1,
+                    'position_y': 1,
+                    'ingame_type': "location"
+                },
+            ]
+
+            for location in locations:
+                Location.create(**location)
+
+            characters = [
+                {
+                    'ingame_type': PLAYABLE_CHARACTER_TYPE,
+                    'ingame_name': 'test_player',
+                },
+                {
+                    'ingame_type': NON_PLAYABLE_CHARACTER_TYPE,
+                    'ingame_name': 'test_npc',
+                },
+            ]
+
+            for character in characters:
+                Character.create(**character)

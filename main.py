@@ -3,7 +3,7 @@ from app.utils.logger import configure_logger
 from app.utils.generaterepo import generate_repo
 from app.utils.main import main
 
-from app.config import *
+from config import *
 
 if __name__ == "__main__":
     logger = configure_logger()

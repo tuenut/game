@@ -1,5 +1,12 @@
+# todo: design config structure.
 import os
+import pygame
+
 from logging import DEBUG, INFO
+
+#############################
+####  Base app settings  ####
+#############################
 
 NAME = "game"
 
@@ -58,3 +65,45 @@ LOGGING = {
         },
     }
 }
+
+#######################
+####  Data config  ####
+#######################
+
+PLAYABLE_CHARACTER_TYPE = 0
+NON_PLAYABLE_CHARACTER_TYPE = 1
+CHARACTER_TYPES = (PLAYABLE_CHARACTER_TYPE, NON_PLAYABLE_CHARACTER_TYPE)
+WEST = 0
+EAST = 1
+NORTH = 2
+SOUTH = 3
+DIRECTIONS = [WEST, EAST, NORTH, SOUTH]
+
+####################
+####  Controls  ####
+####################
+
+NAVIGATION = {
+    pygame.K_LEFT: WEST,
+    pygame.K_RIGHT: EAST,
+    pygame.K_UP: NORTH,
+    pygame.K_DOWN: SOUTH,
+}
+
+###########################
+####  Render settings  ####
+###########################
+
+CELL_SIZE = 62 * 3
+EXIT_HEIGHT = 8
+EXIT_WIDTH = CELL_SIZE / 2
+MAP_MARGIN_X = 5
+MAP_MARGIN_Y = 5
+CELL_BORDER = 1
+COLOR_RENDER_BG = (0, 0, 0)
+COLOR_LOCATION_BG = (100, 100, 100)
+COLOR_EXIT_ACCESSIBLE = COLOR_LOCATION_BG
+COLOR_EXIT_INACCESSIBLE = COLOR_RENDER_BG
+FOG_OF_WAR = False
+
+#######################

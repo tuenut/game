@@ -2,7 +2,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-from app.config import JSON_REPO, REPO_TYPE
+from config import JSON_REPO, REPO_TYPE
 from app.game.data.jsonrepo.datageneration import generate_json_repo
 
 

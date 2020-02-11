@@ -1,6 +1,6 @@
 import logging
 
-from abstractions.data.datacontroller import ABCDataController
+from abstractions.data import ABCDataController
 from abstractions.gamestate import ABCGameStateController
 
 from app.game.state.locations import LocationsManager

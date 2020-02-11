@@ -5,7 +5,7 @@ import pygame
 from datetime import timedelta as td, datetime as dt
 
 from app.events import EventManager, MOVE_CHARACTER
-from abstractions.data import EAST, NORTH, WEST, SOUTH
+from config import WEST, EAST, NORTH, SOUTH
 from abstractions.gamestate import ABCGameState
 
 

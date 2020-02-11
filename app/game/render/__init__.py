@@ -4,7 +4,7 @@ import pygame  # type: ignore
 from app.game.render.locations.locationobject import LocationRender
 from app.game.render.world import WorldRender
 from app.game.state import GameStateController
-from app.game.render.config import COLOR_RENDER_BG
+from config import COLOR_RENDER_BG
 
 
 class Render:

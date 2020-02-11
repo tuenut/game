@@ -1,7 +1,7 @@
 import logging
 import pygame  # type: ignore
 
-from app.game.render.config import CELL_SIZE, EXIT_WIDTH, EXIT_HEIGHT, COLOR_EXIT_ACCESSIBLE, COLOR_EXIT_INACCESSIBLE
+from config import CELL_SIZE, EXIT_HEIGHT, EXIT_WIDTH, COLOR_EXIT_ACCESSIBLE, COLOR_EXIT_INACCESSIBLE
 
 
 class LocationExitsRender:

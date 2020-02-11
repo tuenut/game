@@ -1,4 +1,4 @@
-from app.game.render.config import CELL_SIZE
+from config import CELL_SIZE
 
 DATA_PATTERN = {
     "locations": [],

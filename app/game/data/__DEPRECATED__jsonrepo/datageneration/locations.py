@@ -2,15 +2,16 @@ import copy
 import random
 from hashlib import sha3_256
 from .config import DEFAULT_LOCATION_SIZE
+from config import WEST, EAST, SOUTH, NORTH
 
 
 class Location:
     DEFAULT_EXIT = {"location_id": None, "access": None}
     EXITS_PATTERN = {
-        "west": copy.deepcopy(DEFAULT_EXIT),
-        "east": copy.deepcopy(DEFAULT_EXIT),
-        "south": copy.deepcopy(DEFAULT_EXIT),
-        "north": copy.deepcopy(DEFAULT_EXIT)
+        WEST: copy.deepcopy(DEFAULT_EXIT),
+        EAST: copy.deepcopy(DEFAULT_EXIT),
+        SOUTH: copy.deepcopy(DEFAULT_EXIT),
+        NORTH: copy.deepcopy(DEFAULT_EXIT)
     }
     LOCATION_PATTERN = {
         "exits": copy.deepcopy(EXITS_PATTERN),
@@ -40,10 +41,10 @@ class Location:
 
     def get_exits(self):
         exits = {
-            "south": self.south_exit,
-            "west": self.west_exit,
-            "east": self.east_exit,
-            "north": self.north_exit,
+            SOUTH: self.south_exit,
+            WEST: self.west_exit,
+            EAST: self.east_exit,
+            NORTH: self.north_exit,
         }
 
         return exits

@@ -1,8 +1,7 @@
 import logging
 import pygame  # type: ignore
 
-from abstractions.data import PLAYABLE_CHARACTER, NON_PLAYABLE_CHARACTER
-from app.game.render.config import CELL_SIZE, CELL_BORDER, MAP_MARGIN_Y, MAP_MARGIN_X, EXIT_HEIGHT
+from config import PLAYABLE_CHARACTER_TYPE, NON_PLAYABLE_CHARACTER_TYPE, CELL_SIZE, EXIT_HEIGHT, MAP_MARGIN_X, CELL_BORDER
 from abstractions.gamestate import ABCGameStateCharacter
 
 logger = logging.getLogger(__name__)
@@ -12,8 +11,8 @@ class PlayerRenderObject:
     """Класс отвечает за отрисовку одной двери в ячейке/на локации."""
 
     COLORS = {
-        PLAYABLE_CHARACTER: (255, 200, 0),
-        NON_PLAYABLE_CHARACTER: (255, 0, 200, )
+        PLAYABLE_CHARACTER_TYPE: (255, 200, 0),
+        NON_PLAYABLE_CHARACTER_TYPE: (255, 0, 200,)
     }
 
     @classmethod

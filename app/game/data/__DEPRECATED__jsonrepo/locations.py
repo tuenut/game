@@ -1,14 +1,15 @@
 import logging
 
-from abstractions.data import ABCDataLocation
-from abstractions.data.objects import ABCDataExit
+from abstractions.data import ABCLocationData
+from abstractions.data import ABCLocationJunctionData
+from config import WEST, EAST, NORTH, SOUTH
 
 logger = logging.getLogger(__name__)
 
 __all__ = ['LocationData']
 
 
-class LocationData(ABCDataLocation):
+class LocationData(ABCLocationData):
     __characters = None
     __objects = None
 
@@ -18,10 +19,10 @@ class LocationData(ABCDataLocation):
         self.__size = kwargs.get('size')
 
         exits = kwargs.get('exits', {})
-        self.__location_on_south = ExitData(**exits.get('south'))
-        self.__location_on_west = ExitData(**exits.get('west'))
-        self.__location_on_east = ExitData(**exits.get('east'))
-        self.__location_on_north = ExitData(**exits.get('north'))
+        self.__location_on_south = ExitData(**exits.get(SOUTH))
+        self.__location_on_west = ExitData(**exits.get(WEST))
+        self.__location_on_east = ExitData(**exits.get(EAST))
+        self.__location_on_north = ExitData(**exits.get(NORTH))
 
         self.__characters = kwargs.get('characters', [])
         self.__objects = kwargs.get('objects', [])
@@ -89,7 +90,7 @@ class LocationData(ABCDataLocation):
         raise NotImplementedError
 
 
-class ExitData(ABCDataExit):
+class ExitData(ABCLocationJunctionData):
     @property
     def sirializing_fields(self):
         raise NotImplementedError

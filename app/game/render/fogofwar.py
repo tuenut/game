@@ -2,15 +2,14 @@ import logging
 
 import pygame
 
-from abstractions.data import PLAYABLE_CHARACTER, NON_PLAYABLE_CHARACTER
+from config import PLAYABLE_CHARACTER_TYPE, NON_PLAYABLE_CHARACTER_TYPE, CELL_SIZE, FOG_OF_WAR
 from app.game.render.characters import PlayerRenderObject
-from app.game.render.config import CELL_SIZE, FOG_OF_WAR
 
 
 class FogOfWar:
     FOG_WIDTHS = {
-        PLAYABLE_CHARACTER: int(CELL_SIZE * 2),
-        NON_PLAYABLE_CHARACTER: int(CELL_SIZE / 3),
+        PLAYABLE_CHARACTER_TYPE: int(CELL_SIZE * 2),
+        NON_PLAYABLE_CHARACTER_TYPE: int(CELL_SIZE / 3),
     }
     BACKGROUND = (0, 0, 0)
     ALPHA_COLOR = (255, 0, 255)

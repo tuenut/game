@@ -1,3 +1,5 @@
+from config import WEST, EAST, NORTH, SOUTH
+
 LOCATION_ID_ONE = "0.0"
 LOCATION_ID_TWO = "0.1"
 
@@ -11,10 +13,10 @@ CHARACTER_MOVED = {**CHARACTER, "location_id": LOCATION_ID_TWO}
 LOCATION = {
     "location_id": LOCATION_ID_ONE,
     "exits": {
-        "west": False,
-        "east": True,
-        "north": True,
-        "south": False
+        WEST: False,
+        EAST: True,
+        NORTH: True,
+        SOUTH: False
     },
     "characters": [CHARACTER, ],
     "objects": []
