@@ -2,7 +2,7 @@
 import os
 import pygame
 
-from logging import DEBUG, INFO
+from logging import DEBUG
 
 #############################
 ####  Base app settings  ####
@@ -69,9 +69,6 @@ LOGGING = {
 ####  Data config  ####
 #######################
 
-PLAYABLE_CHARACTER_TYPE = 0
-NON_PLAYABLE_CHARACTER_TYPE = 1
-CHARACTER_TYPES = (PLAYABLE_CHARACTER_TYPE, NON_PLAYABLE_CHARACTER_TYPE)
 WEST = 0
 EAST = 1
 NORTH = 2

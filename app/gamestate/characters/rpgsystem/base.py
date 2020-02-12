@@ -3,12 +3,12 @@ import logging
 from app.utils.logger import pp
 
 
-from app.game.state.characters.rpgsystem.atributes import Attributes
-from app.game.state.characters.rpgsystem.classes import CharacterClass
-from app.game.state.characters.rpgsystem.races import CharacterRace
-from app.game.state.characters.rpgsystem.actions import CharacterMoving
-from app.game.state.characters.rpgsystem.actions import CharacterAttack
-from app.game.state.characters.rpgsystem.actions import CharacterInterraction
+from app.gamestate.characters.rpgsystem.atributes import Attributes
+from app.gamestate.characters.rpgsystem.classes import CharacterClass
+from app.gamestate.characters.rpgsystem.races import CharacterRace
+from app.gamestate.characters.rpgsystem.actions import CharacterMoving
+from app.gamestate.characters.rpgsystem.actions import CharacterAttack
+from app.gamestate.characters.rpgsystem.actions import CharacterInterraction
 
 logger = logging.getLogger(__name__)
 

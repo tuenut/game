@@ -2,7 +2,8 @@ import logging
 
 import pygame
 
-from config import PLAYABLE_CHARACTER_TYPE, NON_PLAYABLE_CHARACTER_TYPE, CELL_SIZE, FOG_OF_WAR
+from config import CELL_SIZE, FOG_OF_WAR
+from app.data.config import PLAYABLE_CHARACTER_TYPE, NON_PLAYABLE_CHARACTER_TYPE
 from app.render.characters import PlayerRenderObject
 
 

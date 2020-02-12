@@ -1,7 +1,7 @@
 import logging
 
 from app.utils.logger import pp
-from config import PLAYABLE_CHARACTER_TYPE, NON_PLAYABLE_CHARACTER_TYPE
+from app.data.config import PLAYABLE_CHARACTER_TYPE, NON_PLAYABLE_CHARACTER_TYPE
 from abstractions.gamestate import ABCGameStateCharacter, ABCGameStateCharactersManager
 from app.gamestate.characters.playable import PlayableCharacterState
 from app.gamestate.characters.nonplayable import NonPlayableCharacter

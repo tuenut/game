@@ -1,7 +1,8 @@
 import logging
 import pygame  # type: ignore
 
-from config import PLAYABLE_CHARACTER_TYPE, NON_PLAYABLE_CHARACTER_TYPE, CELL_SIZE, EXIT_HEIGHT, MAP_MARGIN_X, CELL_BORDER
+from config import CELL_SIZE, EXIT_HEIGHT, MAP_MARGIN_X, CELL_BORDER
+from app.data.config import PLAYABLE_CHARACTER_TYPE, NON_PLAYABLE_CHARACTER_TYPE
 from abstractions.gamestate import ABCGameStateCharacter
 
 logger = logging.getLogger(__name__)

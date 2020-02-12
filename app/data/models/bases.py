@@ -18,9 +18,14 @@ class BaseModel(peewee.Model):
         database = database
 
 
+class GameEntityTypes(BaseModel):
+    type_id = peewee.IntegerField(default=0, unique=True)
+    description = peewee.CharField(max_length=255, default=None, null=True)
+
+
 class GameEntity(BaseModel):
     ingame_id = peewee.CharField(max_length=64, default=None, null=True, unique=True)
-    ingame_type = peewee.CharField(max_length=16)
+    ingame_type = peewee.ForeignKeyField(GameEntityTypes, default=None, null=True, backref="entities")
     ingame_name = peewee.CharField(max_length=16, default=None, null=True, )
 
     def load(self, data: dict):
@@ -55,12 +60,13 @@ class EntityBinding(BaseModel):
         instance = super().create(**self_class_kwargs)
 
         instance.entity = cls._create_entity_binding(instance, **query)
+        instance.save()
 
         return instance
 
     @classmethod
     def _create_entity_binding(cls, instance, **query):
-        ingame_type = query.get('ingame_type')
+        ingame_type = GameEntityTypes.get(type_id=query.get('ingame_type'))
         ingame_name = query.get('ingame_name')
 
         serrialized_data = {
@@ -70,7 +76,7 @@ class EntityBinding(BaseModel):
         }
         serrialized_data.update(
             {
-                'ingame_type': ingame_type,
+                'ingame_type': query.get('ingame_type'),
                 'ingame_name': ingame_name,
                 'created': serrialized_data['created'].timestamp()
             }
