@@ -8,6 +8,7 @@ from app import App
 def main():
     try:
         App().run()
-    except Exception as e:
-        logger.exception("")
-        exit(1)
+    except Exception as exception:
+        logger.exception("Some exception on `App().run()`.")
+
+        raise exception

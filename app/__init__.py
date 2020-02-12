@@ -2,7 +2,7 @@ import logging
 import pygame  # type: ignore
 
 from app.game import Game
-from app.state import State
+from app.appstate import State
 from app.events import EventManager
 
 logger = logging.getLogger(__name__)

@@ -24,7 +24,6 @@ BASE_DIR = init_base_dir_path()
 LOG_DIR = os.path.join(BASE_DIR, '.logs')
 
 REPO_TYPE = "SQLITE"
-JSON_REPO = os.path.join(BASE_DIR, 'repo.json')
 SQLITE_REPO = os.path.join(BASE_DIR, 'sqlite_repo.db')
 
 LOG_LEVEL = DEBUG

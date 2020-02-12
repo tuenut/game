@@ -3,7 +3,6 @@ import logging
 
 from typing import Optional
 
-
 MOVE_CHARACTER = 1
 
 

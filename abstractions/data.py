@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod, ABCMeta
-from typing import List
+from typing import List, Tuple, Optional
 
 from abstractions.bases import ABCNonPlayableCharacter, ABCPlayableCharacter, ABCLocation, ABCInGameObject, \
-    ABCLocationJunction, ABCInGameEntity
+    ABCLocationJunction, ABCInGameEntity, ABCCharacter
 
 __all__ = [
     'ABCData', 'ABCNonPlayableCharacterData', 'ABCPlayableCharacterData', 'ABCInGameObjectData', 'ABCLocationData',
@@ -23,28 +23,165 @@ class ABCData(ABC):
         """Serialize data from self to jsonable dict."""
         ...
 
+
 class ABCInGameEntityData(ABCInGameEntity, ABCData, metaclass=ABCMeta):
+    @property
+    @abstractmethod
+    def ingame_id(self) -> str:
+        ...
+
+    @property
+    @abstractmethod
+    def ingame_name(self) -> str:
+        ...
+
+    @property
+    @abstractmethod
+    def ingame_type(self) -> str:
+        ...
+
+    @abstractmethod
+    def load(self, data: dict):
+        ...
+
+    @abstractmethod
+    def dump(self) -> dict:
+        ...
+
+
+class ABCCharacterData(ABCCharacter, ABCInGameEntityData, metaclass=ABCMeta):
+    @property
+    @abstractmethod
+    def location(self) -> Optional[ABCLocation]:
+        ...
+
+    @property
+    @abstractmethod
+    def position(self) -> Tuple[int, int]:
+        ...
+
+    @property
+    @abstractmethod
+    def size(self) -> Tuple[int, int]:
+        ...
+
+    @property
+    @abstractmethod
+    def ingame_id(self) -> str:
+        ...
+
+    @property
+    @abstractmethod
+    def ingame_name(self) -> str:
+        ...
+
+    @property
+    @abstractmethod
+    def ingame_type(self) -> str:
+        ...
+
+    @abstractmethod
+    def load(self, data: dict):
+        ...
+
+    @abstractmethod
+    def dump(self) -> dict:
+        ...
+
+
+class ABCNonPlayableCharacterData(ABCNonPlayableCharacter, ABCCharacterData, metaclass=ABCMeta):
     ...
 
 
-class ABCNonPlayableCharacterData(ABCNonPlayableCharacter, ABCData, metaclass=ABCMeta):
+class ABCPlayableCharacterData(ABCPlayableCharacter, ABCCharacterData, metaclass=ABCMeta):
     ...
 
 
-class ABCPlayableCharacterData(ABCPlayableCharacter, ABCData, metaclass=ABCMeta):
-    ...
+class ABCInGameObjectData(ABCInGameObject, ABCInGameEntityData, metaclass=ABCMeta):
+    @property
+    @abstractmethod
+    def location(self) -> Optional[ABCLocation]:
+        ...
+
+    @property
+    @abstractmethod
+    def position(self) -> Tuple[int, int]:
+        ...
+
+    @property
+    @abstractmethod
+    def size(self) -> Tuple[int, int]:
+        ...
+
+    @property
+    @abstractmethod
+    def ingame_id(self) -> str:
+        ...
+
+    @property
+    @abstractmethod
+    def ingame_name(self) -> str:
+        ...
+
+    @property
+    @abstractmethod
+    def ingame_type(self) -> str:
+        ...
+
+    @abstractmethod
+    def load(self, data: dict):
+        ...
+
+    @abstractmethod
+    def dump(self) -> dict:
+        ...
 
 
-class ABCInGameObjectData(ABCInGameObject, ABCData, metaclass=ABCMeta):
-    ...
+class ABCLocationJunctionData(ABCLocationJunction, ABCInGameObjectData, metaclass=ABCMeta):
+    @property
+    @abstractmethod
+    def next_location(self) -> Optional[ABCInGameObject]:
+        ...
 
 
-class ABCLocationJunctionData(ABCLocationJunction, metaclass=ABCMeta):
-    ...
+class ABCLocationData(ABCLocation, ABCInGameEntityData, metaclass=ABCMeta):
+    @property
+    @abstractmethod
+    def size(self) -> Tuple[int, int]:
+        ...
 
+    @property
+    @abstractmethod
+    def objects(self) -> List[ABCInGameObject]:
+        ...
 
-class ABCLocationData(ABCLocation, ABCData, metaclass=ABCMeta):
-    ...
+    @property
+    @abstractmethod
+    def characters(self) -> List[ABCCharacter]:
+        ...
+
+    @property
+    @abstractmethod
+    def ingame_id(self) -> str:
+        ...
+
+    @property
+    @abstractmethod
+    def ingame_name(self) -> str:
+        ...
+
+    @property
+    @abstractmethod
+    def ingame_type(self) -> str:
+        ...
+
+    @abstractmethod
+    def load(self, data: dict):
+        ...
+
+    @abstractmethod
+    def dump(self) -> dict:
+        ...
 
 
 class ABCDataController(ABCData, metaclass=ABCMeta):
@@ -63,10 +200,10 @@ class ABCDataController(ABCData, metaclass=ABCMeta):
 
     @property
     @abstractmethod
-    def objects(self) -> List[ABCInGameObjectData, ABCLocationJunctionData, ...]:
+    def objects(self) -> List[ABCInGameObjectData]:
         ...
 
     @property
     @abstractmethod
-    def characters(self) -> List[ABCPlayableCharacterData, ABCNonPlayableCharacterData, ...]:
+    def characters(self) -> List[ABCCharacterData]:
         ...

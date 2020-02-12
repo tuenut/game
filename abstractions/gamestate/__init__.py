@@ -6,7 +6,8 @@ from abc import ABC, abstractmethod, ABCMeta
 __all__ = [
     "ABCGameState", "ABCGameStateController", "ABCGameStateLocationsManager", "ABCGameStateEntity",
     "ABCGameStateLocation", "ABCGameStateLocationExitsManager", "ABCGameStateObject", "ABCGameStateLocationExit",
-    "ABCGameStateCharacter", "ABCGameStateCharactersManager"
+    "ABCGameStateCharacter", "ABCGameStateCharactersManager", "ABCGameStatePlayableCharacter",
+    "ABCGameStateNonPlayableCharacter"
 ]
 
 
