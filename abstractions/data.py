@@ -3,12 +3,12 @@ from __future__ import annotations
 from abc import ABC, abstractmethod, ABCMeta
 from typing import List, Tuple, Optional
 
-from abstractions.bases import ABCNonPlayableCharacter, ABCPlayableCharacter, ABCLocation, ABCInGameObject, \
-    ABCLocationJunction, ABCInGameEntity, ABCCharacter
+from abstractions.bases import ABCNonPlayableCharacter, ABCPlayableCharacter, ABCLocation, ABCObject, \
+    ABCLocationJunction, ABCEntity, ABCCharacter
 
 __all__ = [
     'ABCData', 'ABCNonPlayableCharacterData', 'ABCPlayableCharacterData', 'ABCInGameObjectData', 'ABCLocationData',
-    'ABCLocationJunctionData', 'ABCDataController', 'ABCInGameEntityData'
+    'ABCLocationJunctionData', 'ABCDataController', 'ABCEntityData'
 ]
 
 
@@ -24,20 +24,20 @@ class ABCData(ABC):
         ...
 
 
-class ABCInGameEntityData(ABCInGameEntity, ABCData, metaclass=ABCMeta):
+class ABCEntityData(ABCEntity, ABCData, metaclass=ABCMeta):
     @property
     @abstractmethod
-    def ingame_id(self) -> str:
+    def uuid(self) -> str:
         ...
 
     @property
     @abstractmethod
-    def ingame_name(self) -> str:
+    def name(self) -> str:
         ...
 
     @property
     @abstractmethod
-    def ingame_type(self) -> str:
+    def type(self) -> str:
         ...
 
     @abstractmethod
@@ -49,7 +49,7 @@ class ABCInGameEntityData(ABCInGameEntity, ABCData, metaclass=ABCMeta):
         ...
 
 
-class ABCCharacterData(ABCCharacter, ABCInGameEntityData, metaclass=ABCMeta):
+class ABCCharacterData(ABCCharacter, ABCEntityData, metaclass=ABCMeta):
     @property
     @abstractmethod
     def location(self) -> Optional[ABCLocation]:
@@ -67,17 +67,17 @@ class ABCCharacterData(ABCCharacter, ABCInGameEntityData, metaclass=ABCMeta):
 
     @property
     @abstractmethod
-    def ingame_id(self) -> str:
+    def uuid(self) -> str:
         ...
 
     @property
     @abstractmethod
-    def ingame_name(self) -> str:
+    def name(self) -> str:
         ...
 
     @property
     @abstractmethod
-    def ingame_type(self) -> str:
+    def type(self) -> str:
         ...
 
     @abstractmethod
@@ -97,7 +97,7 @@ class ABCPlayableCharacterData(ABCPlayableCharacter, ABCCharacterData, metaclass
     ...
 
 
-class ABCInGameObjectData(ABCInGameObject, ABCInGameEntityData, metaclass=ABCMeta):
+class ABCInGameObjectData(ABCObject, ABCEntityData, metaclass=ABCMeta):
     @property
     @abstractmethod
     def location(self) -> Optional[ABCLocation]:
@@ -115,17 +115,17 @@ class ABCInGameObjectData(ABCInGameObject, ABCInGameEntityData, metaclass=ABCMet
 
     @property
     @abstractmethod
-    def ingame_id(self) -> str:
+    def uuid(self) -> str:
         ...
 
     @property
     @abstractmethod
-    def ingame_name(self) -> str:
+    def name(self) -> str:
         ...
 
     @property
     @abstractmethod
-    def ingame_type(self) -> str:
+    def type(self) -> str:
         ...
 
     @abstractmethod
@@ -140,11 +140,11 @@ class ABCInGameObjectData(ABCInGameObject, ABCInGameEntityData, metaclass=ABCMet
 class ABCLocationJunctionData(ABCLocationJunction, ABCInGameObjectData, metaclass=ABCMeta):
     @property
     @abstractmethod
-    def next_location(self) -> Optional[ABCInGameObject]:
+    def next_location(self) -> Optional[ABCObject]:
         ...
 
 
-class ABCLocationData(ABCLocation, ABCInGameEntityData, metaclass=ABCMeta):
+class ABCLocationData(ABCLocation, ABCEntityData, metaclass=ABCMeta):
     @property
     @abstractmethod
     def size(self) -> Tuple[int, int]:
@@ -152,7 +152,7 @@ class ABCLocationData(ABCLocation, ABCInGameEntityData, metaclass=ABCMeta):
 
     @property
     @abstractmethod
-    def objects(self) -> List[ABCInGameObject]:
+    def objects(self) -> List[ABCObject]:
         ...
 
     @property
@@ -162,17 +162,17 @@ class ABCLocationData(ABCLocation, ABCInGameEntityData, metaclass=ABCMeta):
 
     @property
     @abstractmethod
-    def ingame_id(self) -> str:
+    def uuid(self) -> str:
         ...
 
     @property
     @abstractmethod
-    def ingame_name(self) -> str:
+    def name(self) -> str:
         ...
 
     @property
     @abstractmethod
-    def ingame_type(self) -> str:
+    def type(self) -> str:
         ...
 
     @abstractmethod

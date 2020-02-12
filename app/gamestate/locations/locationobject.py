@@ -7,11 +7,11 @@ from typing import Tuple
 from app.utils.logger import pp
 
 from config import WEST, EAST, NORTH, SOUTH
-from abstractions.gamestate import ABCGameStateLocation, ABCGameStateObject, ABCGameStateCharacter
+from abstractions.gamestate import ABCLocationGameState, ABCGameStateObject, ABCGameStateCharacter
 from .locationexit import LocationExitsManager
 
 
-class LocationState(ABCGameStateLocation):
+class LocationState(ABCLocationGameState):
     """Класс для хранения состояния ячейки мира"""
     __exits_created = False
 

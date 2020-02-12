@@ -2,13 +2,13 @@ import logging
 import pygame
 
 from config import MAP_MARGIN_X, MAP_MARGIN_Y, COLOR_RENDER_BG, COLOR_LOCATION_BG
-from abstractions.gamestate import ABCGameStateLocation
+from abstractions.gamestate import ABCLocationGameState
 
 logger = logging.getLogger(__name__)
 
 
 class LocationRender:
-    def __init__(self, parent_surface, location: ABCGameStateLocation):
+    def __init__(self, parent_surface, location: ABCLocationGameState):
         self.parent_surface = parent_surface
 
         self.__location = location

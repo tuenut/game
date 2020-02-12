@@ -4,29 +4,29 @@ from abc import ABC, abstractmethod, ABCMeta
 from typing import Optional, Tuple, List
 
 __all__ = [
-    'ABCInGameEntity', 'ABCLocation', 'ABCCharacter', 'ABCLocationJunction', 'ABCPlayableCharacter', 'ABCInGameObject',
+    'ABCEntity', 'ABCLocation', 'ABCCharacter', 'ABCLocationJunction', 'ABCPlayableCharacter', 'ABCObject',
     'ABCNonPlayableCharacter', 'ABCDoorObject', 'ABCItemObject', 'ABCMoveableObject', 'ABCObstructiveObject'
 ]
 
 
-class ABCInGameEntity(ABC):
+class ABCEntity(ABC):
     @property
     @abstractmethod
-    def ingame_id(self) -> str:
+    def uuid(self) -> str:
         ...
 
     @property
     @abstractmethod
-    def ingame_name(self) -> str:
+    def name(self) -> str:
         ...
 
     @property
     @abstractmethod
-    def ingame_type(self) -> str:
+    def type(self) -> str:
         ...
 
 
-class ABCLocation(ABCInGameEntity, metaclass=ABCMeta):
+class ABCLocation(ABCEntity, metaclass=ABCMeta):
     @property
     @abstractmethod
     def size(self) -> Tuple[int, int]:
@@ -34,7 +34,7 @@ class ABCLocation(ABCInGameEntity, metaclass=ABCMeta):
 
     @property
     @abstractmethod
-    def objects(self) -> List[ABCInGameObject]:
+    def objects(self) -> List[ABCObject]:
         ...
 
     @property
@@ -43,7 +43,7 @@ class ABCLocation(ABCInGameEntity, metaclass=ABCMeta):
         ...
 
 
-class ABCInGameObject(ABCInGameEntity, metaclass=ABCMeta):
+class ABCObject(ABCEntity, metaclass=ABCMeta):
     """All objects wich can be placed on locations."""
 
     @property
@@ -62,7 +62,7 @@ class ABCInGameObject(ABCInGameEntity, metaclass=ABCMeta):
         ...
 
 
-class ABCCharacter(ABCInGameObject, metaclass=ABCMeta):
+class ABCCharacter(ABCObject, metaclass=ABCMeta):
     """Base class for players, mobs, npc."""
     ...
 
@@ -75,16 +75,16 @@ class ABCNonPlayableCharacter(ABCCharacter, metaclass=ABCMeta):
     ...
 
 
-class ABCLocationJunction(ABCInGameObject, metaclass=ABCMeta):
+class ABCLocationJunction(ABCObject, metaclass=ABCMeta):
     """Junction between two locations. Placed on one, transport character to another."""
 
     @property
     @abstractmethod
-    def next_location(self) -> Optional[ABCInGameObject]:
+    def next_location(self) -> Optional[ABCObject]:
         ...
 
 
-class ABCObstructiveObject(ABCInGameObject, metaclass=ABCMeta):
+class ABCObstructiveObject(ABCObject, metaclass=ABCMeta):
     """Some object like a mountains, trees, rocks, wich can't change self position in any way in game."""
     ...
 
@@ -93,10 +93,10 @@ class ABCDoorObject(ABCObstructiveObject, metaclass=ABCMeta):
     ...
 
 
-class ABCMoveableObject(ABCInGameObject, metaclass=ABCMeta):
+class ABCMoveableObject(ABCObject, metaclass=ABCMeta):
     """Some objects wich can be moved by players or in another ways."""
     ...
 
 
-class ABCItemObject(ABCInGameObject, metaclass=ABCMeta):
+class ABCItemObject(ABCObject, metaclass=ABCMeta):
     ...

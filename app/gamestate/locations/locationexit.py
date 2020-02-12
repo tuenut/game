@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-from abstractions.gamestate import ABCGameStateLocationExitsManager, ABCGameStateLocationExit
+from abstractions.gamestate import ABCGameStateLocationExit
 from config import WEST, EAST, NORTH, SOUTH
 
 
-class LocationExitsManager(ABCGameStateLocationExitsManager):
+class LocationExitsManager:
     def __init__(self, location_exits: dict):
         self.__exit_on_north = LocationExitState(self, **location_exits[NORTH])
         self.__exit_on_south = LocationExitState(self, **location_exits[SOUTH])

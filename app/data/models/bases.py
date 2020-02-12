@@ -6,9 +6,10 @@ import peewee
 from datetime import datetime as dt
 from hashlib import sha3_256
 
-from config import SQLITE_REPO
+database = peewee.SqliteDatabase(None)
 
-database = peewee.SqliteDatabase(SQLITE_REPO)
+
+# todo: сделать database.init(SQLITE_REPO) при запуске приложения, не тестов.
 
 
 class BaseModel(peewee.Model):
@@ -18,15 +19,15 @@ class BaseModel(peewee.Model):
         database = database
 
 
-class GameEntityTypes(BaseModel):
-    type_id = peewee.IntegerField(default=0, unique=True)
+class EntityTypes(BaseModel):
+    value = peewee.IntegerField(default=0, unique=True)
     description = peewee.CharField(max_length=255, default=None, null=True)
 
 
-class GameEntity(BaseModel):
-    ingame_id = peewee.CharField(max_length=64, default=None, null=True, unique=True)
-    ingame_type = peewee.ForeignKeyField(GameEntityTypes, default=None, null=True, backref="entities")
-    ingame_name = peewee.CharField(max_length=16, default=None, null=True, )
+class Entity(BaseModel):
+    uuid = peewee.CharField(max_length=64, default=None, null=True, unique=True)
+    name = peewee.CharField(max_length=16, default=None, null=True, )
+    type = peewee.ForeignKeyField(EntityTypes, default=None, null=True, backref="entities")
 
     def load(self, data: dict):
         raise NotImplementedError
@@ -36,24 +37,24 @@ class GameEntity(BaseModel):
 
 
 class EntityBinding(BaseModel):
-    entity = peewee.ForeignKeyField(GameEntity, default=None, null=True, unique=True)
+    entity = peewee.ForeignKeyField(Entity, default=None, null=True, unique=True)
     created = peewee.DateTimeField(default=dt.now)
 
     @property
-    def ingame_id(self):
-        return self.entity.ingame_id
+    def uuid(self):
+        return self.entity.uuid
 
     @property
-    def ingame_type(self):
-        return self.entity.ingame_type
+    def type(self):
+        return self.entity.type
 
     @property
-    def ingame_name(self):
-        return self.entity.ingame_name
+    def name(self):
+        return self.entity.name
 
     @classmethod
     def create(cls, **query):
-        if query.get('ingame_id'):
+        if query.get('uuid'):
             raise Exception("Field <ingame_id> can not provide directly, only by automatic calculate.")
 
         self_class_kwargs = {key: val for key, val in query.items() if key in cls._meta.fields.keys()}
@@ -66,26 +67,26 @@ class EntityBinding(BaseModel):
 
     @classmethod
     def _create_entity_binding(cls, instance, **query):
-        ingame_type = GameEntityTypes.get(type_id=query.get('ingame_type'))
-        ingame_name = query.get('ingame_name')
+        entity_type = EntityTypes.get(value=query.get('type'))
+        name = query.get('name')
 
-        serrialized_data = {
+        serialized_data = {
             field_name: getattr(instance, field_name)
             for field_name, field_type in cls._meta.fields.items()
             if not isinstance(field_type, peewee.ForeignKeyField)
         }
-        serrialized_data.update(
+        serialized_data.update(
             {
-                'ingame_type': query.get('ingame_type'),
-                'ingame_name': ingame_name,
-                'created': serrialized_data['created'].timestamp()
+                'type': query.get('type'),
+                'name': name,
+                'created': serialized_data['created'].timestamp()
             }
         )
 
-        ingame_id = cls.generate_object_id(**serrialized_data)
+        uuid = cls.generate_object_id(**serialized_data)
 
         try:
-            entity = GameEntity.create(ingame_id=ingame_id, ingame_type=ingame_type, ingame_name=ingame_name)
+            entity = Entity.create(uuid=uuid, type=entity_type, name=name)
         except Exception as e:
             cls.logger.exception("Some Exception while use overrided creation method.")
             raise e
@@ -94,14 +95,14 @@ class EntityBinding(BaseModel):
 
     @staticmethod
     def generate_object_id(**kwargs):
-        serrialized_data = copy.deepcopy(kwargs)
+        serialized_data = copy.deepcopy(kwargs)
 
         try:
-            serrialized_data.pop('ingame_id')
+            serialized_data.pop('uuid')
         except KeyError:
             pass
 
-        stringified_object = json.dumps(serrialized_data).encode()
+        stringified_object = json.dumps(serialized_data).encode()
         object_id = sha3_256(stringified_object).hexdigest()
 
         return object_id
