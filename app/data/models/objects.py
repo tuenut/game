@@ -4,7 +4,7 @@ from app.data.models.bases import EntityBinding
 from app.data.models.locations import Location
 
 
-class InGameObject(EntityBinding):
+class Object(EntityBinding):
     location = peewee.ForeignKeyField(Location, default=None, null=True, backref='objects')
     position_x = peewee.IntegerField(default=None, null=True)
     position_y = peewee.IntegerField(default=None, null=True)
@@ -23,9 +23,16 @@ class InGameObject(EntityBinding):
         raise NotImplementedError
 
     def dump(self) -> dict:
-        raise NotImplementedError
+        return {
+            'uuid': self.uuid,
+            'type': self.type,
+            'name': self.name,
+            'position': self.position,
+            'size': self.size,
+            'location': self.location.uuid if self.location else None
+        }
 
-class LocationJunction(InGameObject):
+class LocationJunction(Object):
     next_location = peewee.ForeignKeyField(Location, default=None, null=True, backref='junctions_to')
 
     def load(self, data: dict):

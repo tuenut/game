@@ -2,16 +2,12 @@ import unittest
 
 from app.utils.logger import configure_logger
 from app.data.models.bases import database
-from app.data.models import Entity, Location, Character, InGameObject, LocationJunction, EntityTypes
+from app.data.models import Entity, Location, Character, Object, LocationJunction, EntityTypes
 from config import CELL_SIZE
 from app.data.config import PLAYABLE_CHARACTER_TYPE, NON_PLAYABLE_CHARACTER_TYPE, LOCATION_TYPE, OBJECT_TYPE, \
     JUNCTION_OBJECT_TYPE, ENTITY_TYPES
 
-database.init(':memory:')
-
-
-# TODO sqlite в памяти, похоже, сществует только в пределах запуска одного теста.
-# TODO или переделать на файл, или разобраться с контекстом.
+database.init('test_repo.db')
 
 
 class TestDataBase(unittest.TestCase):
@@ -19,8 +15,8 @@ class TestDataBase(unittest.TestCase):
 
     @database.connection_context()
     def test_001_create_tables(self):
-        database.drop_tables([Location, Entity, Character, InGameObject, LocationJunction, EntityTypes])
-        database.create_tables([Location, Entity, Character, InGameObject, LocationJunction, EntityTypes])
+        database.drop_tables([Location, Entity, Character, Object, LocationJunction, EntityTypes])
+        database.create_tables([Location, Entity, Character, Object, LocationJunction, EntityTypes])
 
     @database.connection_context()
     def test_002_create_types(self):
@@ -65,14 +61,14 @@ class TestDataBase(unittest.TestCase):
 
     @database.connection_context()
     def test_005_create_objects(self):
-        InGameObject.create(
+        Object.create(
             name='test_object',
             type=OBJECT_TYPE,
             position_x=int(CELL_SIZE / 2),
             position_y=int(CELL_SIZE / 2),
             size_x=int(CELL_SIZE / 10),
             size_y=int(CELL_SIZE / 10),
-            location=Location.get_or_none(name='location_1')
+            location=Location.get_or_none(entity__name='location_1')
         )
 
     @database.connection_context()
@@ -84,5 +80,5 @@ class TestDataBase(unittest.TestCase):
             position_y=0,
             size_x=int(CELL_SIZE - CELL_SIZE / 10),
             size_y=10,
-            location=Location.get_or_none(name='location_1')
+            location=Location.get_or_none(entity__name='location_1')
         )

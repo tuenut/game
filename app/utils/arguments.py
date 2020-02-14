@@ -9,6 +9,12 @@ def parse_arguments():
         epilog='Author: tuenut'
     )
 
+    args_parser.add_argument(
+        '--edit-world',
+        action='store_true',
+        help="Start app in editor mode."
+    )
+
     parsed_arguments = args_parser.parse_args()
 
     return parsed_arguments

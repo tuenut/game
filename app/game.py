@@ -2,7 +2,7 @@ import logging
 
 import pygame
 
-from app.data import DataController
+from app.data.controller import DataController
 from app.events import EventManager, MOVE_CHARACTER
 from app.gamestate import GameStateController
 from app.render import Render

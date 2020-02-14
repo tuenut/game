@@ -1,4 +1,4 @@
-class State:
+class AppState:
     """Класс для различных состояний приложения."""
 
     def __init__(self):

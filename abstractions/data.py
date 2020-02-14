@@ -8,7 +8,7 @@ from abstractions.bases import ABCNonPlayableCharacter, ABCPlayableCharacter, AB
 
 __all__ = [
     'ABCData', 'ABCNonPlayableCharacterData', 'ABCPlayableCharacterData', 'ABCInGameObjectData', 'ABCLocationData',
-    'ABCLocationJunctionData', 'ABCDataController', 'ABCEntityData'
+    'ABCLocationJunctionData', 'ABCDataController', 'ABCEntityData', 'ABCCharacterData'
 ]
 
 

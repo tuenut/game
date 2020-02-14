@@ -23,4 +23,11 @@ class Character(EntityBinding):
         raise NotImplementedError
 
     def dump(self) -> dict:
-        raise NotImplementedError
+        return {
+            'uuid': self.uuid,
+            'type': self.type,
+            'name': self.name,
+            'position': self.position,
+            'size': self.size,
+            'location': self.location.uuid if self.location else None
+        }

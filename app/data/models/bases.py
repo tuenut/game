@@ -9,14 +9,17 @@ from hashlib import sha3_256
 database = peewee.SqliteDatabase(None)
 
 
-# todo: сделать database.init(SQLITE_REPO) при запуске приложения, не тестов.
-
-
 class BaseModel(peewee.Model):
     logger = logging.getLogger(__name__)
 
     class Meta:
         database = database
+
+    def load(self, data: dict):
+        raise NotImplementedError
+
+    def dump(self) -> dict:
+        raise NotImplementedError
 
 
 class EntityTypes(BaseModel):
@@ -29,12 +32,6 @@ class Entity(BaseModel):
     name = peewee.CharField(max_length=16, default=None, null=True, )
     type = peewee.ForeignKeyField(EntityTypes, default=None, null=True, backref="entities")
 
-    def load(self, data: dict):
-        raise NotImplementedError
-
-    def dump(self) -> dict:
-        raise NotImplementedError
-
 
 class EntityBinding(BaseModel):
     entity = peewee.ForeignKeyField(Entity, default=None, null=True, unique=True)
@@ -46,7 +43,7 @@ class EntityBinding(BaseModel):
 
     @property
     def type(self):
-        return self.entity.type
+        return self.entity.type.value
 
     @property
     def name(self):
