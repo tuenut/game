@@ -32,11 +32,21 @@ class Object(EntityBinding):
             'location': self.location.uuid if self.location else None
         }
 
-class LocationJunction(Object):
+class LocationJunction(EntityBinding):
+    object = peewee.ForeignKeyField(Object, default=None, null=True, backref='junctions', unique=True)
     next_location = peewee.ForeignKeyField(Location, default=None, null=True, backref='junctions_to')
+
+    def create(self, **query):
+        object_ref = Object.create(**query)
+
+
 
     def load(self, data: dict):
         raise NotImplementedError
 
     def dump(self) -> dict:
         raise NotImplementedError
+
+
+class OneToOneExtensionMeta:
+    ...
