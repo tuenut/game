@@ -1,6 +1,6 @@
 from abstractions.data import ABCData
 
-from app.data.models import Object
+from app.data.orm.objects.models import Object
 
 
 class ObjectsDataController(ABCData):
@@ -11,4 +11,4 @@ class ObjectsDataController(ABCData):
         return [obj.dump() for obj in self.objects]
 
     def __init__(self):
-        self.objects = Object.select()
+        self.objects = Object.objects.all()

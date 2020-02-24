@@ -16,8 +16,8 @@ class EntityType(models.Model):
 
 
 class BaseEntityModel(models.Model):
-    uuid = models.OneToOneField('entiti.Entity', null=False, on_delete=models.CASCADE)
-    type = models.ForeignKey('entiti.EntityType', default=None, null=True, on_delete=models.SET_DEFAULT)
+    uuid = models.OneToOneField('entities.Entity', null=False, on_delete=models.CASCADE)
+    type = models.ForeignKey('entities.EntityType', default=None, null=True, on_delete=models.SET_DEFAULT)
     name = models.CharField(max_length=32, default=None, null=True)
 
     def load(self, data: dict):

@@ -5,7 +5,7 @@ from app.data.orm.entities.models import BaseEntityModel
 
 
 class Object(BaseEntityModel):
-    location = models.ForeignKey('Location', default=None, null=True, on_delete=models.SET_DEFAULT)
+    location = models.ForeignKey('locations.Location', default=None, null=True, on_delete=models.SET_DEFAULT)
     position_x = models.IntegerField(default=0)
     position_y = models.IntegerField(default=0)
     size_x = models.IntegerField(default=0)
@@ -28,7 +28,7 @@ class Object(BaseEntityModel):
 
 class LocationJunction(Object):
     next_location = models.ForeignKey(
-        'Location',
+        'locations.Location',
         default=None, null=True, on_delete=models.SET_DEFAULT,
         related_name='junctions_to_that_location', related_query_name='junctions_to_that_location'
     )

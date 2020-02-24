@@ -10,13 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-import sys, os
+import os, sys
 
-sys.path.insert(0, os.path.abspath('../../../'))
+from config import BASE_DIR
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -28,7 +27,6 @@ SECRET_KEY = 'mos4zv(k19nee6%t@zq70w6u$)_$!4u)v6zvgam@3^gc*7&r@6'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -42,10 +40,10 @@ INSTALLED_APPS = [
 
     'app',
 
-    'entities',
-    'locations',
-    'objects',
-    'characters',
+    'app.data.orm.entities',
+    'app.data.orm.locations',
+    'app.data.orm.objects',
+    'app.data.orm.characters',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'orm.urls'
+ROOT_URLCONF = 'app.data.orm.orm.urls'
 
 TEMPLATES = [
     {
@@ -78,7 +76,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'orm.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -88,7 +85,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -108,7 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -121,7 +116,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

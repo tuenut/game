@@ -11,7 +11,7 @@ if __name__ == "__main__":
     logger.debug(f"Start with args <{start_opts}>.")
     logger.debug(f"Base dir: <{BASE_DIR}>.")
 
-    if start_opts.edit_world:
+    if start_opts.editor_mode:
         editor_mode()
     else:
         main_mode()

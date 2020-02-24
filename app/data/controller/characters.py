@@ -1,6 +1,6 @@
 from abstractions.data import ABCData
 
-from app.data.models import Character
+from app.data.orm.characters.models import Character
 
 
 class CharactersDataController(ABCData):
@@ -11,4 +11,4 @@ class CharactersDataController(ABCData):
         return [character.dump() for character in self.characters]
 
     def __init__(self):
-        self.characters = Character.select()
+        self.characters = Character.objects.all()

@@ -2,7 +2,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-from app.app import App
+from app.mainprocess import App
 
 
 def main_mode():

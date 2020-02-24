@@ -10,7 +10,7 @@ def parse_arguments():
     )
 
     args_parser.add_argument(
-        '--edit-world',
+        '--editor-mode',
         action='store_true',
         help="Start app in editor mode."
     )
